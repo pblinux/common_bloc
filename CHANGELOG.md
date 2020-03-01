@@ -1,3 +1,7 @@
+## [0.1.1]
+* Example added
+* Update dependencies
+
 ## [0.1.0] - Initial release
 * Package created
 * RestBloc added
