@@ -1,6 +1,6 @@
 name: common_bloc
 description: A collection of common blocs that maybe will be used very often (powered by the bloc library).
-version: 0.1.2
+version: 0.1.2+1
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc
 environment:

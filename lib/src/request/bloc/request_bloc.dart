@@ -27,6 +27,8 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
     }
   }
 
-  void perform(Function requestAction, String requestName) =>
-      this.add(RequestEvent(requestAction, requestName));
+  void perform(Function requestAction, String requestName,
+          {bool withLoading = true}) =>
+      this.add(
+          RequestEvent(requestAction, requestName, withLoading: withLoading));
 }

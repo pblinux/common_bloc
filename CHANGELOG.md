@@ -1,3 +1,6 @@
+## [0.1.2+1]
+* perform method with loading by default
+
 ## [0.1.2]
 * Optional loading for Request bloc
 
