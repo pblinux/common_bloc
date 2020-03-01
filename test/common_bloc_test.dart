@@ -1,10 +1,12 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http_interceptor/http_client_with_interceptor.dart';
 
 void main() {
-  group('RestBloc', () {
+  group('Rest bloc', () {
     blocTest('get from api',
         act: (bloc) => bloc.get('/posts'),
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
@@ -59,6 +61,32 @@ void main() {
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
+        ]);
+  });
+
+  group('Request bloc', () {
+    blocTest('make a simple task',
+        act: (bloc) => bloc.perform(
+            () async => Future.delayed(Duration(seconds: 3), () => true),
+            'TimerTask'),
+        build: () => RequestBloc(),
+        expect: [
+          isA<UninitializedRequestState>(),
+          isA<LoadingRequestState>(),
+          isA<LoadedRequestState>()
+        ]);
+
+    blocTest('make a simple request on internet',
+        act: (bloc) => bloc.perform(
+            () async => await HttpClientWithInterceptor.build(interceptors: [])
+                .get('https://jsonplaceholder.typicode.com/posts/1')
+              ..body,
+            'NetworkRequest'),
+        build: () => RequestBloc(),
+        expect: [
+          isA<UninitializedRequestState>(),
+          isA<LoadingRequestState>(),
+          isA<LoadedRequestState>()
         ]);
   });
 }

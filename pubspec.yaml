@@ -1,5 +1,5 @@
 name: common_bloc
-description: A couple of common blocs to be used very often.
+description: A collection of common blocs that maybe will be used very often (powered by the bloc library).
 version: 0.1.0
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc

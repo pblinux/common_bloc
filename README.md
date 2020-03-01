@@ -1,5 +1,5 @@
 # common_bloc
-A couple of common blocs to be used very often.
+A collection of common blocs that maybe will be used very often.
 
 ## Idea of this
 Sometimes we need to create various blocs in the same project to do almost the same thing. This is a collection of blocs to no write so many code.
@@ -58,7 +58,40 @@ BlocBuilder<RestBloc, RestState>(
 );
 ```
 
+### RequestBloc
+This bloc will be used when we want to make a task, a request, o something that needs a response/data/result.
+
+#### Usage
+This bloc doesn't need params to be constructed.
+```
+final requestBloc = RequestBloc();
+```
+
+When we need to perform an action, we call:
+
+```
+requestBloc.perform(action, actionName);
+```
+
+'action' is a function that returns a Future to be resolved and will be the result. 
+
+'actionName' is a identifier of what we are doing.
+
+```
+requestBloc.perform(() async => 'Hi!', 'Waving');
+```
+
+#### States
+This use the same states of RestBloc:
+
+- uninitialized
+- loading
+- error
+- loaded
+
+
 ## In the future
 - [ ] Tab Bloc (for controlling tab behaviour).
 - [ ] Session Bloc.
+- [ ] Login/Register Bloc.
 - [ ] A suggestion?.
