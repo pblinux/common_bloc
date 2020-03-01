@@ -15,7 +15,7 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   Stream<RequestState> mapEventToState(
     RequestEvent event,
   ) async* {
-    yield RequestState.loading();
+    if (event.withLoading) yield RequestState.loading();
     try {
       final result = await event.requestAction();
       yield RequestState.loaded(

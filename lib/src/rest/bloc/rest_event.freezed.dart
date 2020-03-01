@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package
+// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
 
 part of 'rest_event.dart';
 
@@ -52,6 +52,50 @@ mixin _$RestEvent {
   });
 }
 
+class _$RestEventTearOff {
+  const _$RestEventTearOff();
+
+  GetEvent get(String path, {Map<String, String> params, Function fromJson}) {
+    return GetEvent(
+      path,
+      params: params,
+      fromJson: fromJson,
+    );
+  }
+
+  PostEvent post(String path, {String body, Function fromJson}) {
+    return PostEvent(
+      path,
+      body: body,
+      fromJson: fromJson,
+    );
+  }
+
+  PutEvent put(String path, {String body, Function fromJson}) {
+    return PutEvent(
+      path,
+      body: body,
+      fromJson: fromJson,
+    );
+  }
+
+  PatchEvent patch(String path, {String body, Function fromJson}) {
+    return PatchEvent(
+      path,
+      body: body,
+      fromJson: fromJson,
+    );
+  }
+
+  DeleteEvent delete(String path) {
+    return DeleteEvent(
+      path,
+    );
+  }
+}
+
+const $RestEvent = _$RestEventTearOff();
+
 class _$GetEvent implements GetEvent {
   _$GetEvent(this.path, {this.params, this.fromJson}) : assert(path != null);
 
@@ -83,9 +127,9 @@ class _$GetEvent implements GetEvent {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      path.hashCode ^
-      params.hashCode ^
-      fromJson.hashCode;
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(params) ^
+      const DeepCollectionEquality().hash(fromJson);
 
   @override
   _$GetEvent copyWith({
@@ -93,7 +137,6 @@ class _$GetEvent implements GetEvent {
     Object params = freezed,
     Object fromJson = freezed,
   }) {
-    assert(path != null);
     return _$GetEvent(
       path == freezed ? this.path : path as String,
       params: params == freezed ? this.params : params as Map<String, String>,
@@ -215,7 +258,10 @@ class _$PostEvent implements PostEvent {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ path.hashCode ^ body.hashCode ^ fromJson.hashCode;
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(body) ^
+      const DeepCollectionEquality().hash(fromJson);
 
   @override
   _$PostEvent copyWith({
@@ -223,7 +269,6 @@ class _$PostEvent implements PostEvent {
     Object body = freezed,
     Object fromJson = freezed,
   }) {
-    assert(path != null);
     return _$PostEvent(
       path == freezed ? this.path : path as String,
       body: body == freezed ? this.body : body as String,
@@ -344,7 +389,10 @@ class _$PutEvent implements PutEvent {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ path.hashCode ^ body.hashCode ^ fromJson.hashCode;
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(body) ^
+      const DeepCollectionEquality().hash(fromJson);
 
   @override
   _$PutEvent copyWith({
@@ -352,7 +400,6 @@ class _$PutEvent implements PutEvent {
     Object body = freezed,
     Object fromJson = freezed,
   }) {
-    assert(path != null);
     return _$PutEvent(
       path == freezed ? this.path : path as String,
       body: body == freezed ? this.body : body as String,
@@ -472,7 +519,10 @@ class _$PatchEvent implements PatchEvent {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ path.hashCode ^ body.hashCode ^ fromJson.hashCode;
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(body) ^
+      const DeepCollectionEquality().hash(fromJson);
 
   @override
   _$PatchEvent copyWith({
@@ -480,7 +530,6 @@ class _$PatchEvent implements PatchEvent {
     Object body = freezed,
     Object fromJson = freezed,
   }) {
-    assert(path != null);
     return _$PatchEvent(
       path == freezed ? this.path : path as String,
       body: body == freezed ? this.body : body as String,
@@ -591,13 +640,13 @@ class _$DeleteEvent implements DeleteEvent {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ path.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(path);
 
   @override
   _$DeleteEvent copyWith({
     Object path = freezed,
   }) {
-    assert(path != null);
     return _$DeleteEvent(
       path == freezed ? this.path : path as String,
     );

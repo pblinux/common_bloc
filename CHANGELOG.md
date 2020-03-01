@@ -1,3 +1,6 @@
+## [0.1.2]
+* Optional loading for Request bloc
+
 ## [0.1.1]
 * Example added
 * Update dependencies

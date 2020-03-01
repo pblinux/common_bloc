@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package
+// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
 
 part of 'rest_state.dart';
 
@@ -46,6 +46,38 @@ mixin _$RestState {
     @required Result orElse(),
   });
 }
+
+class _$RestStateTearOff {
+  const _$RestStateTearOff();
+
+  UninitializedRestState uninitialized() {
+    return UninitializedRestState();
+  }
+
+  ErrorRestState error({String message}) {
+    return ErrorRestState(
+      message: message,
+    );
+  }
+
+  LoadingRestState loading() {
+    return LoadingRestState();
+  }
+
+  LoadedRestState loaded({dynamic data, String lastPath, String timestamp}) {
+    return LoadedRestState(
+      data: data,
+      lastPath: lastPath,
+      timestamp: timestamp,
+    );
+  }
+
+  EmptyRestState empty() {
+    return EmptyRestState();
+  }
+}
+
+const $RestState = _$RestStateTearOff();
 
 class _$UninitializedRestState implements UninitializedRestState {
   _$UninitializedRestState();
@@ -156,7 +188,8 @@ class _$ErrorRestState implements ErrorRestState {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ message.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
   @override
   _$ErrorRestState copyWith({
@@ -365,9 +398,9 @@ class _$LoadedRestState implements LoadedRestState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      data.hashCode ^
-      lastPath.hashCode ^
-      timestamp.hashCode;
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(lastPath) ^
+      const DeepCollectionEquality().hash(timestamp);
 
   @override
   _$LoadedRestState copyWith({
