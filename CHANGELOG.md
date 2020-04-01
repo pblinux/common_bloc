@@ -1,4 +1,4 @@
-## [0.1.2+1]
+## [0.1.3]
 * Change REST response to Map
 * A better example
 * Remove unused 'empty' state.
