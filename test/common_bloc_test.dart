@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
+import 'package:common_bloc/src/rss/bloc/rss_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http_interceptor/http_client_with_interceptor.dart';
 
@@ -87,6 +88,17 @@ void main() {
           isA<UninitializedRequestState>(),
           isA<LoadingRequestState>(),
           isA<LoadedRequestState>()
+        ]);
+  });
+
+  group('Rss bloc', () {
+    blocTest('get rss feed',
+        act: (bloc) => bloc.getFeed('http://www.publicbooks.org/tag/fiction/feed'),
+        build: () => RssBloc(),
+        expect: [
+          isA<UninitializedRssState>(),
+          isA<LoadingRssState>(),
+          isA<LoadedRssState>()
         ]);
   });
 }

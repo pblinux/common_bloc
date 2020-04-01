@@ -8,6 +8,7 @@ Sometimes we need to create various blocs in the same project to do almost the s
 - [bloc](https://pub.dev/packages/bloc)
 - [freezed](https://pub.dev/packages/freezed)
 - [http_interceptor](https://pub.dev/packages/http_interceptor)
+- [webfeed](https://pub.dev/packages/webfeed)
 
 ## Blocs
 
@@ -89,9 +90,24 @@ This use the same states of RestBloc:
 - error
 - loaded
 
+### RssBloc
+This bloc make a request to an RSS url and returns an formatted object.
+
+#### Usage
+This bloc doesn't need params to be constructed.
+```
+final rssBloc = RssBloc();
+```
+
+Now you can fetch the RSS info:
+```
+rssBloc.getFeed('http://www.publicbooks.org/tag/fiction/feed');
+```
+
+#### States
+This bloc use the same states of RestBloc and RequestState.
 
 ## In the future
+- [X] Bloc for RSS feed.
 - [ ] Tab Bloc (for controlling tab behaviour).
-- [ ] Session Bloc.
-- [ ] Login/Register Bloc.
-- [ ] A suggestion?.
+- [ ] A suggestion?

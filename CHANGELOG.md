@@ -1,3 +1,6 @@
+## [0.1.4]
+* New RSSBloc
+
 ## [0.1.3]
 * Change REST response to Map
 * A better example

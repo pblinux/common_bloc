@@ -1,11 +1,9 @@
 export './request_state.dart';
 
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-
 import './request_event.dart';
 import './request_state.dart';
+import 'dart:async';
+import 'package:bloc/bloc.dart';
 
 class RequestBloc extends Bloc<RequestEvent, RequestState> {
   @override

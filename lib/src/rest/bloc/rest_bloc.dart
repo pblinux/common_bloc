@@ -1,10 +1,12 @@
-export './rest_event.dart';
-export './rest_state.dart';
-import './rest_event.dart';
-import './rest_state.dart';
+export 'package:common_bloc/src/rest/bloc/rest_event.dart';
+export 'package:common_bloc/src/rest/bloc/rest_state.dart';
+
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:common_bloc/src/common/data_source.dart';
+import 'package:common_bloc/src/common/response.dart';
+import 'package:common_bloc/src/rest/bloc/rest_event.dart';
+import 'package:common_bloc/src/rest/bloc/rest_state.dart';
 import 'package:http_interceptor/http_client_with_interceptor.dart';
 import 'package:http_interceptor/interceptor_contract.dart';
 

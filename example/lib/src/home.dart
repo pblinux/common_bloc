@@ -1,3 +1,4 @@
+import 'package:common_bloc_example/src/rss.dart';
 import 'package:flutter/material.dart';
 import 'request.dart';
 import 'rest.dart';
@@ -27,7 +28,13 @@ class HomeScreen extends StatelessWidget {
             onPressed: () => Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => RequestScreen())),
             subtitle: 'Perform any kind of action and wait for the result',
-            title: 'Request')
+            title: 'Request'),
+        HomeItem(
+            icon: Icons.rss_feed,
+            onPressed: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => RssScreen())),
+            subtitle: 'Get RSS feed from URL',
+            title: 'RSS')
       ]))
     ]));
   }
