@@ -14,7 +14,6 @@ mixin _$RequestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
   });
 
   @optionalTypeArgs
@@ -23,7 +22,6 @@ mixin _$RequestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
     @required Result orElse(),
   });
 
@@ -33,7 +31,6 @@ mixin _$RequestState {
     @required Result error(ErrorRequestState value),
     @required Result loading(LoadingRequestState value),
     @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
   });
 
   @optionalTypeArgs
@@ -42,7 +39,6 @@ mixin _$RequestState {
     Result error(ErrorRequestState value),
     Result loading(LoadingRequestState value),
     Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
     @required Result orElse(),
   });
 }
@@ -72,10 +68,6 @@ class _$RequestStateTearOff {
       timestamp: timestamp,
     );
   }
-
-  EmptyRequestState empty() {
-    return EmptyRequestState();
-  }
 }
 
 const $RequestState = _$RequestStateTearOff();
@@ -103,13 +95,11 @@ class _$UninitializedRequestState implements UninitializedRequestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return uninitialized();
   }
 
@@ -120,7 +110,6 @@ class _$UninitializedRequestState implements UninitializedRequestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -137,13 +126,11 @@ class _$UninitializedRequestState implements UninitializedRequestState {
     @required Result error(ErrorRequestState value),
     @required Result loading(LoadingRequestState value),
     @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return uninitialized(this);
   }
 
@@ -154,7 +141,6 @@ class _$UninitializedRequestState implements UninitializedRequestState {
     Result error(ErrorRequestState value),
     Result loading(LoadingRequestState value),
     Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -208,13 +194,11 @@ class _$ErrorRequestState implements ErrorRequestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return error(message);
   }
 
@@ -225,7 +209,6 @@ class _$ErrorRequestState implements ErrorRequestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -242,13 +225,11 @@ class _$ErrorRequestState implements ErrorRequestState {
     @required Result error(ErrorRequestState value),
     @required Result loading(LoadingRequestState value),
     @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return error(this);
   }
 
@@ -259,7 +240,6 @@ class _$ErrorRequestState implements ErrorRequestState {
     Result error(ErrorRequestState value),
     Result loading(LoadingRequestState value),
     Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -301,13 +281,11 @@ class _$LoadingRequestState implements LoadingRequestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loading();
   }
 
@@ -318,7 +296,6 @@ class _$LoadingRequestState implements LoadingRequestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -335,13 +312,11 @@ class _$LoadingRequestState implements LoadingRequestState {
     @required Result error(ErrorRequestState value),
     @required Result loading(LoadingRequestState value),
     @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loading(this);
   }
 
@@ -352,7 +327,6 @@ class _$LoadingRequestState implements LoadingRequestState {
     Result error(ErrorRequestState value),
     Result loading(LoadingRequestState value),
     Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -424,13 +398,11 @@ class _$LoadedRequestState implements LoadedRequestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loaded(data, lastRequest, timestamp);
   }
 
@@ -441,7 +413,6 @@ class _$LoadedRequestState implements LoadedRequestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -458,13 +429,11 @@ class _$LoadedRequestState implements LoadedRequestState {
     @required Result error(ErrorRequestState value),
     @required Result loading(LoadingRequestState value),
     @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loaded(this);
   }
 
@@ -475,7 +444,6 @@ class _$LoadedRequestState implements LoadedRequestState {
     Result error(ErrorRequestState value),
     Result loading(LoadingRequestState value),
     Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -498,93 +466,4 @@ abstract class LoadedRequestState implements RequestState {
 
   LoadedRequestState copyWith(
       {dynamic data, String lastRequest, String timestamp});
-}
-
-class _$EmptyRequestState implements EmptyRequestState {
-  _$EmptyRequestState();
-
-  @override
-  String toString() {
-    return 'RequestState.empty()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmptyRequestState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result empty(),
-  }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(empty != null);
-    return empty();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    Result empty(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
-    @required Result empty(EmptyRequestState value),
-  }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(empty != null);
-    return empty(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    Result empty(EmptyRequestState value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmptyRequestState implements RequestState {
-  factory EmptyRequestState() = _$EmptyRequestState;
 }

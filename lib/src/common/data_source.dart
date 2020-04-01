@@ -55,10 +55,8 @@ class RestDataSource {
 }
 
 extension ResponseManagment on Response {
-  String get encodedBody => json.encode(this.body);
-
   dynamic manageRequestResponse({Function fromJson}) =>
-      fromJson != null ? fromJson(encodedBody) : encodedBody;
+      fromJson != null ? fromJson(this.body) : json.decode(this.body);
 
   ResponseException manageRequestError() {
     switch (this.statusCode) {

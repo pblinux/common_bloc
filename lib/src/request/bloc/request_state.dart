@@ -11,5 +11,4 @@ abstract class RequestState with _$RequestState {
       {dynamic data,
       String lastRequest,
       String timestamp}) = LoadedRequestState;
-  factory RequestState.empty() = EmptyRequestState;
 }

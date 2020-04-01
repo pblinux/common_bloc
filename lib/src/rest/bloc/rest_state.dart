@@ -7,7 +7,5 @@ abstract class RestState with _$RestState {
   factory RestState.uninitialized() = UninitializedRestState;
   factory RestState.error({String message}) = ErrorRestState;
   factory RestState.loading() = LoadingRestState;
-  factory RestState.loaded({dynamic data, String lastPath, String timestamp}) =
-      LoadedRestState;
-  factory RestState.empty() = EmptyRestState;
+  factory RestState.loaded({dynamic data, String lastPath, String timestamp}) = LoadedRestState;
 }

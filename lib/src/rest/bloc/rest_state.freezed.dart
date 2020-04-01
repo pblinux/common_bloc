@@ -14,7 +14,6 @@ mixin _$RestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
   });
 
   @optionalTypeArgs
@@ -23,7 +22,6 @@ mixin _$RestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
     @required Result orElse(),
   });
 
@@ -33,7 +31,6 @@ mixin _$RestState {
     @required Result error(ErrorRestState value),
     @required Result loading(LoadingRestState value),
     @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
   });
 
   @optionalTypeArgs
@@ -42,7 +39,6 @@ mixin _$RestState {
     Result error(ErrorRestState value),
     Result loading(LoadingRestState value),
     Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
     @required Result orElse(),
   });
 }
@@ -71,10 +67,6 @@ class _$RestStateTearOff {
       timestamp: timestamp,
     );
   }
-
-  EmptyRestState empty() {
-    return EmptyRestState();
-  }
 }
 
 const $RestState = _$RestStateTearOff();
@@ -102,13 +94,11 @@ class _$UninitializedRestState implements UninitializedRestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return uninitialized();
   }
 
@@ -119,7 +109,6 @@ class _$UninitializedRestState implements UninitializedRestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -136,13 +125,11 @@ class _$UninitializedRestState implements UninitializedRestState {
     @required Result error(ErrorRestState value),
     @required Result loading(LoadingRestState value),
     @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return uninitialized(this);
   }
 
@@ -153,7 +140,6 @@ class _$UninitializedRestState implements UninitializedRestState {
     Result error(ErrorRestState value),
     Result loading(LoadingRestState value),
     Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -207,13 +193,11 @@ class _$ErrorRestState implements ErrorRestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return error(message);
   }
 
@@ -224,7 +208,6 @@ class _$ErrorRestState implements ErrorRestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -241,13 +224,11 @@ class _$ErrorRestState implements ErrorRestState {
     @required Result error(ErrorRestState value),
     @required Result loading(LoadingRestState value),
     @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return error(this);
   }
 
@@ -258,7 +239,6 @@ class _$ErrorRestState implements ErrorRestState {
     Result error(ErrorRestState value),
     Result loading(LoadingRestState value),
     Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -300,13 +280,11 @@ class _$LoadingRestState implements LoadingRestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loading();
   }
 
@@ -317,7 +295,6 @@ class _$LoadingRestState implements LoadingRestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -334,13 +311,11 @@ class _$LoadingRestState implements LoadingRestState {
     @required Result error(ErrorRestState value),
     @required Result loading(LoadingRestState value),
     @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loading(this);
   }
 
@@ -351,7 +326,6 @@ class _$LoadingRestState implements LoadingRestState {
     Result error(ErrorRestState value),
     Result loading(LoadingRestState value),
     Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -422,13 +396,11 @@ class _$LoadedRestState implements LoadedRestState {
     @required Result error(String message),
     @required Result loading(),
     @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loaded(data, lastPath, timestamp);
   }
 
@@ -439,7 +411,6 @@ class _$LoadedRestState implements LoadedRestState {
     Result error(String message),
     Result loading(),
     Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -456,13 +427,11 @@ class _$LoadedRestState implements LoadedRestState {
     @required Result error(ErrorRestState value),
     @required Result loading(LoadingRestState value),
     @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
   }) {
     assert(uninitialized != null);
     assert(error != null);
     assert(loading != null);
     assert(loaded != null);
-    assert(empty != null);
     return loaded(this);
   }
 
@@ -473,7 +442,6 @@ class _$LoadedRestState implements LoadedRestState {
     Result error(ErrorRestState value),
     Result loading(LoadingRestState value),
     Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -493,93 +461,4 @@ abstract class LoadedRestState implements RestState {
   String get timestamp;
 
   LoadedRestState copyWith({dynamic data, String lastPath, String timestamp});
-}
-
-class _$EmptyRestState implements EmptyRestState {
-  _$EmptyRestState();
-
-  @override
-  String toString() {
-    return 'RestState.empty()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmptyRestState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastPath, String timestamp),
-    @required Result empty(),
-  }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(empty != null);
-    return empty();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastPath, String timestamp),
-    Result empty(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRestState value),
-    @required Result error(ErrorRestState value),
-    @required Result loading(LoadingRestState value),
-    @required Result loaded(LoadedRestState value),
-    @required Result empty(EmptyRestState value),
-  }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(empty != null);
-    return empty(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRestState value),
-    Result error(ErrorRestState value),
-    Result loading(LoadingRestState value),
-    Result loaded(LoadedRestState value),
-    Result empty(EmptyRestState value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmptyRestState implements RestState {
-  factory EmptyRestState() = _$EmptyRestState;
 }

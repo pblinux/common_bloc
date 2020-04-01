@@ -1,5 +1,10 @@
 ## [0.1.2+1]
-* perform method with loading by default
+* Change REST response to Map
+* A better example
+* Remove unused 'empty' state.
+
+## [0.1.2+1]
+* 'perform' method with loading by default
 
 ## [0.1.2]
 * Optional loading for Request bloc
