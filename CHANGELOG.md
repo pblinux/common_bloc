@@ -1,3 +1,7 @@
+## [0.1.4+1]
+* RestBloc can change baseUrl
+* Expose current base url in RestBloc
+
 ## [0.1.4]
 * New RSSBloc
 

@@ -4,9 +4,11 @@ import 'package:meta/meta.dart';
 
 class RestDataSource {
   final HttpClientWithInterceptor client;
-  final String baseURL;
+  String baseURL;
 
   RestDataSource({@required this.baseURL, @required this.client});
+
+  void changeBaseUrl(String newUrl) => this.baseURL = newUrl;
 
   Future<dynamic> get(String path,
       {Map<String, String> params, Function fromJson}) async {

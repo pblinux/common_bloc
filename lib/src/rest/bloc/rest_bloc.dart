@@ -23,6 +23,8 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   @override
   RestState get initialState => RestState.uninitialized();
 
+  String get baseUrl => restDataSource.baseURL;
+
   @override
   Stream<RestState> mapEventToState(
     RestEvent event,
@@ -63,4 +65,6 @@ class RestBloc extends Bloc<RestEvent, RestState> {
 
   void delete(String path, {Map<String, String> params, Function fromJson}) =>
       this.add(RestEvent.delete(path));
+
+  void changeUrl(String newBaseUrl) => restDataSource.changeBaseUrl(newBaseUrl);
 }
