@@ -5,7 +5,12 @@ part 'rest_state.freezed.dart';
 @freezed
 abstract class RestState with _$RestState {
   factory RestState.uninitialized() = UninitializedRestState;
-  factory RestState.error({String message}) = ErrorRestState;
+  factory RestState.error({String message, String humanMessage}) =
+      ErrorRestState;
   factory RestState.loading() = LoadingRestState;
-  factory RestState.loaded({dynamic data, String lastPath, String timestamp}) = LoadedRestState;
+  factory RestState.loaded(
+      {Map<String, String> headers,
+      String lastPath,
+      String timestamp,
+      dynamic data}) = LoadedRestState;
 }

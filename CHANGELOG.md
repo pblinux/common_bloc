@@ -1,3 +1,8 @@
+## [0.1.4+2]
+* Headers for RestBloc
+* Content-Type for RestBloc
+* Response headers in RestBloc
+
 ## [0.1.4+1]
 * RestBloc can change baseUrl
 * Expose current base url in RestBloc

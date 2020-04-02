@@ -1,7 +1,7 @@
-import 'package:common_bloc_example/src/rss.dart';
 import 'package:flutter/material.dart';
 import 'request.dart';
 import 'rest.dart';
+import 'rss.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

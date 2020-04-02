@@ -32,39 +32,78 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     yield RestState.loading();
     try {
       final result = await event.map(
-          delete: (e) => restDataSource.delete(e.path),
+          delete: (e) => restDataSource.delete(e.path, headers: e.headers),
           get: (e) => restDataSource.get(e.path,
-              fromJson: e.fromJson, params: e.params),
-          patch: (e) =>
-              restDataSource.patch(e.path, body: e.body, fromJson: e.fromJson),
-          post: (e) =>
-              restDataSource.post(e.path, body: e.body, fromJson: e.fromJson),
-          put: (e) =>
-              restDataSource.put(e.path, body: e.body, fromJson: e.fromJson));
+              fromJson: e.fromJson, params: e.params, headers: e.headers),
+          patch: (e) => restDataSource.patch(e.path,
+              body: e.body,
+              contentType: e.contentType,
+              fromJson: e.fromJson,
+              headers: e.headers),
+          post: (e) => restDataSource.post(e.path,
+              body: e.body,
+              contentType: e.contentType,
+              fromJson: e.fromJson,
+              headers: e.headers),
+          put: (e) => restDataSource.put(e.path,
+              body: e.body,
+              contentType: e.contentType,
+              fromJson: e.fromJson,
+              headers: e.headers));
       yield RestState.loaded(
-          data: result,
+          data: result['data'],
+          headers: result['headers'],
           lastPath: event.path,
           timestamp: DateTime.now().toIso8601String());
     } catch (e) {
       yield RestState.error(
-          message: e is ResponseException ? e.humanMessage : e);
+          humanMessage: e is ResponseException ? e.humanMessage : e,
+          message: e is ResponseException ? e.message : e);
     }
   }
 
-  void get(String path, {Map<String, String> params, Function fromJson}) =>
-      this.add(RestEvent.get(path, params: params, fromJson: fromJson));
+  void get(String path,
+          {Function fromJson,
+          Map<String, String> headers,
+          Map<String, String> params}) =>
+      this.add(RestEvent.get(path,
+          params: params, fromJson: fromJson, headers: headers));
 
-  void post(String path, {String body, Function fromJson}) =>
-      this.add(RestEvent.post(path, body: body, fromJson: fromJson));
+  void post(String path,
+          {Function fromJson,
+          Map<String, String> headers,
+          String body,
+          String contentType}) =>
+      this.add(RestEvent.post(path,
+          body: body,
+          contentType: contentType,
+          fromJson: fromJson,
+          headers: headers));
 
-  void put(String path, {String body, Function fromJson}) =>
-      this.add(RestEvent.put(path, body: body, fromJson: fromJson));
+  void put(String path,
+          {Function fromJson,
+          Map<String, String> headers,
+          String body,
+          String contentType}) =>
+      this.add(RestEvent.put(path,
+          body: body,
+          contentType: contentType,
+          fromJson: fromJson,
+          headers: headers));
 
-  void patch(String path, {String body, Function fromJson}) =>
-      this.add(RestEvent.patch(path, body: body, fromJson: fromJson));
+  void patch(String path,
+          {Function fromJson,
+          Map<String, String> headers,
+          String body,
+          String contentType}) =>
+      this.add(RestEvent.patch(path,
+          body: body,
+          contentType: contentType,
+          fromJson: fromJson,
+          headers: headers));
 
-  void delete(String path, {Map<String, String> params, Function fromJson}) =>
-      this.add(RestEvent.delete(path));
+  void delete(String path, {Function fromJson, Map<String, String> headers}) =>
+      this.add(RestEvent.delete(path, headers: headers));
 
   void changeUrl(String newBaseUrl) => restDataSource.changeBaseUrl(newBaseUrl);
 }

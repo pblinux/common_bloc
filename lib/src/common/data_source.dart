@@ -10,44 +10,69 @@ class RestDataSource {
 
   void changeBaseUrl(String newUrl) => this.baseURL = newUrl;
 
-  Future<dynamic> get(String path,
-      {Map<String, String> params, Function fromJson}) async {
-    final response =
-        await client.get(Uri.encodeFull(baseURL + path), params: params);
+  Future<Map<String, dynamic>> get(String path,
+      {Function fromJson,
+      Map<String, String> headers,
+      Map<String, String> params}) async {
+    final response = await client.get(Uri.encodeFull(baseURL + path),
+        headers: headers, params: params);
     if (response.statusCode == 200)
       return response.manageRestRequestResponse(fromJson: fromJson);
     throw response.manageRequestError();
   }
 
-  Future<dynamic> post(String path, {String body, Function fromJson}) async {
+  Future<Map<String, dynamic>> post(String path,
+      {Function fromJson,
+      Map<String, String> headers,
+      String body,
+      String contentType}) async {
     final response =
-        await client.post(Uri.encodeFull(baseURL + path), body: body);
+        await client.post(Uri.encodeFull(baseURL + path), body: body, headers: {
+      if (contentType != null) 'Content-Type': contentType,
+      if (headers != null) ...headers
+    });
+    print(response.statusCode);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
     throw response.manageRequestError();
   }
 
-  Future<dynamic> put(String path, {String body, Function fromJson}) async {
+  Future<Map<String, dynamic>> put(String path,
+      {Function fromJson,
+      Map<String, String> headers,
+      String body,
+      String contentType}) async {
     final response =
-        await client.put(Uri.encodeFull(baseURL + path), body: body);
+        await client.put(Uri.encodeFull(baseURL + path), body: body, headers: {
+      if (contentType != null) 'Content-Type': contentType,
+      if (headers != null) ...headers
+    });
     if (response.statusCode == 200 || response.statusCode == 204) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
     throw response.manageRequestError();
   }
 
-  Future<dynamic> patch(String path, {String body, Function fromJson}) async {
-    final response =
-        await client.patch(Uri.encodeFull(baseURL + path), body: body);
+  Future<Map<String, dynamic>> patch(String path,
+      {Function fromJson,
+      Map<String, String> headers,
+      String body,
+      String contentType}) async {
+    final response = await client
+        .patch(Uri.encodeFull(baseURL + path), body: body, headers: {
+      if (contentType != null) 'Content-Type': contentType,
+      if (headers != null) ...headers
+    });
     if (response.statusCode == 200 || response.statusCode == 204) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
     throw response.manageRequestError();
   }
 
-  Future<dynamic> delete(String path) async {
-    final response = await client.delete(baseURL + path);
+  Future<Map<String, dynamic>> delete(String path,
+      {Map<String, String> headers}) async {
+    final response = await client.delete(baseURL + path, headers: headers);
     if (response.statusCode == 200 || response.statusCode == 404) {
       return response.manageRestRequestResponse();
     }
