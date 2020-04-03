@@ -1,4 +1,4 @@
-import 'package:common_bloc/src/common/response.dart';
+import 'package:common_bloc/src/common/response_extension.dart';
 import 'package:http_interceptor/http_client_with_interceptor.dart';
 
 class RssDataSource {

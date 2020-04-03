@@ -1,4 +1,4 @@
-import 'package:common_bloc/src/common/response.dart';
+import 'package:common_bloc/src/common/response_extension.dart';
 import 'package:http_interceptor/http_client_with_interceptor.dart';
 import 'package:meta/meta.dart';
 
@@ -31,7 +31,6 @@ class RestDataSource {
       if (contentType != null) 'Content-Type': contentType,
       if (headers != null) ...headers
     });
-    print(response.statusCode);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }

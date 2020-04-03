@@ -56,9 +56,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           lastPath: event.path,
           timestamp: DateTime.now().toIso8601String());
     } catch (e) {
-      yield RestState.error(
-          humanMessage: e is ResponseException ? e.humanMessage : e,
-          message: e is ResponseException ? e.message : e);
+      if (e is ResponseException) {
+        yield RestState.error(humanMessage: e.humanMessage, message: e.message);
+      } else {
+        yield RestState.error(
+            message: e.toString(), humanMessage: e.toString());
+      }
     }
   }
 
