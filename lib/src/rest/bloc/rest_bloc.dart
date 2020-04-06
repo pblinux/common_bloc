@@ -29,7 +29,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   Stream<RestState> mapEventToState(
     RestEvent event,
   ) async* {
-    yield RestState.loading();
+    if (event.withLoading) yield RestState.loading();
     try {
       final result = await event.map(
           delete: (e) => restDataSource.delete(e.path, headers: e.headers),
@@ -68,45 +68,59 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   void get(String path,
           {Function fromJson,
           Map<String, String> headers,
-          Map<String, String> params}) =>
+          Map<String, String> params,
+          bool withLoading = true}) =>
       this.add(RestEvent.get(path,
-          params: params, fromJson: fromJson, headers: headers));
+          params: params,
+          fromJson: fromJson,
+          headers: headers,
+          withLoading: withLoading));
 
   void post(String path,
           {Function fromJson,
           Map<String, String> headers,
           String body,
-          String contentType}) =>
+          String contentType,
+          bool withLoading = true}) =>
       this.add(RestEvent.post(path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
-          headers: headers));
+          headers: headers,
+          withLoading: withLoading));
 
   void put(String path,
           {Function fromJson,
           Map<String, String> headers,
           String body,
-          String contentType}) =>
+          String contentType,
+          bool withLoading = true}) =>
       this.add(RestEvent.put(path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
-          headers: headers));
+          headers: headers,
+          withLoading: withLoading));
 
   void patch(String path,
           {Function fromJson,
           Map<String, String> headers,
           String body,
-          String contentType}) =>
+          String contentType,
+          bool withLoading = true}) =>
       this.add(RestEvent.patch(path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
-          headers: headers));
+          headers: headers,
+          withLoading: withLoading));
 
-  void delete(String path, {Function fromJson, Map<String, String> headers}) =>
-      this.add(RestEvent.delete(path, headers: headers));
+  void delete(String path,
+          {Function fromJson,
+          Map<String, String> headers,
+          bool withLoading = true}) =>
+      this.add(
+          RestEvent.delete(path, headers: headers, withLoading: withLoading));
 
   void changeUrl(String newBaseUrl) => restDataSource.changeBaseUrl(newBaseUrl);
 }

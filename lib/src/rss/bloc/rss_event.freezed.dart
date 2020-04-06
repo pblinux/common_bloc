@@ -9,16 +9,18 @@ part of 'rss_event.dart';
 
 mixin _$RssEvent {
   String get rssUrl;
+  bool get withLoading;
 
-  RssEvent copyWith({String rssUrl});
+  RssEvent copyWith({String rssUrl, bool withLoading});
 }
 
 class _$RssEventTearOff {
   const _$RssEventTearOff();
 
-  _RssEvent call(String rssUrl) {
+  _RssEvent call(String rssUrl, {bool withLoading = true}) {
     return _RssEvent(
       rssUrl,
+      withLoading: withLoading,
     );
   }
 }
@@ -26,14 +28,17 @@ class _$RssEventTearOff {
 const $RssEvent = _$RssEventTearOff();
 
 class _$_RssEvent implements _RssEvent {
-  _$_RssEvent(this.rssUrl) : assert(rssUrl != null);
+  _$_RssEvent(this.rssUrl, {this.withLoading = true}) : assert(rssUrl != null);
 
   @override
   final String rssUrl;
+  @JsonKey(defaultValue: true)
+  @override
+  final bool withLoading;
 
   @override
   String toString() {
-    return 'RssEvent(rssUrl: $rssUrl)';
+    return 'RssEvent(rssUrl: $rssUrl, withLoading: $withLoading)';
   }
 
   @override
@@ -41,29 +46,39 @@ class _$_RssEvent implements _RssEvent {
     return identical(this, other) ||
         (other is _RssEvent &&
             (identical(other.rssUrl, rssUrl) ||
-                const DeepCollectionEquality().equals(other.rssUrl, rssUrl)));
+                const DeepCollectionEquality().equals(other.rssUrl, rssUrl)) &&
+            (identical(other.withLoading, withLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.withLoading, withLoading)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(rssUrl);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(rssUrl) ^
+      const DeepCollectionEquality().hash(withLoading);
 
   @override
   _$_RssEvent copyWith({
     Object rssUrl = freezed,
+    Object withLoading = freezed,
   }) {
     return _$_RssEvent(
       rssUrl == freezed ? this.rssUrl : rssUrl as String,
+      withLoading:
+          withLoading == freezed ? this.withLoading : withLoading as bool,
     );
   }
 }
 
 abstract class _RssEvent implements RssEvent {
-  factory _RssEvent(String rssUrl) = _$_RssEvent;
+  factory _RssEvent(String rssUrl, {bool withLoading}) = _$_RssEvent;
 
   @override
   String get rssUrl;
+  @override
+  bool get withLoading;
 
   @override
-  _RssEvent copyWith({String rssUrl});
+  _RssEvent copyWith({String rssUrl, bool withLoading});
 }

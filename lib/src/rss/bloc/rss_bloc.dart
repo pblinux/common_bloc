@@ -18,7 +18,7 @@ class RssBloc extends Bloc<RssEvent, RssState> {
   Stream<RssState> mapEventToState(
     RssEvent event,
   ) async* {
-    yield RssState.loading();
+    if (event.withLoading) yield RssState.loading();
     try {
       final result = await rssDataSource.get(event.rssUrl);
       final feed = RssFeed.parse(result);
@@ -29,5 +29,6 @@ class RssBloc extends Bloc<RssEvent, RssState> {
     }
   }
 
-  void getFeed(String rssUrl) => this.add(RssEvent(rssUrl));
+  void getFeed(String rssUrl, {bool withLoading = true}) =>
+      this.add(RssEvent(rssUrl, withLoading: withLoading));
 }
