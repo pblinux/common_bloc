@@ -2,6 +2,7 @@
 * Headers for RestBloc
 * Content-Type for RestBloc
 * Response headers in RestBloc
+* withLoading for RestBloc and RssBloc
 
 ## [0.1.4+1]
 * RestBloc can change baseUrl
