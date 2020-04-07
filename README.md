@@ -1,4 +1,7 @@
 # common_bloc
+[![pub](https://img.shields.io/badge/pub-0.1.4%2B2-blue)](https://pub.dev/packages/common_bloc)
+![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
+
 A collection of common blocs that maybe will be used very often.
 
 ## Idea of this
