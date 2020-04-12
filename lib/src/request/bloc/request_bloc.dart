@@ -21,7 +21,7 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
           lastRequest: event.requestName,
           timestamp: DateTime.now().toIso8601String());
     } catch (e) {
-      yield RequestState.error(message: e);
+      yield RequestState.error(message: e.toString());
     }
   }
 

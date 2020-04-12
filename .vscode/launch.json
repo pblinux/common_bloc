@@ -12,9 +12,10 @@
         },
         {
             "name": "Run tests",
-            "type": "dart",
+            "noDebug": true,
+            "program": "test/",
             "request": "launch",
-            "program": "test/common_bloc_test.dart"
+            "type": "dart"
         },
     ]
 }
