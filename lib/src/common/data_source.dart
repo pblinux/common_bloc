@@ -1,26 +1,38 @@
-import 'package:common_bloc/src/common/response_extension.dart';
 import 'package:http_interceptor/http_client_with_interceptor.dart';
 import 'package:meta/meta.dart';
+import 'response_extension.dart';
 
+///Data source for RestBloc
 class RestDataSource {
+  ///Http client for requests
   final HttpClientWithInterceptor client;
+
+  ///Base url
   String baseURL;
 
+  ///Main constructor
   RestDataSource({@required this.baseURL, @required this.client});
 
-  void changeBaseUrl(String newUrl) => this.baseURL = newUrl;
+  /// Get current base url
+  String get currentBaseUrl => baseURL;
 
+  /// Change base url
+  set currentBaseUrl(String newUrl) => baseURL = newUrl;
+
+  ///GET request to API
   Future<Map<String, dynamic>> get(String path,
       {Function fromJson,
       Map<String, String> headers,
       Map<String, String> params}) async {
     final response = await client.get(Uri.encodeFull(baseURL + path),
         headers: headers, params: params);
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return response.manageRestRequestResponse(fromJson: fromJson);
+    }
     throw response.manageRequestError();
   }
 
+  ///POST request to API
   Future<Map<String, dynamic>> post(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -37,6 +49,7 @@ class RestDataSource {
     throw response.manageRequestError();
   }
 
+  ///PUT request to API
   Future<Map<String, dynamic>> put(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -53,6 +66,7 @@ class RestDataSource {
     throw response.manageRequestError();
   }
 
+  ///PATCH request to API
   Future<Map<String, dynamic>> patch(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -69,6 +83,7 @@ class RestDataSource {
     throw response.manageRequestError();
   }
 
+  ///DELETE request to API
   Future<Map<String, dynamic>> delete(String path,
       {Map<String, String> headers}) async {
     final response = await client.delete(baseURL + path, headers: headers);

@@ -1,15 +1,16 @@
-export 'package:common_bloc/src/rss/bloc/rss_state.dart';
-
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:common_bloc/src/common/response.dart';
-import 'package:common_bloc/src/common/rss_source.dart';
-import 'package:common_bloc/src/rss/bloc/rss_event.dart';
-import 'package:common_bloc/src/rss/bloc/rss_state.dart';
 import 'package:webfeed/webfeed.dart';
+import '../../common/rss_source.dart';
+import 'rss_event.dart';
+import 'rss_state.dart';
 
+export 'package:common_bloc/src/rss/bloc/rss_state.dart';
+
+///RequestBloc - A bloc to fetch RSS feed
+///
 class RssBloc extends Bloc<RssEvent, RssState> {
-  final RssDataSource rssDataSource = RssDataSource();
+  final RssDataSource _rssDataSource = RssDataSource();
 
   @override
   RssState get initialState => RssState.uninitialized();
@@ -20,15 +21,15 @@ class RssBloc extends Bloc<RssEvent, RssState> {
   ) async* {
     if (event.withLoading) yield RssState.loading();
     try {
-      final result = await rssDataSource.get(event.rssUrl);
+      final result = await _rssDataSource.get(event.rssUrl);
       final feed = RssFeed.parse(result);
       yield RssState.loaded(data: feed, timestamp: DateTime.now().toString());
-    } catch (e) {
-      yield RssState.error(
-          message: e is ResponseException ? e.humanMessage : e);
+    } on Exception catch (e) {
+      yield RssState.error(message: e.toString());
     }
   }
 
+  ///Perfoms the fetch of a RSS feed.
   void getFeed(String rssUrl, {bool withLoading = true}) =>
-      this.add(RssEvent(rssUrl, withLoading: withLoading));
+      add(RssEvent(rssUrl, withLoading: withLoading));
 }

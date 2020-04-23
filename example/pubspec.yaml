@@ -25,11 +25,12 @@ dependencies:
   cupertino_icons: ^0.1.2
   common_bloc:
     path: ../
-  flutter_bloc: ^3.2.0
+  flutter_bloc: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  effective_dart: ^1.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

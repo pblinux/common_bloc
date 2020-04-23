@@ -8,13 +8,14 @@ void main() {
   group('Rest bloc', () {
     blocTest('get from api',
         act: (bloc) => bloc.get('/posts'),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com',
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com',
             interceptors: [LogginInterceptor()]),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('post to api',
         act: (bloc) => bloc.post('/posts',
@@ -23,12 +24,13 @@ void main() {
               'body': 'This is a new entry',
               'userId': 1
             })),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('update (with put) to api',
         act: (bloc) => bloc.put('/posts/1',
@@ -38,35 +40,45 @@ void main() {
               'body': 'This is a new entry',
               'userId': 1
             })),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
-        ]);
+        ],
+        skip: 0);
     blocTest('update (with patch) to api',
         act: (bloc) => bloc.patch('/posts/1',
             body: json.encode({'title': 'CommonBlocTest'})),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('delete from api',
         act: (bloc) => bloc.delete('/posts/1'),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<LoadedRestState>()
-        ]);
+        ],
+        skip: 0);
+
+    test('check base url', () {
+      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      final currentBaseUrl = bloc.currentBaseUrl;
+      expect(currentBaseUrl, 'https://jsonplaceholder.typicode.com');
+      bloc.close();
+    });
 
     test('change base url', () {
       final bloc = RestBloc('https://jsonplaceholder.typicode.com');
-      bloc.changeUrl('http://www.mocky.io/v2');
-      expect(bloc.baseUrl, 'http://www.mocky.io/v2');
+      bloc.currentBaseUrl = 'http://www.mocky.io/v2';
+      expect(bloc.currentBaseUrl, 'http://www.mocky.io/v2');
       bloc.close();
     });
   });
@@ -74,61 +86,66 @@ void main() {
   group('Rest bloc errors', () {
     blocTest('bad request response from api',
         act: (bloc) => bloc.get('/5e926cf33100003d26462ca1'),
-        build: () => RestBloc('http://www.mocky.io/v2'),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<ErrorRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('unauthorized request response from api',
-        act: (bloc) => bloc.get('/5e926d0e3100005d00462ca2'),
-        build: () => RestBloc('http://www.mocky.io/v2'),
+        act: (bloc) => bloc.post('/5e926d0e3100005d00462ca2'),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<ErrorRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('forbidden request response from api',
-        act: (bloc) => bloc.get('/5e926d183100003d26462ca3'),
-        build: () => RestBloc('http://www.mocky.io/v2'),
+        act: (bloc) => bloc.put('/5e926d183100003d26462ca3'),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<ErrorRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('unprocessable entity request response from api',
-        act: (bloc) => bloc.get('/5e926d233100006100462ca4'),
-        build: () => RestBloc('http://www.mocky.io/v2'),
+        act: (bloc) => bloc.patch('/5e926d233100006100462ca4'),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<ErrorRestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('server error request response from api',
-        act: (bloc) => bloc.get('/5e926d2d3100005d00462ca5'),
-        build: () => RestBloc('http://www.mocky.io/v2'),
+        act: (bloc) => bloc.delete('/5e926d2d3100005d00462ca5'),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
           isA<ErrorRestState>()
-        ]);
+        ],
+        skip: 0);
   });
 }
 
 class LogginInterceptor implements InterceptorContract {
   @override
   Future<RequestData> interceptRequest({RequestData data}) async {
-    print(data.body);
+    // print(data.body);
     return data;
   }
 
   @override
   Future<ResponseData> interceptResponse({ResponseData data}) async {
-    print(data.body);
+    // print(data.body);
     return data;
   }
 }

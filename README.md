@@ -1,7 +1,9 @@
 # common_bloc
-[![pub](https://img.shields.io/badge/pub-0.1.4%2B2-blue)](https://pub.dev/packages/common_bloc)
+[![pub](https://img.shields.io/badge/pub-1.0.0-blue)](https://pub.dev/packages/common_bloc)
 ![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
 [![codecov](https://codecov.io/gh/pblinux/common_bloc/branch/master/graph/badge.svg)](https://codecov.io/gh/pblinux/common_bloc)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/pblinux/end_credits)
 
 A collection of common blocs that maybe will be used very often.
 

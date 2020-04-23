@@ -2,6 +2,7 @@ import 'package:common_bloc/common_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+///Rest screen
 class RestScreen extends StatefulWidget {
   @override
   _RestScreenState createState() => _RestScreenState();
@@ -39,8 +40,10 @@ class _RestScreenState extends State<RestScreen> {
                 loading: (s) => Center(child: CircularProgressIndicator()),
                 loaded: (s) => SingleChildScrollView(
                     child: Center(
-                        child: Text(
-                            'I perform a REST request succesfully :)\n\n${s.data.toString()}',
+                        child: Text(_generateRestResult(s),
                             textAlign: TextAlign.center))))));
   }
+
+  String _generateRestResult(s) =>
+      'I perform a REST request succesfully :)\n\n${s.data.toString()}';
 }

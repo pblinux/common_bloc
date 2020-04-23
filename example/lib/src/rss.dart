@@ -2,6 +2,7 @@ import 'package:common_bloc/common_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+///RSS screen
 class RssScreen extends StatefulWidget {
   @override
   _RssScreenState createState() => _RssScreenState();
@@ -38,8 +39,12 @@ class _RssScreenState extends State<RssScreen> {
                     Center(child: Text('I\'m an error :( | ${s.message}')),
                 loading: (s) => Center(child: CircularProgressIndicator()),
                 loaded: (s) => Center(
-                    child: Text(
-                        'I get rss succesfully :)\n\nItems: ${s.data.items.length} : ${s.timestamp}',
+                    child: Text(_generateRssResult(s),
                         textAlign: TextAlign.center)))));
+  }
+
+  String _generateRssResult(s) {
+    final message = 'I get rss succesfully :)\n\nItems:';
+    return '$message ${s.data.items.length} : ${s.timestamp}';
   }
 }

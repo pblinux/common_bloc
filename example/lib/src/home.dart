@@ -3,6 +3,7 @@ import 'request.dart';
 import 'rest.dart';
 import 'rss.dart';
 
+///Home screen
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,12 +41,21 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+/// Show item for common_bloc examples
 class HomeItem extends StatelessWidget {
+  /// Item pressed
   final Function onPressed;
+
+  /// Item icon
   final IconData icon;
+
+  /// Item subtitle
   final String subtitle;
+
+  /// Item title
   final String title;
 
+  /// Main constructor
   HomeItem(
       {@required this.icon,
       @required this.onPressed,

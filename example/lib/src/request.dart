@@ -2,6 +2,7 @@ import 'package:common_bloc/common_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+///Request Screen
 class RequestScreen extends StatefulWidget {
   @override
   _RequestScreenState createState() => _RequestScreenState();
@@ -40,8 +41,10 @@ class _RequestScreenState extends State<RequestScreen> {
                     Center(child: Text('I\'m an error :( | ${s.message}')),
                 loading: (s) => Center(child: CircularProgressIndicator()),
                 loaded: (s) => Center(
-                    child: Text(
-                        'I perform a task succesfully :)\n${s.lastRequest} : ${s.timestamp}',
+                    child: Text(_generateRequestResult(s),
                         textAlign: TextAlign.center)))));
   }
+
+  String _generateRequestResult(s) =>
+      'I perform a task succesfully :)\n${s.lastRequest} : ${s.timestamp}';
 }
