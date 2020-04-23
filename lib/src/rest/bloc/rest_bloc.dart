@@ -28,7 +28,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   RestState get initialState => RestState.uninitialized();
 
   ///Get current base url
-  String get currentBaseUrl => _restDataSource.baseURL;
+  String get currentBaseUrl => _restDataSource.currentBaseUrl;
 
   set currentBaseUrl(String newBaseUrl) =>
       _restDataSource.currentBaseUrl = newBaseUrl;
