@@ -1,3 +1,7 @@
+## [1.0.0]
+* Update bloc to 4.0.0
+* effective_dart
+
 ## [0.1.4+2]
 * Headers for RestBloc
 * Content-Type for RestBloc

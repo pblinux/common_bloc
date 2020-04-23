@@ -10,12 +10,13 @@ void main() {
         act: (bloc) => bloc.perform(
             () async => Future.delayed(Duration(seconds: 3), () => true),
             'TimerTask'),
-        build: () => RequestBloc(),
+        build: () async => RequestBloc(),
         expect: [
           isA<UninitializedRequestState>(),
           isA<LoadingRequestState>(),
           isA<LoadedRequestState>()
-        ]);
+        ],
+        skip: 0);
 
     blocTest('make a simple request on internet',
         act: (bloc) => bloc.perform(
@@ -24,12 +25,13 @@ void main() {
                 .get('https://jsonplaceholder.typicode.com/posts/1')
               ..body,
             'NetworkRequest'),
-        build: () => RequestBloc(),
+        build: () async => RequestBloc(),
         expect: [
           isA<UninitializedRequestState>(),
           isA<LoadingRequestState>(),
           isA<LoadedRequestState>()
-        ]);
+        ],
+        skip: 0);
   });
 
   group('Request bloc errors', () {
@@ -38,25 +40,26 @@ void main() {
             () async => Future.delayed(
                 Duration(seconds: 3), () => throw Exception('failed')),
             'FailTask'),
-        build: () => RequestBloc(),
+        build: () async => RequestBloc(),
         expect: [
           isA<UninitializedRequestState>(),
           isA<LoadingRequestState>(),
           isA<ErrorRequestState>()
-        ]);
+        ],
+        skip: 0);
   });
 }
 
 class LogginInterceptor implements InterceptorContract {
   @override
   Future<RequestData> interceptRequest({RequestData data}) async {
-    print(data.body);
+    // print(data.body);
     return data;
   }
 
   @override
   Future<ResponseData> interceptResponse({ResponseData data}) async {
-    print(data.body);
+    // print(data.body);
     return data;
   }
 }

@@ -7,23 +7,25 @@ void main() {
     blocTest('get rss feed',
         act: (bloc) =>
             bloc.getFeed('http://www.publicbooks.org/tag/fiction/feed'),
-        build: () => RssBloc(),
+        build: () async => RssBloc(),
         expect: [
           isA<UninitializedRssState>(),
           isA<LoadingRssState>(),
           isA<LoadedRssState>()
-        ]);
+        ],
+        skip: 0);
   });
 
   group('Rss bloc errors', () {
     blocTest('fail geting rss feed',
         act: (bloc) =>
             bloc.getFeed('http://www.publicbooks.org/tag/fiction/feeed'),
-        build: () => RssBloc(),
+        build: () async => RssBloc(),
         expect: [
           isA<UninitializedRssState>(),
           isA<LoadingRssState>(),
           isA<ErrorRssState>()
-        ]);
+        ],
+        skip: 0);
   });
 }

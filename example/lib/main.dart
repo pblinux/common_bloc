@@ -4,6 +4,7 @@ import 'src/home.dart';
 
 void main() => runApp(CommonBlocApp());
 
+///Commom bloc example app
 class CommonBlocApp extends StatefulWidget {
   @override
   _CommonBlocAppState createState() => _CommonBlocAppState();
