@@ -68,6 +68,13 @@ void main() {
         ],
         skip: 0);
 
+    test('check base url', () {
+      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      final currentBaseUrl = bloc.currentBaseUrl;
+      expect(currentBaseUrl, 'https://jsonplaceholder.typicode.com');
+      bloc.close();
+    });
+
     test('change base url', () {
       final bloc = RestBloc('https://jsonplaceholder.typicode.com');
       bloc.currentBaseUrl = 'http://www.mocky.io/v2';
@@ -88,7 +95,7 @@ void main() {
         skip: 0);
 
     blocTest('unauthorized request response from api',
-        act: (bloc) => bloc.get('/5e926d0e3100005d00462ca2'),
+        act: (bloc) => bloc.post('/5e926d0e3100005d00462ca2'),
         build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
@@ -98,7 +105,7 @@ void main() {
         skip: 0);
 
     blocTest('forbidden request response from api',
-        act: (bloc) => bloc.get('/5e926d183100003d26462ca3'),
+        act: (bloc) => bloc.put('/5e926d183100003d26462ca3'),
         build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
@@ -108,7 +115,7 @@ void main() {
         skip: 0);
 
     blocTest('unprocessable entity request response from api',
-        act: (bloc) => bloc.get('/5e926d233100006100462ca4'),
+        act: (bloc) => bloc.patch('/5e926d233100006100462ca4'),
         build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
@@ -118,7 +125,7 @@ void main() {
         skip: 0);
 
     blocTest('server error request response from api',
-        act: (bloc) => bloc.get('/5e926d2d3100005d00462ca5'),
+        act: (bloc) => bloc.delete('/5e926d2d3100005d00462ca5'),
         build: () async => RestBloc('http://www.mocky.io/v2'),
         expect: [
           isA<UninitializedRestState>(),
