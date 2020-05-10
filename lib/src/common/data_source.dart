@@ -7,7 +7,7 @@ class RestDataSource {
   ///Http client for requests
   final Dio client;
 
-  ///Base url
+  ///Base url for requests
   String baseURL;
 
   ///Main constructor
@@ -22,6 +22,11 @@ class RestDataSource {
   set currentBaseUrl(String newUrl) => baseURL = newUrl;
 
   ///GET request to API
+  ///
+  ///Perform a GET request to API with specific
+  ///[path], you can send the [headers], [params]
+  ///and a [fromJson] method to parse the result
+  ///json to a specific object.
   Future<Map<String, dynamic>> get(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -36,6 +41,11 @@ class RestDataSource {
   }
 
   ///POST request to API
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   Future<Map<String, dynamic>> post(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -54,6 +64,11 @@ class RestDataSource {
   }
 
   ///PUT request to API
+  ///
+  ///Perform a PUT request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   Future<Map<String, dynamic>> put(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -72,6 +87,11 @@ class RestDataSource {
   }
 
   ///PATCH request to API
+  ///
+  ///Perform a PATCH request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   Future<Map<String, dynamic>> patch(String path,
       {Function fromJson,
       Map<String, String> headers,
@@ -90,12 +110,41 @@ class RestDataSource {
   }
 
   ///DELETE request to API
+  ///
+  ///Perform a DELETE request to API with specific
+  ///[path]. You can send the [headers] for request.
   Future<Map<String, dynamic>> delete(String path,
       {Map<String, String> headers}) async {
     final response = await client.delete(path,
         options: Options(headers: headers, responseType: ResponseType.json));
     if (response.statusCode == 200 || response.statusCode == 404) {
       return response.manageRestRequestResponse();
+    }
+    throw response.manageRequestError();
+  }
+
+  ///POST request with FormData content.
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [formData] as data.
+  ///
+  ///Usefull for uploading files
+  ///
+  ///You can specify the [headers] for request.
+  Future<dynamic> formData(String path, FormData formData,
+      {Function fromJson,
+      Function(int, int) onProgressChanged,
+      Map<String, String> headers,
+      String contentType}) async {
+    final response = await client.post(path,
+        data: formData,
+        onSendProgress: onProgressChanged,
+        options: Options(
+            contentType: contentType,
+            headers: headers,
+            responseType: ResponseType.json));
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      return response.manageRestRequestResponse(fromJson: fromJson);
     }
     throw response.manageRequestError();
   }

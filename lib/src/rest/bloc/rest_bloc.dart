@@ -56,7 +56,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
               body: e.body,
               contentType: e.contentType,
               fromJson: e.fromJson,
-              headers: e.headers));
+              headers: e.headers),
+          formData: (e) => _restDataSource.formData(e.path, e.body,
+              contentType: e.contentType,
+              fromJson: e.fromJson,
+              headers: e.headers,
+              onProgressChanged: e.onProgressChanged));
       yield RestState.loaded(
           data: result['data'],
           headers: result['headers'],
@@ -69,8 +74,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     }
   }
 
-  ///Perform a GET request with provided
-  ///path, headers and params
+  ///GET request to API
+  ///
+  ///Perform a GET request to API with specific
+  ///[path], you can send the [headers], [params]
+  ///and a [fromJson] method to parse the result
+  ///json to a specific object.
   void get(String path,
           {Function fromJson,
           Map<String, String> headers,
@@ -82,8 +91,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a POST request with provided
-  ///path, body, and headers
+  ///POST request to API
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void post(String path,
           {Function fromJson,
           Map<String, String> headers,
@@ -97,8 +110,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a PUT request with provided
-  ///path, body, and headers
+  ///PUT request to API
+  ///
+  ///Perform a PUT request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void put(String path,
           {Function fromJson,
           Map<String, String> headers,
@@ -112,8 +129,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a PATCH request with provided
-  ///path, body, and headers
+  ///PATCH request to API
+  ///
+  ///Perform a PATCH request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void patch(String path,
           {Function fromJson,
           Map<String, String> headers,
@@ -127,11 +148,35 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a DELETE request with provided
-  ///path and headers
+  ///DELETE request to API
+  ///
+  ///Perform a DELETE request to API with specific
+  ///[path]. You can send the [headers] for request.
   void delete(String path,
           {Function fromJson,
           Map<String, String> headers,
           bool withLoading = true}) =>
       add(RestEvent.delete(path, headers: headers, withLoading: withLoading));
+
+  ///POST request with FormData content.
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [formData] as data.
+  ///
+  ///Usefull for uploading files
+  ///
+  ///You can specify the [headers] for request.
+  void formData(String path,
+          {FormData body,
+          Function fromJson,
+          Function(int, int) onProgressChanged,
+          Map<String, String> headers,
+          String contentType,
+          bool withLoading = true}) =>
+      add(RestEvent.formData(path,
+          body: body,
+          contentType: contentType,
+          fromJson: fromJson,
+          headers: headers,
+          withLoading: withLoading));
 }

@@ -65,6 +65,22 @@ void main() {
         ],
         skip: 0);
 
+    blocTest('post to api with form data',
+        act: (bloc) => bloc.formData('/posts',
+            body: FormData.fromMap({
+              'title': 'CommonBlocTest',
+              'body': 'This is a new entry',
+              'userId': 1
+            }),
+            onProgressChanged: onProgressChange),
+        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        expect: [
+          isA<UninitializedRestState>(),
+          isA<LoadingRestState>(),
+          isA<LoadedRestState>()
+        ],
+        skip: 0);
+
     test('check base url', () {
       final bloc = RestBloc('https://jsonplaceholder.typicode.com');
       final currentBaseUrl = bloc.currentBaseUrl;
@@ -132,6 +148,10 @@ void main() {
         skip: 0);
   });
 }
+
+Function get onProgressChange => (sent, total) {
+      // print("$sent $total");
+    };
 
 InterceptorsWrapper get logginInterceptor =>
     InterceptorsWrapper(onRequest: (request) {

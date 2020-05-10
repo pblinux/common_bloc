@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'rest_event.freezed.dart';
@@ -40,4 +41,13 @@ abstract class RestEvent with _$RestEvent {
   factory RestEvent.delete(String path,
       {@Default(true) bool withLoading,
       Map<String, String> headers}) = DeleteEvent;
+
+  ///Perform an GET request
+  factory RestEvent.formData(String path,
+      {@Default(true) bool withLoading,
+      FormData body,
+      Function fromJson,
+      Function(int, int) onProgressChanged,
+      Map<String, String> headers,
+      String contentType}) = FromDataEvent;
 }
