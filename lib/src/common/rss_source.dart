@@ -7,9 +7,12 @@ class RssDataSource {
 
   ///Get a RSS feed
   Future<String> get(String rssUrl) async {
-    final response = await _client.get(rssUrl,
-        options: Options(responseType: ResponseType.plain));
-    if (response.statusCode == 200) return response.manageRssRequestResponse();
-    throw response.manageRequestError();
+    try {
+      final response = await _client.get(rssUrl,
+          options: Options(responseType: ResponseType.plain));
+      return response.manageRssRequestResponse();
+    } on DioError catch (e) {
+      throw e.manageRequestError();
+    }
   }
 }

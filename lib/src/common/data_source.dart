@@ -31,13 +31,14 @@ class RestDataSource {
       {Function fromJson,
       Map<String, String> headers,
       Map<String, String> params}) async {
-    final response = await client.get(path,
-        queryParameters: params,
-        options: Options(headers: headers, responseType: ResponseType.json));
-    if (response.statusCode == 200) {
+    try {
+      final response = await client.get(path,
+          queryParameters: params,
+          options: Options(headers: headers, responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 
   ///POST request to API
@@ -51,16 +52,17 @@ class RestDataSource {
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) async {
-    final response = await client.post(path,
-        data: body,
-        options: Options(
-            contentType: contentType,
-            headers: headers,
-            responseType: ResponseType.json));
-    if (response.statusCode == 200 || response.statusCode == 201) {
+    try {
+      final response = await client.post(path,
+          data: body,
+          options: Options(
+              contentType: contentType,
+              headers: headers,
+              responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 
   ///PUT request to API
@@ -74,16 +76,17 @@ class RestDataSource {
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) async {
-    final response = await client.put(path,
-        data: body,
-        options: Options(
-            contentType: contentType,
-            headers: headers,
-            responseType: ResponseType.json));
-    if (response.statusCode == 200 || response.statusCode == 204) {
+    try {
+      final response = await client.put(path,
+          data: body,
+          options: Options(
+              contentType: contentType,
+              headers: headers,
+              responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 
   ///PATCH request to API
@@ -97,16 +100,17 @@ class RestDataSource {
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) async {
-    final response = await client.patch(path,
-        data: body,
-        options: Options(
-            contentType: contentType,
-            headers: headers,
-            responseType: ResponseType.json));
-    if (response.statusCode == 200 || response.statusCode == 204) {
+    try {
+      final response = await client.patch(path,
+          data: body,
+          options: Options(
+              contentType: contentType,
+              headers: headers,
+              responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 
   ///DELETE request to API
@@ -115,12 +119,13 @@ class RestDataSource {
   ///[path]. You can send the [headers] for request.
   Future<Map<String, dynamic>> delete(String path,
       {Map<String, String> headers}) async {
-    final response = await client.delete(path,
-        options: Options(headers: headers, responseType: ResponseType.json));
-    if (response.statusCode == 200 || response.statusCode == 404) {
+    try {
+      final response = await client.delete(path,
+          options: Options(headers: headers, responseType: ResponseType.json));
       return response.manageRestRequestResponse();
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 
   ///POST request with FormData content.
@@ -136,16 +141,17 @@ class RestDataSource {
       Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType}) async {
-    final response = await client.post(path,
-        data: formData,
-        onSendProgress: onProgressChanged,
-        options: Options(
-            contentType: contentType,
-            headers: headers,
-            responseType: ResponseType.json));
-    if (response.statusCode == 200 || response.statusCode == 201) {
+    try {
+      final response = await client.post(path,
+          data: formData,
+          onSendProgress: onProgressChanged,
+          options: Options(
+              contentType: contentType,
+              headers: headers,
+              responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
+    } on DioError catch (e) {
+      throw e.manageRequestError();
     }
-    throw response.manageRequestError();
   }
 }
