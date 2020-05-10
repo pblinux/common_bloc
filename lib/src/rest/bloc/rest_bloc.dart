@@ -69,8 +69,6 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           timestamp: DateTime.now().toIso8601String());
     } on ResponseException catch (e) {
       yield RestState.error(humanMessage: e.humanMessage, message: e.message);
-    } on Exception catch (e) {
-      yield RestState.error(message: e.toString(), humanMessage: e.toString());
     }
   }
 

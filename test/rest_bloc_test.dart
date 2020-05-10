@@ -146,6 +146,17 @@ void main() {
           isA<ErrorRestState>()
         ],
         skip: 0);
+
+    blocTest('unknown request response from api',
+        act: (bloc) => bloc.formData('/5eb7c68c3100006a00c8a272',
+            body: FormData.fromMap({})),
+        build: () async => RestBloc('http://www.mocky.io/v2'),
+        expect: [
+          isA<UninitializedRestState>(),
+          isA<LoadingRestState>(),
+          isA<ErrorRestState>()
+        ],
+        skip: 0);
   });
 }
 
