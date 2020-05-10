@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:http_interceptor/http_client_with_interceptor.dart';
-import 'package:http_interceptor/interceptor_contract.dart';
+import 'package:dio/dio.dart';
 import '../../common/data_source.dart';
 import '../../common/response.dart';
 import 'rest_event.dart';
@@ -17,11 +16,11 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   RestDataSource _restDataSource;
 
   ///Main constructor
-  RestBloc(String baseUrl, {List<InterceptorContract> interceptors}) {
+  RestBloc(String baseUrl, {List<Interceptor> interceptors}) {
     _restDataSource = RestDataSource(
         baseURL: baseUrl,
-        client: HttpClientWithInterceptor.build(
-            interceptors: [if (interceptors != null) ...interceptors]));
+        client: Dio()
+          ..interceptors.addAll([if (interceptors != null) ...interceptors]));
   }
 
   @override
@@ -88,7 +87,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   void post(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.post(path,
@@ -103,7 +102,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   void put(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.put(path,
@@ -118,7 +117,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   void patch(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.patch(path,

@@ -1,8 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:http_interceptor/http_client_with_interceptor.dart';
-import 'package:http_interceptor/http_interceptor.dart';
+import 'package:dio/dio.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Request bloc', () {
@@ -20,10 +19,9 @@ void main() {
 
     blocTest('make a simple request on internet',
         act: (bloc) => bloc.perform(
-            () async => await HttpClientWithInterceptor.build(
-                    interceptors: [LogginInterceptor()])
+            () async => await (Dio()..interceptors.add(logginInterceptor))
                 .get('https://jsonplaceholder.typicode.com/posts/1')
-              ..body,
+              ..data,
             'NetworkRequest'),
         build: () async => RequestBloc(),
         expect: [
@@ -50,16 +48,9 @@ void main() {
   });
 }
 
-class LogginInterceptor implements InterceptorContract {
-  @override
-  Future<RequestData> interceptRequest({RequestData data}) async {
-    // print(data.body);
-    return data;
-  }
-
-  @override
-  Future<ResponseData> interceptResponse({ResponseData data}) async {
-    // print(data.body);
-    return data;
-  }
-}
+InterceptorsWrapper get logginInterceptor =>
+    InterceptorsWrapper(onRequest: (request) {
+      return request;
+    }, onResponse: (response) {
+      return response;
+    });

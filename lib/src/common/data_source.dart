@@ -1,17 +1,19 @@
-import 'package:http_interceptor/http_client_with_interceptor.dart';
+import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import 'response_extension.dart';
 
 ///Data source for RestBloc
 class RestDataSource {
   ///Http client for requests
-  final HttpClientWithInterceptor client;
+  final Dio client;
 
   ///Base url
   String baseURL;
 
   ///Main constructor
-  RestDataSource({@required this.baseURL, @required this.client});
+  RestDataSource({@required this.baseURL, @required this.client}) {
+    client.options.baseUrl = baseURL;
+  }
 
   /// Get current base url
   String get currentBaseUrl => baseURL;
@@ -24,8 +26,9 @@ class RestDataSource {
       {Function fromJson,
       Map<String, String> headers,
       Map<String, String> params}) async {
-    final response = await client.get(Uri.encodeFull(baseURL + path),
-        headers: headers, params: params);
+    final response = await client.get(path,
+        queryParameters: params,
+        options: Options(headers: headers, responseType: ResponseType.json));
     if (response.statusCode == 200) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
@@ -36,13 +39,14 @@ class RestDataSource {
   Future<Map<String, dynamic>> post(String path,
       {Function fromJson,
       Map<String, String> headers,
-      String body,
+      Map<String, dynamic> body,
       String contentType}) async {
-    final response =
-        await client.post(Uri.encodeFull(baseURL + path), body: body, headers: {
-      if (contentType != null) 'Content-Type': contentType,
-      if (headers != null) ...headers
-    });
+    final response = await client.post(path,
+        data: body,
+        options: Options(
+            contentType: contentType,
+            headers: headers,
+            responseType: ResponseType.json));
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
@@ -53,13 +57,14 @@ class RestDataSource {
   Future<Map<String, dynamic>> put(String path,
       {Function fromJson,
       Map<String, String> headers,
-      String body,
+      Map<String, dynamic> body,
       String contentType}) async {
-    final response =
-        await client.put(Uri.encodeFull(baseURL + path), body: body, headers: {
-      if (contentType != null) 'Content-Type': contentType,
-      if (headers != null) ...headers
-    });
+    final response = await client.put(path,
+        data: body,
+        options: Options(
+            contentType: contentType,
+            headers: headers,
+            responseType: ResponseType.json));
     if (response.statusCode == 200 || response.statusCode == 204) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
@@ -70,13 +75,14 @@ class RestDataSource {
   Future<Map<String, dynamic>> patch(String path,
       {Function fromJson,
       Map<String, String> headers,
-      String body,
+      Map<String, dynamic> body,
       String contentType}) async {
-    final response = await client
-        .patch(Uri.encodeFull(baseURL + path), body: body, headers: {
-      if (contentType != null) 'Content-Type': contentType,
-      if (headers != null) ...headers
-    });
+    final response = await client.patch(path,
+        data: body,
+        options: Options(
+            contentType: contentType,
+            headers: headers,
+            responseType: ResponseType.json));
     if (response.statusCode == 200 || response.statusCode == 204) {
       return response.manageRestRequestResponse(fromJson: fromJson);
     }
@@ -86,7 +92,8 @@ class RestDataSource {
   ///DELETE request to API
   Future<Map<String, dynamic>> delete(String path,
       {Map<String, String> headers}) async {
-    final response = await client.delete(baseURL + path, headers: headers);
+    final response = await client.delete(path,
+        options: Options(headers: headers, responseType: ResponseType.json));
     if (response.statusCode == 200 || response.statusCode == 404) {
       return response.manageRestRequestResponse();
     }

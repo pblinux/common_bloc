@@ -7,12 +7,7 @@ part of 'rss_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
-mixin _$RssEvent {
-  String get rssUrl;
-  bool get withLoading;
-
-  RssEvent copyWith({String rssUrl, bool withLoading});
-}
+T _$identity<T>(T value) => value;
 
 class _$RssEventTearOff {
   const _$RssEventTearOff();
@@ -25,10 +20,74 @@ class _$RssEventTearOff {
   }
 }
 
+// ignore: unused_element
 const $RssEvent = _$RssEventTearOff();
 
+mixin _$RssEvent {
+  String get rssUrl;
+  bool get withLoading;
+
+  $RssEventCopyWith<RssEvent> get copyWith;
+}
+
+abstract class $RssEventCopyWith<$Res> {
+  factory $RssEventCopyWith(RssEvent value, $Res Function(RssEvent) then) =
+      _$RssEventCopyWithImpl<$Res>;
+  $Res call({String rssUrl, bool withLoading});
+}
+
+class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
+  _$RssEventCopyWithImpl(this._value, this._then);
+
+  final RssEvent _value;
+  // ignore: unused_field
+  final $Res Function(RssEvent) _then;
+
+  @override
+  $Res call({
+    Object rssUrl = freezed,
+    Object withLoading = freezed,
+  }) {
+    return _then(_value.copyWith(
+      rssUrl: rssUrl == freezed ? _value.rssUrl : rssUrl as String,
+      withLoading:
+          withLoading == freezed ? _value.withLoading : withLoading as bool,
+    ));
+  }
+}
+
+abstract class _$RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
+  factory _$RssEventCopyWith(_RssEvent value, $Res Function(_RssEvent) then) =
+      __$RssEventCopyWithImpl<$Res>;
+  @override
+  $Res call({String rssUrl, bool withLoading});
+}
+
+class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
+    implements _$RssEventCopyWith<$Res> {
+  __$RssEventCopyWithImpl(_RssEvent _value, $Res Function(_RssEvent) _then)
+      : super(_value, (v) => _then(v as _RssEvent));
+
+  @override
+  _RssEvent get _value => super._value as _RssEvent;
+
+  @override
+  $Res call({
+    Object rssUrl = freezed,
+    Object withLoading = freezed,
+  }) {
+    return _then(_RssEvent(
+      rssUrl == freezed ? _value.rssUrl : rssUrl as String,
+      withLoading:
+          withLoading == freezed ? _value.withLoading : withLoading as bool,
+    ));
+  }
+}
+
 class _$_RssEvent implements _RssEvent {
-  _$_RssEvent(this.rssUrl, {this.withLoading = true}) : assert(rssUrl != null);
+  _$_RssEvent(this.rssUrl, {this.withLoading = true})
+      : assert(rssUrl != null),
+        assert(withLoading != null);
 
   @override
   final String rssUrl;
@@ -59,16 +118,8 @@ class _$_RssEvent implements _RssEvent {
       const DeepCollectionEquality().hash(withLoading);
 
   @override
-  _$_RssEvent copyWith({
-    Object rssUrl = freezed,
-    Object withLoading = freezed,
-  }) {
-    return _$_RssEvent(
-      rssUrl == freezed ? this.rssUrl : rssUrl as String,
-      withLoading:
-          withLoading == freezed ? this.withLoading : withLoading as bool,
-    );
-  }
+  _$RssEventCopyWith<_RssEvent> get copyWith =>
+      __$RssEventCopyWithImpl<_RssEvent>(this, _$identity);
 }
 
 abstract class _RssEvent implements RssEvent {
@@ -78,7 +129,6 @@ abstract class _RssEvent implements RssEvent {
   String get rssUrl;
   @override
   bool get withLoading;
-
   @override
-  _RssEvent copyWith({String rssUrl, bool withLoading});
+  _$RssEventCopyWith<_RssEvent> get copyWith;
 }

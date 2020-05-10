@@ -1,6 +1,6 @@
 name: common_bloc
 description: A collection of common blocs that maybe will be used very often (powered by the bloc library).
-version: 1.0.0
+version: 2.0.0
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc
 
@@ -8,21 +8,15 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   bloc: ^4.0.0
+  dio: ^3.0.9
   freezed_annotation: ^0.7.1
-  http: ^0.12.0+4
-  http_interceptor: ^0.2.0
   meta: ^1.1.8
   webfeed: ^0.4.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  bloc_test: ^5.0.0
-  build_runner: ^1.7.4
-  freezed: ^0.8.2
+  bloc_test: ^5.1.0
+  build_runner: ^1.9.0
   effective_dart: ^1.2.1
-
-flutter:
+  freezed: ^0.10.8
+  test: ^1.14.3

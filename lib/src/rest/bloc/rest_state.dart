@@ -17,7 +17,7 @@ abstract class RestState with _$RestState {
 
   ///Finished state
   factory RestState.loaded(
-      {Map<String, String> headers,
+      {Map<String, List<String>> headers,
       String lastPath,
       String timestamp,
       dynamic data}) = LoadedRestState;

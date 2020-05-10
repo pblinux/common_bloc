@@ -1,15 +1,14 @@
-import 'dart:convert';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:http_interceptor/http_interceptor.dart';
+import 'package:dio/dio.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Rest bloc', () {
     blocTest('get from api',
         act: (bloc) => bloc.get('/posts'),
         build: () async => RestBloc('https://jsonplaceholder.typicode.com',
-            interceptors: [LogginInterceptor()]),
+            interceptors: [logginInterceptor]),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -18,12 +17,11 @@ void main() {
         skip: 0);
 
     blocTest('post to api',
-        act: (bloc) => bloc.post('/posts',
-            body: json.encode({
+        act: (bloc) => bloc.post('/posts', body: {
               'title': 'CommonBlocTest',
               'body': 'This is a new entry',
               'userId': 1
-            })),
+            }),
         build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
@@ -33,13 +31,12 @@ void main() {
         skip: 0);
 
     blocTest('update (with put) to api',
-        act: (bloc) => bloc.put('/posts/1',
-            body: json.encode({
+        act: (bloc) => bloc.put('/posts/1', body: {
               'id': 1,
               'title': 'CommonBlocTest',
               'body': 'This is a new entry',
               'userId': 1
-            })),
+            }),
         build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
@@ -48,8 +45,8 @@ void main() {
         ],
         skip: 0);
     blocTest('update (with patch) to api',
-        act: (bloc) => bloc.patch('/posts/1',
-            body: json.encode({'title': 'CommonBlocTest'})),
+        act: (bloc) =>
+            bloc.patch('/posts/1', body: {'title': 'CommonBlocTest'}),
         build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: [
           isA<UninitializedRestState>(),
@@ -136,16 +133,9 @@ void main() {
   });
 }
 
-class LogginInterceptor implements InterceptorContract {
-  @override
-  Future<RequestData> interceptRequest({RequestData data}) async {
-    // print(data.body);
-    return data;
-  }
-
-  @override
-  Future<ResponseData> interceptResponse({ResponseData data}) async {
-    // print(data.body);
-    return data;
-  }
-}
+InterceptorsWrapper get logginInterceptor =>
+    InterceptorsWrapper(onRequest: (request) {
+      return request;
+    }, onResponse: (response) {
+      return response;
+    });
