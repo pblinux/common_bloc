@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:http_interceptor/http_client_with_interceptor.dart';
-import 'package:http_interceptor/interceptor_contract.dart';
+import 'package:dio/dio.dart';
 import '../../common/data_source.dart';
 import '../../common/response.dart';
 import 'rest_event.dart';
@@ -17,11 +16,11 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   RestDataSource _restDataSource;
 
   ///Main constructor
-  RestBloc(String baseUrl, {List<InterceptorContract> interceptors}) {
+  RestBloc(String baseUrl, {List<Interceptor> interceptors}) {
     _restDataSource = RestDataSource(
         baseURL: baseUrl,
-        client: HttpClientWithInterceptor.build(
-            interceptors: [if (interceptors != null) ...interceptors]));
+        client: Dio()
+          ..interceptors.addAll([if (interceptors != null) ...interceptors]));
   }
 
   @override
@@ -57,7 +56,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
               body: e.body,
               contentType: e.contentType,
               fromJson: e.fromJson,
-              headers: e.headers));
+              headers: e.headers),
+          formData: (e) => _restDataSource.formData(e.path, e.body,
+              contentType: e.contentType,
+              fromJson: e.fromJson,
+              headers: e.headers,
+              onProgressChanged: e.onProgressChanged));
       yield RestState.loaded(
           data: result['data'],
           headers: result['headers'],
@@ -65,13 +69,15 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           timestamp: DateTime.now().toIso8601String());
     } on ResponseException catch (e) {
       yield RestState.error(humanMessage: e.humanMessage, message: e.message);
-    } on Exception catch (e) {
-      yield RestState.error(message: e.toString(), humanMessage: e.toString());
     }
   }
 
-  ///Perform a GET request with provided
-  ///path, headers and params
+  ///GET request to API
+  ///
+  ///Perform a GET request to API with specific
+  ///[path], you can send the [headers], [params]
+  ///and a [fromJson] method to parse the result
+  ///json to a specific object.
   void get(String path,
           {Function fromJson,
           Map<String, String> headers,
@@ -83,12 +89,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a POST request with provided
-  ///path, body, and headers
+  ///POST request to API
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void post(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.post(path,
@@ -98,12 +108,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a PUT request with provided
-  ///path, body, and headers
+  ///PUT request to API
+  ///
+  ///Perform a PUT request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void put(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.put(path,
@@ -113,12 +127,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a PATCH request with provided
-  ///path, body, and headers
+  ///PATCH request to API
+  ///
+  ///Perform a PATCH request to API with specific
+  ///[path] and a [body]. You can send the [headers], [contentType]
+  ///and a [fromJson] method to parse the result json to
+  ///a specific object.
   void patch(String path,
           {Function fromJson,
           Map<String, String> headers,
-          String body,
+          Map<String, dynamic> body,
           String contentType,
           bool withLoading = true}) =>
       add(RestEvent.patch(path,
@@ -128,11 +146,35 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           headers: headers,
           withLoading: withLoading));
 
-  ///Perform a DELETE request with provided
-  ///path and headers
+  ///DELETE request to API
+  ///
+  ///Perform a DELETE request to API with specific
+  ///[path]. You can send the [headers] for request.
   void delete(String path,
           {Function fromJson,
           Map<String, String> headers,
           bool withLoading = true}) =>
       add(RestEvent.delete(path, headers: headers, withLoading: withLoading));
+
+  ///POST request with FormData content.
+  ///
+  ///Perform a POST request to API with specific
+  ///[path] and a [formData] as data.
+  ///
+  ///Usefull for uploading files
+  ///
+  ///You can specify the [headers] for request.
+  void formData(String path,
+          {FormData body,
+          Function fromJson,
+          Function(int, int) onProgressChanged,
+          Map<String, String> headers,
+          String contentType,
+          bool withLoading = true}) =>
+      add(RestEvent.formData(path,
+          body: body,
+          contentType: contentType,
+          fromJson: fromJson,
+          headers: headers,
+          withLoading: withLoading));
 }

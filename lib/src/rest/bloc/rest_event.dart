@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'rest_event.freezed.dart';
@@ -7,37 +8,46 @@ part 'rest_event.freezed.dart';
 abstract class RestEvent with _$RestEvent {
   ///Perform an GET request
   factory RestEvent.get(String path,
-      {Function fromJson,
+      {@Default(true) bool withLoading,
+      Function fromJson,
       Map<String, String> headers,
-      Map<String, String> params,
-      @Default(true) bool withLoading}) = GetEvent;
+      Map<String, String> params}) = GetEvent;
 
   ///Perform an GET request
   factory RestEvent.post(String path,
-      {Function fromJson,
+      {@Default(true) bool withLoading,
+      Function fromJson,
       Map<String, String> headers,
-      String body,
-      String contentType,
-      @Default(true) bool withLoading}) = PostEvent;
+      Map<String, dynamic> body,
+      String contentType}) = PostEvent;
 
   ///Perform an GET request
   factory RestEvent.put(String path,
-      {Function fromJson,
+      {@Default(true) bool withLoading,
+      Function fromJson,
       Map<String, String> headers,
-      String body,
-      String contentType,
-      @Default(true) bool withLoading}) = PutEvent;
+      Map<String, dynamic> body,
+      String contentType}) = PutEvent;
 
   ///Perform an GET request
   factory RestEvent.patch(String path,
-      {Function fromJson,
+      {@Default(true) bool withLoading,
+      Function fromJson,
       Map<String, String> headers,
-      String body,
-      String contentType,
-      @Default(true) bool withLoading}) = PatchEvent;
+      Map<String, dynamic> body,
+      String contentType}) = PatchEvent;
 
   ///Perform an GET request
   factory RestEvent.delete(String path,
-      {Map<String, String> headers,
-      @Default(true) bool withLoading}) = DeleteEvent;
+      {@Default(true) bool withLoading,
+      Map<String, String> headers}) = DeleteEvent;
+
+  ///Perform an GET request
+  factory RestEvent.formData(String path,
+      {@Default(true) bool withLoading,
+      FormData body,
+      Function fromJson,
+      Function(int, int) onProgressChanged,
+      Map<String, String> headers,
+      String contentType}) = FromDataEvent;
 }

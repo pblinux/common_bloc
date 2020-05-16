@@ -7,44 +7,7 @@ part of 'rest_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-mixin _$RestState {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message, String humanMessage),
-    @required Result loading(),
-    @required
-        Result loaded(Map<String, String> headers, String lastPath,
-            String timestamp, dynamic data),
-  });
-
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message, String humanMessage),
-    Result loading(),
-    Result loaded(Map<String, String> headers, String lastPath,
-        String timestamp, dynamic data),
-    @required Result orElse(),
-  });
-
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRestState value),
-    @required Result error(ErrorRestState value),
-    @required Result loading(LoadingRestState value),
-    @required Result loaded(LoadedRestState value),
-  });
-
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRestState value),
-    Result error(ErrorRestState value),
-    Result loading(LoadingRestState value),
-    Result loaded(LoadedRestState value),
-    @required Result orElse(),
-  });
-}
+T _$identity<T>(T value) => value;
 
 class _$RestStateTearOff {
   const _$RestStateTearOff();
@@ -65,7 +28,7 @@ class _$RestStateTearOff {
   }
 
   LoadedRestState loaded(
-      {Map<String, String> headers,
+      {Map<String, List<String>> headers,
       String lastPath,
       String timestamp,
       dynamic data}) {
@@ -78,7 +41,74 @@ class _$RestStateTearOff {
   }
 }
 
+// ignore: unused_element
 const $RestState = _$RestStateTearOff();
+
+mixin _$RestState {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result uninitialized(),
+    @required Result error(String message, String humanMessage),
+    @required Result loading(),
+    @required
+        Result loaded(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result uninitialized(),
+    Result error(String message, String humanMessage),
+    Result loading(),
+    Result loaded(Map<String, List<String>> headers, String lastPath,
+        String timestamp, dynamic data),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result uninitialized(UninitializedRestState value),
+    @required Result error(ErrorRestState value),
+    @required Result loading(LoadingRestState value),
+    @required Result loaded(LoadedRestState value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result uninitialized(UninitializedRestState value),
+    Result error(ErrorRestState value),
+    Result loading(LoadingRestState value),
+    Result loaded(LoadedRestState value),
+    @required Result orElse(),
+  });
+}
+
+abstract class $RestStateCopyWith<$Res> {
+  factory $RestStateCopyWith(RestState value, $Res Function(RestState) then) =
+      _$RestStateCopyWithImpl<$Res>;
+}
+
+class _$RestStateCopyWithImpl<$Res> implements $RestStateCopyWith<$Res> {
+  _$RestStateCopyWithImpl(this._value, this._then);
+
+  final RestState _value;
+  // ignore: unused_field
+  final $Res Function(RestState) _then;
+}
+
+abstract class $UninitializedRestStateCopyWith<$Res> {
+  factory $UninitializedRestStateCopyWith(UninitializedRestState value,
+          $Res Function(UninitializedRestState) then) =
+      _$UninitializedRestStateCopyWithImpl<$Res>;
+}
+
+class _$UninitializedRestStateCopyWithImpl<$Res>
+    extends _$RestStateCopyWithImpl<$Res>
+    implements $UninitializedRestStateCopyWith<$Res> {
+  _$UninitializedRestStateCopyWithImpl(UninitializedRestState _value,
+      $Res Function(UninitializedRestState) _then)
+      : super(_value, (v) => _then(v as UninitializedRestState));
+
+  @override
+  UninitializedRestState get _value => super._value as UninitializedRestState;
+}
 
 class _$UninitializedRestState implements UninitializedRestState {
   _$UninitializedRestState();
@@ -103,7 +133,7 @@ class _$UninitializedRestState implements UninitializedRestState {
     @required Result error(String message, String humanMessage),
     @required Result loading(),
     @required
-        Result loaded(Map<String, String> headers, String lastPath,
+        Result loaded(Map<String, List<String>> headers, String lastPath,
             String timestamp, dynamic data),
   }) {
     assert(uninitialized != null);
@@ -119,7 +149,7 @@ class _$UninitializedRestState implements UninitializedRestState {
     Result uninitialized(),
     Result error(String message, String humanMessage),
     Result loading(),
-    Result loaded(Map<String, String> headers, String lastPath,
+    Result loaded(Map<String, List<String>> headers, String lastPath,
         String timestamp, dynamic data),
     @required Result orElse(),
   }) {
@@ -166,6 +196,36 @@ abstract class UninitializedRestState implements RestState {
   factory UninitializedRestState() = _$UninitializedRestState;
 }
 
+abstract class $ErrorRestStateCopyWith<$Res> {
+  factory $ErrorRestStateCopyWith(
+          ErrorRestState value, $Res Function(ErrorRestState) then) =
+      _$ErrorRestStateCopyWithImpl<$Res>;
+  $Res call({String message, String humanMessage});
+}
+
+class _$ErrorRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
+    implements $ErrorRestStateCopyWith<$Res> {
+  _$ErrorRestStateCopyWithImpl(
+      ErrorRestState _value, $Res Function(ErrorRestState) _then)
+      : super(_value, (v) => _then(v as ErrorRestState));
+
+  @override
+  ErrorRestState get _value => super._value as ErrorRestState;
+
+  @override
+  $Res call({
+    Object message = freezed,
+    Object humanMessage = freezed,
+  }) {
+    return _then(ErrorRestState(
+      message: message == freezed ? _value.message : message as String,
+      humanMessage: humanMessage == freezed
+          ? _value.humanMessage
+          : humanMessage as String,
+    ));
+  }
+}
+
 class _$ErrorRestState implements ErrorRestState {
   _$ErrorRestState({this.message, this.humanMessage});
 
@@ -198,16 +258,8 @@ class _$ErrorRestState implements ErrorRestState {
       const DeepCollectionEquality().hash(humanMessage);
 
   @override
-  _$ErrorRestState copyWith({
-    Object message = freezed,
-    Object humanMessage = freezed,
-  }) {
-    return _$ErrorRestState(
-      message: message == freezed ? this.message : message as String,
-      humanMessage:
-          humanMessage == freezed ? this.humanMessage : humanMessage as String,
-    );
-  }
+  $ErrorRestStateCopyWith<ErrorRestState> get copyWith =>
+      _$ErrorRestStateCopyWithImpl<ErrorRestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -216,7 +268,7 @@ class _$ErrorRestState implements ErrorRestState {
     @required Result error(String message, String humanMessage),
     @required Result loading(),
     @required
-        Result loaded(Map<String, String> headers, String lastPath,
+        Result loaded(Map<String, List<String>> headers, String lastPath,
             String timestamp, dynamic data),
   }) {
     assert(uninitialized != null);
@@ -232,7 +284,7 @@ class _$ErrorRestState implements ErrorRestState {
     Result uninitialized(),
     Result error(String message, String humanMessage),
     Result loading(),
-    Result loaded(Map<String, String> headers, String lastPath,
+    Result loaded(Map<String, List<String>> headers, String lastPath,
         String timestamp, dynamic data),
     @required Result orElse(),
   }) {
@@ -281,8 +333,23 @@ abstract class ErrorRestState implements RestState {
 
   String get message;
   String get humanMessage;
+  $ErrorRestStateCopyWith<ErrorRestState> get copyWith;
+}
 
-  ErrorRestState copyWith({String message, String humanMessage});
+abstract class $LoadingRestStateCopyWith<$Res> {
+  factory $LoadingRestStateCopyWith(
+          LoadingRestState value, $Res Function(LoadingRestState) then) =
+      _$LoadingRestStateCopyWithImpl<$Res>;
+}
+
+class _$LoadingRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
+    implements $LoadingRestStateCopyWith<$Res> {
+  _$LoadingRestStateCopyWithImpl(
+      LoadingRestState _value, $Res Function(LoadingRestState) _then)
+      : super(_value, (v) => _then(v as LoadingRestState));
+
+  @override
+  LoadingRestState get _value => super._value as LoadingRestState;
 }
 
 class _$LoadingRestState implements LoadingRestState {
@@ -308,7 +375,7 @@ class _$LoadingRestState implements LoadingRestState {
     @required Result error(String message, String humanMessage),
     @required Result loading(),
     @required
-        Result loaded(Map<String, String> headers, String lastPath,
+        Result loaded(Map<String, List<String>> headers, String lastPath,
             String timestamp, dynamic data),
   }) {
     assert(uninitialized != null);
@@ -324,7 +391,7 @@ class _$LoadingRestState implements LoadingRestState {
     Result uninitialized(),
     Result error(String message, String humanMessage),
     Result loading(),
-    Result loaded(Map<String, String> headers, String lastPath,
+    Result loaded(Map<String, List<String>> headers, String lastPath,
         String timestamp, dynamic data),
     @required Result orElse(),
   }) {
@@ -371,11 +438,49 @@ abstract class LoadingRestState implements RestState {
   factory LoadingRestState() = _$LoadingRestState;
 }
 
+abstract class $LoadedRestStateCopyWith<$Res> {
+  factory $LoadedRestStateCopyWith(
+          LoadedRestState value, $Res Function(LoadedRestState) then) =
+      _$LoadedRestStateCopyWithImpl<$Res>;
+  $Res call(
+      {Map<String, List<String>> headers,
+      String lastPath,
+      String timestamp,
+      dynamic data});
+}
+
+class _$LoadedRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
+    implements $LoadedRestStateCopyWith<$Res> {
+  _$LoadedRestStateCopyWithImpl(
+      LoadedRestState _value, $Res Function(LoadedRestState) _then)
+      : super(_value, (v) => _then(v as LoadedRestState));
+
+  @override
+  LoadedRestState get _value => super._value as LoadedRestState;
+
+  @override
+  $Res call({
+    Object headers = freezed,
+    Object lastPath = freezed,
+    Object timestamp = freezed,
+    Object data = freezed,
+  }) {
+    return _then(LoadedRestState(
+      headers: headers == freezed
+          ? _value.headers
+          : headers as Map<String, List<String>>,
+      lastPath: lastPath == freezed ? _value.lastPath : lastPath as String,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
+      data: data == freezed ? _value.data : data as dynamic,
+    ));
+  }
+}
+
 class _$LoadedRestState implements LoadedRestState {
   _$LoadedRestState({this.headers, this.lastPath, this.timestamp, this.data});
 
   @override
-  final Map<String, String> headers;
+  final Map<String, List<String>> headers;
   @override
   final String lastPath;
   @override
@@ -414,20 +519,8 @@ class _$LoadedRestState implements LoadedRestState {
       const DeepCollectionEquality().hash(data);
 
   @override
-  _$LoadedRestState copyWith({
-    Object headers = freezed,
-    Object lastPath = freezed,
-    Object timestamp = freezed,
-    Object data = freezed,
-  }) {
-    return _$LoadedRestState(
-      headers:
-          headers == freezed ? this.headers : headers as Map<String, String>,
-      lastPath: lastPath == freezed ? this.lastPath : lastPath as String,
-      timestamp: timestamp == freezed ? this.timestamp : timestamp as String,
-      data: data == freezed ? this.data : data as dynamic,
-    );
-  }
+  $LoadedRestStateCopyWith<LoadedRestState> get copyWith =>
+      _$LoadedRestStateCopyWithImpl<LoadedRestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -436,7 +529,7 @@ class _$LoadedRestState implements LoadedRestState {
     @required Result error(String message, String humanMessage),
     @required Result loading(),
     @required
-        Result loaded(Map<String, String> headers, String lastPath,
+        Result loaded(Map<String, List<String>> headers, String lastPath,
             String timestamp, dynamic data),
   }) {
     assert(uninitialized != null);
@@ -452,7 +545,7 @@ class _$LoadedRestState implements LoadedRestState {
     Result uninitialized(),
     Result error(String message, String humanMessage),
     Result loading(),
-    Result loaded(Map<String, String> headers, String lastPath,
+    Result loaded(Map<String, List<String>> headers, String lastPath,
         String timestamp, dynamic data),
     @required Result orElse(),
   }) {
@@ -497,19 +590,14 @@ class _$LoadedRestState implements LoadedRestState {
 
 abstract class LoadedRestState implements RestState {
   factory LoadedRestState(
-      {Map<String, String> headers,
+      {Map<String, List<String>> headers,
       String lastPath,
       String timestamp,
       dynamic data}) = _$LoadedRestState;
 
-  Map<String, String> get headers;
+  Map<String, List<String>> get headers;
   String get lastPath;
   String get timestamp;
   dynamic get data;
-
-  LoadedRestState copyWith(
-      {Map<String, String> headers,
-      String lastPath,
-      String timestamp,
-      dynamic data});
+  $LoadedRestStateCopyWith<LoadedRestState> get copyWith;
 }

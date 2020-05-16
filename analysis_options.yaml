@@ -1,9 +1,8 @@
 include: package:effective_dart/analysis_options.yaml
 analyzer:
   exclude:
-    - example/lib/**
-    - lib/src/request/bloc/**.freezed.dart
-    - lib/src/rest/bloc/**.freezed.dart
-    - lib/src/rss/bloc/**.freezed.dart
+    - '**/*.freezed.dart'
+    - 'example/lib/**'
+    - 'test/.test_coverage.dart'
   errors:
     include_file_not_found: ignore

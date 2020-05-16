@@ -1,3 +1,8 @@
+## [2.0.0]
+* Change http client to Dio
+* FormData method for RestBloc
+* Remove Flutter dependency
+
 ## [1.0.0]
 * Update bloc to 4.0.0
 * effective_dart

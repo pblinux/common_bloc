@@ -7,14 +7,7 @@ part of 'request_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
-mixin _$RequestEvent {
-  Function get requestAction;
-  String get requestName;
-  bool get withLoading;
-
-  RequestEvent copyWith(
-      {Function requestAction, String requestName, bool withLoading});
-}
+T _$identity<T>(T value) => value;
 
 class _$RequestEventTearOff {
   const _$RequestEventTearOff();
@@ -29,13 +22,90 @@ class _$RequestEventTearOff {
   }
 }
 
+// ignore: unused_element
 const $RequestEvent = _$RequestEventTearOff();
+
+mixin _$RequestEvent {
+  Function get requestAction;
+  String get requestName;
+  bool get withLoading;
+
+  $RequestEventCopyWith<RequestEvent> get copyWith;
+}
+
+abstract class $RequestEventCopyWith<$Res> {
+  factory $RequestEventCopyWith(
+          RequestEvent value, $Res Function(RequestEvent) then) =
+      _$RequestEventCopyWithImpl<$Res>;
+  $Res call({Function requestAction, String requestName, bool withLoading});
+}
+
+class _$RequestEventCopyWithImpl<$Res> implements $RequestEventCopyWith<$Res> {
+  _$RequestEventCopyWithImpl(this._value, this._then);
+
+  final RequestEvent _value;
+  // ignore: unused_field
+  final $Res Function(RequestEvent) _then;
+
+  @override
+  $Res call({
+    Object requestAction = freezed,
+    Object requestName = freezed,
+    Object withLoading = freezed,
+  }) {
+    return _then(_value.copyWith(
+      requestAction: requestAction == freezed
+          ? _value.requestAction
+          : requestAction as Function,
+      requestName:
+          requestName == freezed ? _value.requestName : requestName as String,
+      withLoading:
+          withLoading == freezed ? _value.withLoading : withLoading as bool,
+    ));
+  }
+}
+
+abstract class _$RequestEventCopyWith<$Res>
+    implements $RequestEventCopyWith<$Res> {
+  factory _$RequestEventCopyWith(
+          _RequestEvent value, $Res Function(_RequestEvent) then) =
+      __$RequestEventCopyWithImpl<$Res>;
+  @override
+  $Res call({Function requestAction, String requestName, bool withLoading});
+}
+
+class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
+    implements _$RequestEventCopyWith<$Res> {
+  __$RequestEventCopyWithImpl(
+      _RequestEvent _value, $Res Function(_RequestEvent) _then)
+      : super(_value, (v) => _then(v as _RequestEvent));
+
+  @override
+  _RequestEvent get _value => super._value as _RequestEvent;
+
+  @override
+  $Res call({
+    Object requestAction = freezed,
+    Object requestName = freezed,
+    Object withLoading = freezed,
+  }) {
+    return _then(_RequestEvent(
+      requestAction == freezed
+          ? _value.requestAction
+          : requestAction as Function,
+      requestName == freezed ? _value.requestName : requestName as String,
+      withLoading:
+          withLoading == freezed ? _value.withLoading : withLoading as bool,
+    ));
+  }
+}
 
 class _$_RequestEvent implements _RequestEvent {
   _$_RequestEvent(this.requestAction, this.requestName,
       {this.withLoading = true})
       : assert(requestAction != null),
-        assert(requestName != null);
+        assert(requestName != null),
+        assert(withLoading != null);
 
   @override
   final Function requestAction;
@@ -73,18 +143,8 @@ class _$_RequestEvent implements _RequestEvent {
       const DeepCollectionEquality().hash(withLoading);
 
   @override
-  _$_RequestEvent copyWith({
-    Object requestAction = freezed,
-    Object requestName = freezed,
-    Object withLoading = freezed,
-  }) {
-    return _$_RequestEvent(
-      requestAction == freezed ? this.requestAction : requestAction as Function,
-      requestName == freezed ? this.requestName : requestName as String,
-      withLoading:
-          withLoading == freezed ? this.withLoading : withLoading as bool,
-    );
-  }
+  _$RequestEventCopyWith<_RequestEvent> get copyWith =>
+      __$RequestEventCopyWithImpl<_RequestEvent>(this, _$identity);
 }
 
 abstract class _RequestEvent implements RequestEvent {
@@ -97,8 +157,6 @@ abstract class _RequestEvent implements RequestEvent {
   String get requestName;
   @override
   bool get withLoading;
-
   @override
-  _RequestEvent copyWith(
-      {Function requestAction, String requestName, bool withLoading});
+  _$RequestEventCopyWith<_RequestEvent> get copyWith;
 }

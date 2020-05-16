@@ -7,41 +7,7 @@ part of 'rss_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-mixin _$RssState {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
-  });
-
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
-  });
-
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
-  });
-
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
-  });
-}
+T _$identity<T>(T value) => value;
 
 class _$RssStateTearOff {
   const _$RssStateTearOff();
@@ -68,7 +34,71 @@ class _$RssStateTearOff {
   }
 }
 
+// ignore: unused_element
 const $RssState = _$RssStateTearOff();
+
+mixin _$RssState {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result uninitialized(),
+    @required Result error(String message),
+    @required Result loading(),
+    @required Result loaded(RssFeed data, String timestamp),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result uninitialized(),
+    Result error(String message),
+    Result loading(),
+    Result loaded(RssFeed data, String timestamp),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result uninitialized(UninitializedRssState value),
+    @required Result error(ErrorRssState value),
+    @required Result loading(LoadingRssState value),
+    @required Result loaded(LoadedRssState value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result uninitialized(UninitializedRssState value),
+    Result error(ErrorRssState value),
+    Result loading(LoadingRssState value),
+    Result loaded(LoadedRssState value),
+    @required Result orElse(),
+  });
+}
+
+abstract class $RssStateCopyWith<$Res> {
+  factory $RssStateCopyWith(RssState value, $Res Function(RssState) then) =
+      _$RssStateCopyWithImpl<$Res>;
+}
+
+class _$RssStateCopyWithImpl<$Res> implements $RssStateCopyWith<$Res> {
+  _$RssStateCopyWithImpl(this._value, this._then);
+
+  final RssState _value;
+  // ignore: unused_field
+  final $Res Function(RssState) _then;
+}
+
+abstract class $UninitializedRssStateCopyWith<$Res> {
+  factory $UninitializedRssStateCopyWith(UninitializedRssState value,
+          $Res Function(UninitializedRssState) then) =
+      _$UninitializedRssStateCopyWithImpl<$Res>;
+}
+
+class _$UninitializedRssStateCopyWithImpl<$Res>
+    extends _$RssStateCopyWithImpl<$Res>
+    implements $UninitializedRssStateCopyWith<$Res> {
+  _$UninitializedRssStateCopyWithImpl(
+      UninitializedRssState _value, $Res Function(UninitializedRssState) _then)
+      : super(_value, (v) => _then(v as UninitializedRssState));
+
+  @override
+  UninitializedRssState get _value => super._value as UninitializedRssState;
+}
 
 class _$UninitializedRssState implements UninitializedRssState {
   _$UninitializedRssState();
@@ -153,6 +183,32 @@ abstract class UninitializedRssState implements RssState {
   factory UninitializedRssState() = _$UninitializedRssState;
 }
 
+abstract class $ErrorRssStateCopyWith<$Res> {
+  factory $ErrorRssStateCopyWith(
+          ErrorRssState value, $Res Function(ErrorRssState) then) =
+      _$ErrorRssStateCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements $ErrorRssStateCopyWith<$Res> {
+  _$ErrorRssStateCopyWithImpl(
+      ErrorRssState _value, $Res Function(ErrorRssState) _then)
+      : super(_value, (v) => _then(v as ErrorRssState));
+
+  @override
+  ErrorRssState get _value => super._value as ErrorRssState;
+
+  @override
+  $Res call({
+    Object message = freezed,
+  }) {
+    return _then(ErrorRssState(
+      message: message == freezed ? _value.message : message as String,
+    ));
+  }
+}
+
 class _$ErrorRssState implements ErrorRssState {
   _$ErrorRssState({this.message});
 
@@ -177,13 +233,8 @@ class _$ErrorRssState implements ErrorRssState {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
   @override
-  _$ErrorRssState copyWith({
-    Object message = freezed,
-  }) {
-    return _$ErrorRssState(
-      message: message == freezed ? this.message : message as String,
-    );
-  }
+  $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
+      _$ErrorRssStateCopyWithImpl<ErrorRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -252,8 +303,23 @@ abstract class ErrorRssState implements RssState {
   factory ErrorRssState({String message}) = _$ErrorRssState;
 
   String get message;
+  $ErrorRssStateCopyWith<ErrorRssState> get copyWith;
+}
 
-  ErrorRssState copyWith({String message});
+abstract class $LoadingRssStateCopyWith<$Res> {
+  factory $LoadingRssStateCopyWith(
+          LoadingRssState value, $Res Function(LoadingRssState) then) =
+      _$LoadingRssStateCopyWithImpl<$Res>;
+}
+
+class _$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements $LoadingRssStateCopyWith<$Res> {
+  _$LoadingRssStateCopyWithImpl(
+      LoadingRssState _value, $Res Function(LoadingRssState) _then)
+      : super(_value, (v) => _then(v as LoadingRssState));
+
+  @override
+  LoadingRssState get _value => super._value as LoadingRssState;
 }
 
 class _$LoadingRssState implements LoadingRssState {
@@ -339,6 +405,34 @@ abstract class LoadingRssState implements RssState {
   factory LoadingRssState() = _$LoadingRssState;
 }
 
+abstract class $LoadedRssStateCopyWith<$Res> {
+  factory $LoadedRssStateCopyWith(
+          LoadedRssState value, $Res Function(LoadedRssState) then) =
+      _$LoadedRssStateCopyWithImpl<$Res>;
+  $Res call({RssFeed data, String timestamp});
+}
+
+class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements $LoadedRssStateCopyWith<$Res> {
+  _$LoadedRssStateCopyWithImpl(
+      LoadedRssState _value, $Res Function(LoadedRssState) _then)
+      : super(_value, (v) => _then(v as LoadedRssState));
+
+  @override
+  LoadedRssState get _value => super._value as LoadedRssState;
+
+  @override
+  $Res call({
+    Object data = freezed,
+    Object timestamp = freezed,
+  }) {
+    return _then(LoadedRssState(
+      data: data == freezed ? _value.data : data as RssFeed,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
+    ));
+  }
+}
+
 class _$LoadedRssState implements LoadedRssState {
   _$LoadedRssState({this.data, this.timestamp});
 
@@ -370,15 +464,8 @@ class _$LoadedRssState implements LoadedRssState {
       const DeepCollectionEquality().hash(timestamp);
 
   @override
-  _$LoadedRssState copyWith({
-    Object data = freezed,
-    Object timestamp = freezed,
-  }) {
-    return _$LoadedRssState(
-      data: data == freezed ? this.data : data as RssFeed,
-      timestamp: timestamp == freezed ? this.timestamp : timestamp as String,
-    );
-  }
+  $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
+      _$LoadedRssStateCopyWithImpl<LoadedRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -448,6 +535,5 @@ abstract class LoadedRssState implements RssState {
 
   RssFeed get data;
   String get timestamp;
-
-  LoadedRssState copyWith({RssFeed data, String timestamp});
+  $LoadedRssStateCopyWith<LoadedRssState> get copyWith;
 }
