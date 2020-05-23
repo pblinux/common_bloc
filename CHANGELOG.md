@@ -1,3 +1,7 @@
+## [2.0.1]
+* Clear RestBloc state
+* Update dependencies
+
 ## [2.0.0]
 * Change http client to Dio
 * FormData method for RestBloc
