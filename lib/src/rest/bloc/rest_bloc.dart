@@ -39,6 +39,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     if (event.withLoading) yield RestState.loading();
     try {
       final result = await event.map(
+          clear: (e) => null,
           delete: (e) => _restDataSource.delete(e.path, headers: e.headers),
           get: (e) => _restDataSource.get(e.path,
               fromJson: e.fromJson, params: e.params, headers: e.headers),
@@ -62,11 +63,15 @@ class RestBloc extends Bloc<RestEvent, RestState> {
               fromJson: e.fromJson,
               headers: e.headers,
               onProgressChanged: e.onProgressChanged));
-      yield RestState.loaded(
-          data: result['data'],
-          headers: result['headers'],
-          lastPath: event.path,
-          timestamp: DateTime.now().toIso8601String());
+      if (result == null) {
+        yield RestState.uninitialized();
+      } else {
+        yield RestState.loaded(
+            data: result['data'],
+            headers: result['headers'],
+            lastPath: event.path,
+            timestamp: DateTime.now().toIso8601String());
+      }
     } on ResponseException catch (e) {
       yield RestState.error(humanMessage: e.humanMessage, message: e.message);
     }
@@ -177,4 +182,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
           fromJson: fromJson,
           headers: headers,
           withLoading: withLoading));
+
+  ///Clear RestState
+  ///
+  ///Restart the state to uninitialized
+  ///
+  ///Usefull for reusing the bloc without construct
+  ///it again.
+  void clear() => add(RestEvent.clear(''));
 }

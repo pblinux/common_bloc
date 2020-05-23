@@ -50,4 +50,8 @@ abstract class RestEvent with _$RestEvent {
       Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType}) = FromDataEvent;
+
+  ///Rebuild RestBloc state and yield to uninitialized
+  factory RestEvent.clear(String path, {@Default(false) bool withLoading}) =
+      ClearEvent;
 }

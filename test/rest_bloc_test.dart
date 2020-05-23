@@ -81,6 +81,21 @@ void main() {
         ],
         skip: 0);
 
+    test('clear rest bloc state', () async {
+      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      bloc.get('/posts');
+      bloc.clear();
+      await emitsExactly(
+          bloc,
+          [
+            isA<UninitializedRestState>(),
+            isA<LoadingRestState>(),
+            isA<LoadedRestState>(),
+            isA<UninitializedRestState>()
+          ],
+          skip: 0);
+    });
+
     test('check base url', () {
       final bloc = RestBloc('https://jsonplaceholder.typicode.com');
       final currentBaseUrl = bloc.currentBaseUrl;
