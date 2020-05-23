@@ -100,6 +100,13 @@ class _$RestEventTearOff {
       contentType: contentType,
     );
   }
+
+  ClearEvent clear(String path, {bool withLoading = false}) {
+    return ClearEvent(
+      path,
+      withLoading: withLoading,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -108,7 +115,6 @@ const $RestEvent = _$RestEventTearOff();
 mixin _$RestEvent {
   String get path;
   bool get withLoading;
-  Map<String, String> get headers;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -151,6 +157,7 @@ mixin _$RestEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -186,6 +193,7 @@ mixin _$RestEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -196,6 +204,7 @@ mixin _$RestEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -205,6 +214,7 @@ mixin _$RestEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   });
 
@@ -214,7 +224,7 @@ mixin _$RestEvent {
 abstract class $RestEventCopyWith<$Res> {
   factory $RestEventCopyWith(RestEvent value, $Res Function(RestEvent) then) =
       _$RestEventCopyWithImpl<$Res>;
-  $Res call({String path, bool withLoading, Map<String, String> headers});
+  $Res call({String path, bool withLoading});
 }
 
 class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
@@ -228,14 +238,11 @@ class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
   $Res call({
     Object path = freezed,
     Object withLoading = freezed,
-    Object headers = freezed,
   }) {
     return _then(_value.copyWith(
       path: path == freezed ? _value.path : path as String,
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
-      headers:
-          headers == freezed ? _value.headers : headers as Map<String, String>,
     ));
   }
 }
@@ -377,6 +384,7 @@ class _$GetEvent implements GetEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -384,6 +392,7 @@ class _$GetEvent implements GetEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return get(path, withLoading, fromJson, headers, params);
   }
 
@@ -422,6 +431,7 @@ class _$GetEvent implements GetEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -440,6 +450,7 @@ class _$GetEvent implements GetEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -447,6 +458,7 @@ class _$GetEvent implements GetEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return get(this);
   }
 
@@ -459,6 +471,7 @@ class _$GetEvent implements GetEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -481,7 +494,6 @@ abstract class GetEvent implements RestEvent {
   @override
   bool get withLoading;
   Function get fromJson;
-  @override
   Map<String, String> get headers;
   Map<String, String> get params;
   @override
@@ -639,6 +651,7 @@ class _$PostEvent implements PostEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -646,6 +659,7 @@ class _$PostEvent implements PostEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return post(path, withLoading, fromJson, headers, body, contentType);
   }
 
@@ -684,6 +698,7 @@ class _$PostEvent implements PostEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -702,6 +717,7 @@ class _$PostEvent implements PostEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -709,6 +725,7 @@ class _$PostEvent implements PostEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return post(this);
   }
 
@@ -721,6 +738,7 @@ class _$PostEvent implements PostEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -744,7 +762,6 @@ abstract class PostEvent implements RestEvent {
   @override
   bool get withLoading;
   Function get fromJson;
-  @override
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -903,6 +920,7 @@ class _$PutEvent implements PutEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -910,6 +928,7 @@ class _$PutEvent implements PutEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return put(path, withLoading, fromJson, headers, body, contentType);
   }
 
@@ -948,6 +967,7 @@ class _$PutEvent implements PutEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -966,6 +986,7 @@ class _$PutEvent implements PutEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -973,6 +994,7 @@ class _$PutEvent implements PutEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return put(this);
   }
 
@@ -985,6 +1007,7 @@ class _$PutEvent implements PutEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1008,7 +1031,6 @@ abstract class PutEvent implements RestEvent {
   @override
   bool get withLoading;
   Function get fromJson;
-  @override
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -1168,6 +1190,7 @@ class _$PatchEvent implements PatchEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1175,6 +1198,7 @@ class _$PatchEvent implements PatchEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return patch(path, withLoading, fromJson, headers, body, contentType);
   }
 
@@ -1213,6 +1237,7 @@ class _$PatchEvent implements PatchEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1231,6 +1256,7 @@ class _$PatchEvent implements PatchEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1238,6 +1264,7 @@ class _$PatchEvent implements PatchEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return patch(this);
   }
 
@@ -1250,6 +1277,7 @@ class _$PatchEvent implements PatchEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1273,7 +1301,6 @@ abstract class PatchEvent implements RestEvent {
   @override
   bool get withLoading;
   Function get fromJson;
-  @override
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -1398,6 +1425,7 @@ class _$DeleteEvent implements DeleteEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1405,6 +1433,7 @@ class _$DeleteEvent implements DeleteEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return delete(path, withLoading, headers);
   }
 
@@ -1443,6 +1472,7 @@ class _$DeleteEvent implements DeleteEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1461,6 +1491,7 @@ class _$DeleteEvent implements DeleteEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1468,6 +1499,7 @@ class _$DeleteEvent implements DeleteEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return delete(this);
   }
 
@@ -1480,6 +1512,7 @@ class _$DeleteEvent implements DeleteEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1498,7 +1531,6 @@ abstract class DeleteEvent implements RestEvent {
   String get path;
   @override
   bool get withLoading;
-  @override
   Map<String, String> get headers;
   @override
   $DeleteEventCopyWith<DeleteEvent> get copyWith;
@@ -1670,6 +1702,7 @@ class _$FromDataEvent implements FromDataEvent {
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
+    @required Result clear(String path, bool withLoading),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1677,6 +1710,7 @@ class _$FromDataEvent implements FromDataEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return formData(path, withLoading, body, fromJson, onProgressChanged,
         headers, contentType);
   }
@@ -1716,6 +1750,7 @@ class _$FromDataEvent implements FromDataEvent {
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
+    Result clear(String path, bool withLoading),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1735,6 +1770,7 @@ class _$FromDataEvent implements FromDataEvent {
     @required Result patch(PatchEvent value),
     @required Result delete(DeleteEvent value),
     @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
   }) {
     assert(get != null);
     assert(post != null);
@@ -1742,6 +1778,7 @@ class _$FromDataEvent implements FromDataEvent {
     assert(patch != null);
     assert(delete != null);
     assert(formData != null);
+    assert(clear != null);
     return formData(this);
   }
 
@@ -1754,6 +1791,7 @@ class _$FromDataEvent implements FromDataEvent {
     Result patch(PatchEvent value),
     Result delete(DeleteEvent value),
     Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1780,9 +1818,225 @@ abstract class FromDataEvent implements RestEvent {
   FormData get body;
   Function get fromJson;
   dynamic Function(int, int) get onProgressChanged;
-  @override
   Map<String, String> get headers;
   String get contentType;
   @override
   $FromDataEventCopyWith<FromDataEvent> get copyWith;
+}
+
+abstract class $ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory $ClearEventCopyWith(
+          ClearEvent value, $Res Function(ClearEvent) then) =
+      _$ClearEventCopyWithImpl<$Res>;
+  @override
+  $Res call({String path, bool withLoading});
+}
+
+class _$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements $ClearEventCopyWith<$Res> {
+  _$ClearEventCopyWithImpl(ClearEvent _value, $Res Function(ClearEvent) _then)
+      : super(_value, (v) => _then(v as ClearEvent));
+
+  @override
+  ClearEvent get _value => super._value as ClearEvent;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object withLoading = freezed,
+  }) {
+    return _then(ClearEvent(
+      path == freezed ? _value.path : path as String,
+      withLoading:
+          withLoading == freezed ? _value.withLoading : withLoading as bool,
+    ));
+  }
+}
+
+class _$ClearEvent implements ClearEvent {
+  _$ClearEvent(this.path, {this.withLoading = false})
+      : assert(path != null),
+        assert(withLoading != null);
+
+  @override
+  final String path;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool withLoading;
+
+  @override
+  String toString() {
+    return 'RestEvent.clear(path: $path, withLoading: $withLoading)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ClearEvent &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.withLoading, withLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.withLoading, withLoading)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(withLoading);
+
+  @override
+  $ClearEventCopyWith<ClearEvent> get copyWith =>
+      _$ClearEventCopyWithImpl<ClearEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result get(String path, bool withLoading, Function fromJson,
+            Map<String, String> headers, Map<String, String> params),
+    @required
+        Result post(
+            String path,
+            bool withLoading,
+            Function fromJson,
+            Map<String, String> headers,
+            Map<String, dynamic> body,
+            String contentType),
+    @required
+        Result put(
+            String path,
+            bool withLoading,
+            Function fromJson,
+            Map<String, String> headers,
+            Map<String, dynamic> body,
+            String contentType),
+    @required
+        Result patch(
+            String path,
+            bool withLoading,
+            Function fromJson,
+            Map<String, String> headers,
+            Map<String, dynamic> body,
+            String contentType),
+    @required
+        Result delete(
+            String path, bool withLoading, Map<String, String> headers),
+    @required
+        Result formData(
+            String path,
+            bool withLoading,
+            FormData body,
+            Function fromJson,
+            dynamic Function(int, int) onProgressChanged,
+            Map<String, String> headers,
+            String contentType),
+    @required Result clear(String path, bool withLoading),
+  }) {
+    assert(get != null);
+    assert(post != null);
+    assert(put != null);
+    assert(patch != null);
+    assert(delete != null);
+    assert(formData != null);
+    assert(clear != null);
+    return clear(path, withLoading);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result get(String path, bool withLoading, Function fromJson,
+        Map<String, String> headers, Map<String, String> params),
+    Result post(
+        String path,
+        bool withLoading,
+        Function fromJson,
+        Map<String, String> headers,
+        Map<String, dynamic> body,
+        String contentType),
+    Result put(
+        String path,
+        bool withLoading,
+        Function fromJson,
+        Map<String, String> headers,
+        Map<String, dynamic> body,
+        String contentType),
+    Result patch(
+        String path,
+        bool withLoading,
+        Function fromJson,
+        Map<String, String> headers,
+        Map<String, dynamic> body,
+        String contentType),
+    Result delete(String path, bool withLoading, Map<String, String> headers),
+    Result formData(
+        String path,
+        bool withLoading,
+        FormData body,
+        Function fromJson,
+        dynamic Function(int, int) onProgressChanged,
+        Map<String, String> headers,
+        String contentType),
+    Result clear(String path, bool withLoading),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (clear != null) {
+      return clear(path, withLoading);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result get(GetEvent value),
+    @required Result post(PostEvent value),
+    @required Result put(PutEvent value),
+    @required Result patch(PatchEvent value),
+    @required Result delete(DeleteEvent value),
+    @required Result formData(FromDataEvent value),
+    @required Result clear(ClearEvent value),
+  }) {
+    assert(get != null);
+    assert(post != null);
+    assert(put != null);
+    assert(patch != null);
+    assert(delete != null);
+    assert(formData != null);
+    assert(clear != null);
+    return clear(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result get(GetEvent value),
+    Result post(PostEvent value),
+    Result put(PutEvent value),
+    Result patch(PatchEvent value),
+    Result delete(DeleteEvent value),
+    Result formData(FromDataEvent value),
+    Result clear(ClearEvent value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (clear != null) {
+      return clear(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClearEvent implements RestEvent {
+  factory ClearEvent(String path, {bool withLoading}) = _$ClearEvent;
+
+  @override
+  String get path;
+  @override
+  bool get withLoading;
+  @override
+  $ClearEventCopyWith<ClearEvent> get copyWith;
 }
