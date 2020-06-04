@@ -84,7 +84,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///and a [fromJson] method to parse the result
   ///json to a specific object.
   void get(String path,
-          {Function fromJson,
+          {Function(Map<String, dynamic>) fromJson,
           Map<String, String> headers,
           Map<String, String> params,
           bool withLoading = true}) =>
@@ -101,7 +101,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
   void post(String path,
-          {Function fromJson,
+          {Function(Map<String, dynamic>) fromJson,
           Map<String, String> headers,
           Map<String, dynamic> body,
           String contentType,
@@ -120,7 +120,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
   void put(String path,
-          {Function fromJson,
+          {Function(Map<String, dynamic>) fromJson,
           Map<String, String> headers,
           Map<String, dynamic> body,
           String contentType,
@@ -139,7 +139,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
   void patch(String path,
-          {Function fromJson,
+          {Function(Map<String, dynamic>) fromJson,
           Map<String, String> headers,
           Map<String, dynamic> body,
           String contentType,
@@ -156,7 +156,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///Perform a DELETE request to API with specific
   ///[path]. You can send the [headers] for request.
   void delete(String path,
-          {Function fromJson,
+          {Function(Map<String, dynamic>) fromJson,
           Map<String, String> headers,
           bool withLoading = true}) =>
       add(RestEvent.delete(path, headers: headers, withLoading: withLoading));
@@ -171,7 +171,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///You can specify the [headers] for request.
   void formData(String path,
           {FormData body,
-          Function fromJson,
+          Function(Map<String, dynamic>) fromJson,
           Function(int, int) onProgressChanged,
           Map<String, String> headers,
           String contentType,

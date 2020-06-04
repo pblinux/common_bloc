@@ -1,6 +1,6 @@
 name: common_bloc
 description: A collection of common blocs that maybe will be used very often (powered by the bloc library).
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc
 
@@ -19,5 +19,5 @@ dev_dependencies:
   build_runner: ^1.10.0
   effective_dart: ^1.2.1
   freezed: ^0.10.9
-  test: ^1.14.5
+  test: ^1.14.6
   test_coverage: ^0.4.1

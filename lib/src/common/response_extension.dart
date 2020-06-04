@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'response.dart';
 
@@ -6,7 +8,9 @@ import 'response.dart';
 ///Used in RestBloc and RssBloc
 extension ResponseManagment on Response {
   ///Returns the response with data and headers
-  Map<String, dynamic> manageRestRequestResponse({Function fromJson}) => {
+  Map<String, dynamic> manageRestRequestResponse(
+          {Function(Map<String, dynamic>) fromJson}) =>
+      {
         'data': fromJson != null ? fromJson(data) : data,
         'headers': headers.map
       };
@@ -26,32 +30,32 @@ extension ErrorManagment on DioError {
         return ResponseException(
             code: 400,
             humanMessage: 'Bad request',
-            message: response.data.toString());
+            message: json.encode(response.data));
       case 401:
         return ResponseException(
             code: 401,
             humanMessage: 'Unauthorized',
-            message: response.data.toString());
+            message: json.encode(response.data));
       case 403:
         return ResponseException(
             code: 403,
             humanMessage: 'Forbidden',
-            message: response.data.toString());
+            message: json.encode(response.data));
       case 422:
         return ResponseException(
             code: 422,
             humanMessage: 'Unprocessable Entity',
-            message: response.data.toString());
+            message: json.encode(response.data));
       case 500:
         return ResponseException(
             code: 500,
             humanMessage: 'Server error',
-            message: response.data.toString());
+            message: json.encode(response.data));
       default:
         return ResponseException(
             code: 100,
             humanMessage: 'Unknown error',
-            message: response.data.toString());
+            message: json.encode(response.data));
     }
   }
 }

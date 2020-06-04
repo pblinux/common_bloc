@@ -9,14 +9,14 @@ abstract class RestEvent with _$RestEvent {
   ///Perform an GET request
   factory RestEvent.get(String path,
       {@Default(true) bool withLoading,
-      Function fromJson,
+      Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, String> params}) = GetEvent;
 
   ///Perform an GET request
   factory RestEvent.post(String path,
       {@Default(true) bool withLoading,
-      Function fromJson,
+      Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = PostEvent;
@@ -24,7 +24,7 @@ abstract class RestEvent with _$RestEvent {
   ///Perform an GET request
   factory RestEvent.put(String path,
       {@Default(true) bool withLoading,
-      Function fromJson,
+      Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = PutEvent;
@@ -32,7 +32,7 @@ abstract class RestEvent with _$RestEvent {
   ///Perform an GET request
   factory RestEvent.patch(String path,
       {@Default(true) bool withLoading,
-      Function fromJson,
+      Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = PatchEvent;
@@ -46,7 +46,7 @@ abstract class RestEvent with _$RestEvent {
   factory RestEvent.formData(String path,
       {@Default(true) bool withLoading,
       FormData body,
-      Function fromJson,
+      Function(Map<String, dynamic>) fromJson,
       Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType}) = FromDataEvent;

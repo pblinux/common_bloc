@@ -1,3 +1,7 @@
+## [2.0.2]
+* Fix RestData error message decode.
+* Update dependencies
+
 ## [2.0.1]
 * Clear RestBloc state
 * Update dependencies

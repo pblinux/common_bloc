@@ -14,7 +14,7 @@ class _$RestEventTearOff {
 
   GetEvent get(String path,
       {bool withLoading = true,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, String> params}) {
     return GetEvent(
@@ -28,7 +28,7 @@ class _$RestEventTearOff {
 
   PostEvent post(String path,
       {bool withLoading = true,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) {
@@ -44,7 +44,7 @@ class _$RestEventTearOff {
 
   PutEvent put(String path,
       {bool withLoading = true,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) {
@@ -60,7 +60,7 @@ class _$RestEventTearOff {
 
   PatchEvent patch(String path,
       {bool withLoading = true,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) {
@@ -86,7 +86,7 @@ class _$RestEventTearOff {
   FromDataEvent formData(String path,
       {bool withLoading = true,
       FormData body,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       dynamic Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType}) {
@@ -119,13 +119,17 @@ mixin _$RestEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -133,7 +137,7 @@ mixin _$RestEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -141,7 +145,7 @@ mixin _$RestEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -153,7 +157,7 @@ mixin _$RestEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -161,26 +165,30 @@ mixin _$RestEvent {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -189,7 +197,7 @@ mixin _$RestEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -254,7 +262,7 @@ abstract class $GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call(
       {String path,
       bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, String> params});
 }
@@ -279,7 +287,9 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
       path == freezed ? _value.path : path as String,
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
-      fromJson: fromJson == freezed ? _value.fromJson : fromJson as Function,
+      fromJson: fromJson == freezed
+          ? _value.fromJson
+          : fromJson as dynamic Function(Map<String, dynamic>),
       headers:
           headers == freezed ? _value.headers : headers as Map<String, String>,
       params: params == freezed ? _value.params : params as Map<String, String>,
@@ -299,7 +309,7 @@ class _$GetEvent implements GetEvent {
   @override
   final bool withLoading;
   @override
-  final Function fromJson;
+  final dynamic Function(Map<String, dynamic>) fromJson;
   @override
   final Map<String, String> headers;
   @override
@@ -346,13 +356,17 @@ class _$GetEvent implements GetEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -360,7 +374,7 @@ class _$GetEvent implements GetEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -368,7 +382,7 @@ class _$GetEvent implements GetEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -380,7 +394,7 @@ class _$GetEvent implements GetEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -399,26 +413,30 @@ class _$GetEvent implements GetEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -427,7 +445,7 @@ class _$GetEvent implements GetEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -485,7 +503,7 @@ class _$GetEvent implements GetEvent {
 abstract class GetEvent implements RestEvent {
   factory GetEvent(String path,
       {bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, String> params}) = _$GetEvent;
 
@@ -493,7 +511,7 @@ abstract class GetEvent implements RestEvent {
   String get path;
   @override
   bool get withLoading;
-  Function get fromJson;
+  dynamic Function(Map<String, dynamic>) get fromJson;
   Map<String, String> get headers;
   Map<String, String> get params;
   @override
@@ -507,7 +525,7 @@ abstract class $PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call(
       {String path,
       bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType});
@@ -534,7 +552,9 @@ class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
       path == freezed ? _value.path : path as String,
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
-      fromJson: fromJson == freezed ? _value.fromJson : fromJson as Function,
+      fromJson: fromJson == freezed
+          ? _value.fromJson
+          : fromJson as dynamic Function(Map<String, dynamic>),
       headers:
           headers == freezed ? _value.headers : headers as Map<String, String>,
       body: body == freezed ? _value.body : body as Map<String, dynamic>,
@@ -560,7 +580,7 @@ class _$PostEvent implements PostEvent {
   @override
   final bool withLoading;
   @override
-  final Function fromJson;
+  final dynamic Function(Map<String, dynamic>) fromJson;
   @override
   final Map<String, String> headers;
   @override
@@ -613,13 +633,17 @@ class _$PostEvent implements PostEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -627,7 +651,7 @@ class _$PostEvent implements PostEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -635,7 +659,7 @@ class _$PostEvent implements PostEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -647,7 +671,7 @@ class _$PostEvent implements PostEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -666,26 +690,30 @@ class _$PostEvent implements PostEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -694,7 +722,7 @@ class _$PostEvent implements PostEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -752,7 +780,7 @@ class _$PostEvent implements PostEvent {
 abstract class PostEvent implements RestEvent {
   factory PostEvent(String path,
       {bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = _$PostEvent;
@@ -761,7 +789,7 @@ abstract class PostEvent implements RestEvent {
   String get path;
   @override
   bool get withLoading;
-  Function get fromJson;
+  dynamic Function(Map<String, dynamic>) get fromJson;
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -776,7 +804,7 @@ abstract class $PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call(
       {String path,
       bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType});
@@ -803,7 +831,9 @@ class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
       path == freezed ? _value.path : path as String,
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
-      fromJson: fromJson == freezed ? _value.fromJson : fromJson as Function,
+      fromJson: fromJson == freezed
+          ? _value.fromJson
+          : fromJson as dynamic Function(Map<String, dynamic>),
       headers:
           headers == freezed ? _value.headers : headers as Map<String, String>,
       body: body == freezed ? _value.body : body as Map<String, dynamic>,
@@ -829,7 +859,7 @@ class _$PutEvent implements PutEvent {
   @override
   final bool withLoading;
   @override
-  final Function fromJson;
+  final dynamic Function(Map<String, dynamic>) fromJson;
   @override
   final Map<String, String> headers;
   @override
@@ -882,13 +912,17 @@ class _$PutEvent implements PutEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -896,7 +930,7 @@ class _$PutEvent implements PutEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -904,7 +938,7 @@ class _$PutEvent implements PutEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -916,7 +950,7 @@ class _$PutEvent implements PutEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -935,26 +969,30 @@ class _$PutEvent implements PutEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -963,7 +1001,7 @@ class _$PutEvent implements PutEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -1021,7 +1059,7 @@ class _$PutEvent implements PutEvent {
 abstract class PutEvent implements RestEvent {
   factory PutEvent(String path,
       {bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = _$PutEvent;
@@ -1030,7 +1068,7 @@ abstract class PutEvent implements RestEvent {
   String get path;
   @override
   bool get withLoading;
-  Function get fromJson;
+  dynamic Function(Map<String, dynamic>) get fromJson;
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -1046,7 +1084,7 @@ abstract class $PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call(
       {String path,
       bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType});
@@ -1073,7 +1111,9 @@ class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
       path == freezed ? _value.path : path as String,
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
-      fromJson: fromJson == freezed ? _value.fromJson : fromJson as Function,
+      fromJson: fromJson == freezed
+          ? _value.fromJson
+          : fromJson as dynamic Function(Map<String, dynamic>),
       headers:
           headers == freezed ? _value.headers : headers as Map<String, String>,
       body: body == freezed ? _value.body : body as Map<String, dynamic>,
@@ -1099,7 +1139,7 @@ class _$PatchEvent implements PatchEvent {
   @override
   final bool withLoading;
   @override
-  final Function fromJson;
+  final dynamic Function(Map<String, dynamic>) fromJson;
   @override
   final Map<String, String> headers;
   @override
@@ -1152,13 +1192,17 @@ class _$PatchEvent implements PatchEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1166,7 +1210,7 @@ class _$PatchEvent implements PatchEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1174,7 +1218,7 @@ class _$PatchEvent implements PatchEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1186,7 +1230,7 @@ class _$PatchEvent implements PatchEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -1205,26 +1249,30 @@ class _$PatchEvent implements PatchEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -1233,7 +1281,7 @@ class _$PatchEvent implements PatchEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -1291,7 +1339,7 @@ class _$PatchEvent implements PatchEvent {
 abstract class PatchEvent implements RestEvent {
   factory PatchEvent(String path,
       {bool withLoading,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       Map<String, String> headers,
       Map<String, dynamic> body,
       String contentType}) = _$PatchEvent;
@@ -1300,7 +1348,7 @@ abstract class PatchEvent implements RestEvent {
   String get path;
   @override
   bool get withLoading;
-  Function get fromJson;
+  dynamic Function(Map<String, dynamic>) get fromJson;
   Map<String, String> get headers;
   Map<String, dynamic> get body;
   String get contentType;
@@ -1387,13 +1435,17 @@ class _$DeleteEvent implements DeleteEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1401,7 +1453,7 @@ class _$DeleteEvent implements DeleteEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1409,7 +1461,7 @@ class _$DeleteEvent implements DeleteEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1421,7 +1473,7 @@ class _$DeleteEvent implements DeleteEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -1440,26 +1492,30 @@ class _$DeleteEvent implements DeleteEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -1468,7 +1524,7 @@ class _$DeleteEvent implements DeleteEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -1546,7 +1602,7 @@ abstract class $FromDataEventCopyWith<$Res>
       {String path,
       bool withLoading,
       FormData body,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       dynamic Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType});
@@ -1576,7 +1632,9 @@ class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
       withLoading:
           withLoading == freezed ? _value.withLoading : withLoading as bool,
       body: body == freezed ? _value.body : body as FormData,
-      fromJson: fromJson == freezed ? _value.fromJson : fromJson as Function,
+      fromJson: fromJson == freezed
+          ? _value.fromJson
+          : fromJson as dynamic Function(Map<String, dynamic>),
       onProgressChanged: onProgressChanged == freezed
           ? _value.onProgressChanged
           : onProgressChanged as dynamic Function(int, int),
@@ -1607,7 +1665,7 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   final FormData body;
   @override
-  final Function fromJson;
+  final dynamic Function(Map<String, dynamic>) fromJson;
   @override
   final dynamic Function(int, int) onProgressChanged;
   @override
@@ -1664,13 +1722,17 @@ class _$FromDataEvent implements FromDataEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1678,7 +1740,7 @@ class _$FromDataEvent implements FromDataEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1686,7 +1748,7 @@ class _$FromDataEvent implements FromDataEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1698,7 +1760,7 @@ class _$FromDataEvent implements FromDataEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -1718,26 +1780,30 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -1746,7 +1812,7 @@ class _$FromDataEvent implements FromDataEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
@@ -1806,7 +1872,7 @@ abstract class FromDataEvent implements RestEvent {
   factory FromDataEvent(String path,
       {bool withLoading,
       FormData body,
-      Function fromJson,
+      dynamic Function(Map<String, dynamic>) fromJson,
       dynamic Function(int, int) onProgressChanged,
       Map<String, String> headers,
       String contentType}) = _$FromDataEvent;
@@ -1816,7 +1882,7 @@ abstract class FromDataEvent implements RestEvent {
   @override
   bool get withLoading;
   FormData get body;
-  Function get fromJson;
+  dynamic Function(Map<String, dynamic>) get fromJson;
   dynamic Function(int, int) get onProgressChanged;
   Map<String, String> get headers;
   String get contentType;
@@ -1894,13 +1960,17 @@ class _$ClearEvent implements ClearEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result get(String path, bool withLoading, Function fromJson,
-            Map<String, String> headers, Map<String, String> params),
+        Result get(
+            String path,
+            bool withLoading,
+            dynamic Function(Map<String, dynamic>) fromJson,
+            Map<String, String> headers,
+            Map<String, String> params),
     @required
         Result post(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1908,7 +1978,7 @@ class _$ClearEvent implements ClearEvent {
         Result put(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1916,7 +1986,7 @@ class _$ClearEvent implements ClearEvent {
         Result patch(
             String path,
             bool withLoading,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             Map<String, String> headers,
             Map<String, dynamic> body,
             String contentType),
@@ -1928,7 +1998,7 @@ class _$ClearEvent implements ClearEvent {
             String path,
             bool withLoading,
             FormData body,
-            Function fromJson,
+            dynamic Function(Map<String, dynamic>) fromJson,
             dynamic Function(int, int) onProgressChanged,
             Map<String, String> headers,
             String contentType),
@@ -1947,26 +2017,30 @@ class _$ClearEvent implements ClearEvent {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result get(String path, bool withLoading, Function fromJson,
-        Map<String, String> headers, Map<String, String> params),
+    Result get(
+        String path,
+        bool withLoading,
+        dynamic Function(Map<String, dynamic>) fromJson,
+        Map<String, String> headers,
+        Map<String, String> params),
     Result post(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result put(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
     Result patch(
         String path,
         bool withLoading,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         Map<String, String> headers,
         Map<String, dynamic> body,
         String contentType),
@@ -1975,7 +2049,7 @@ class _$ClearEvent implements ClearEvent {
         String path,
         bool withLoading,
         FormData body,
-        Function fromJson,
+        dynamic Function(Map<String, dynamic>) fromJson,
         dynamic Function(int, int) onProgressChanged,
         Map<String, String> headers,
         String contentType),
