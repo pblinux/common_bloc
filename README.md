@@ -1,5 +1,5 @@
 # common_bloc
-[![pub](https://img.shields.io/badge/pub-2.0.2-blue)](https://pub.dev/packages/common_bloc)
+[![pub](https://img.shields.io/badge/pub-2.0.3-blue)](https://pub.dev/packages/common_bloc)
 ![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
 [![codecov](https://codecov.io/gh/pblinux/common_bloc/branch/master/graph/badge.svg)](https://codecov.io/gh/pblinux/common_bloc)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
