@@ -7,7 +7,7 @@ void main() {
   group('Rest bloc', () {
     blocTest('get from api',
         act: (bloc) => bloc.get('/posts'),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com',
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io',
             interceptors: [logginInterceptor]),
         expect: [
           isA<UninitializedRestState>(),
@@ -22,7 +22,7 @@ void main() {
               'body': 'This is a new entry',
               'userId': 1
             }),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -37,7 +37,7 @@ void main() {
               'body': 'This is a new entry',
               'userId': 1
             }),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -47,7 +47,7 @@ void main() {
     blocTest('update (with patch) to api',
         act: (bloc) =>
             bloc.patch('/posts/1', body: {'title': 'CommonBlocTest'}),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -57,7 +57,7 @@ void main() {
 
     blocTest('delete from api',
         act: (bloc) => bloc.delete('/posts/1'),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -73,7 +73,7 @@ void main() {
               'userId': 1
             }),
             onProgressChanged: onProgressChange),
-        build: () async => RestBloc('https://jsonplaceholder.typicode.com'),
+        build: () async => RestBloc('https://jsonplaceholder.cypress.io'),
         expect: [
           isA<UninitializedRestState>(),
           isA<LoadingRestState>(),
@@ -82,7 +82,7 @@ void main() {
         skip: 0);
 
     test('clear rest bloc state', () async {
-      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      final bloc = RestBloc('https://jsonplaceholder.cypress.io');
       bloc.get('/posts');
       bloc.clear();
       await emitsExactly(
@@ -97,14 +97,14 @@ void main() {
     });
 
     test('check base url', () {
-      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      final bloc = RestBloc('https://jsonplaceholder.cypress.io');
       final currentBaseUrl = bloc.currentBaseUrl;
-      expect(currentBaseUrl, 'https://jsonplaceholder.typicode.com');
+      expect(currentBaseUrl, 'https://jsonplaceholder.cypress.io');
       bloc.close();
     });
 
     test('change base url', () {
-      final bloc = RestBloc('https://jsonplaceholder.typicode.com');
+      final bloc = RestBloc('https://jsonplaceholder.cypress.io');
       bloc.currentBaseUrl = 'http://www.mocky.io/v2';
       expect(bloc.currentBaseUrl, 'http://www.mocky.io/v2');
       bloc.close();

@@ -9,7 +9,7 @@ class RestScreen extends StatefulWidget {
 }
 
 class _RestScreenState extends State<RestScreen> {
-  final RestBloc _restBloc = RestBloc('https://jsonplaceholder.typicode.com');
+  final RestBloc _restBloc = RestBloc('https://jsonplaceholder.cypress.io');
 
   @override
   void initState() {

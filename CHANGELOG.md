@@ -1,3 +1,6 @@
+## [2.0.3]
+* Update dependencies
+
 ## [2.0.2]
 * Fix RestData error message decode.
 * Update dependencies

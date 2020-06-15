@@ -20,7 +20,7 @@ void main() {
     blocTest('make a simple request on internet',
         act: (bloc) => bloc.perform(
             () async => await (Dio()..interceptors.add(logginInterceptor))
-                .get('https://jsonplaceholder.typicode.com/posts/1')
+                .get('https://jsonplaceholder.cypress.io/posts/1')
               ..data,
             'NetworkRequest'),
         build: () async => RequestBloc(),
