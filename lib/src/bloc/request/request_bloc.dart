@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import './request_event.dart';
-import './request_state.dart';
+import '../../common/models/request/request_event.dart';
+import '../../common/models/request/request_state.dart';
 
-export './request_state.dart';
+export 'package:common_bloc/src/common/models/request/request_state.dart';
 
 ///RequestBloc - A bloc to make simple tasks
 ///
 ///Like fetching data, compute json, timers, etc.
 class RequestBloc extends Bloc<RequestEvent, RequestState> {
-  @override
-  RequestState get initialState => RequestState.uninitialized();
+  ///Main Constructor
+  RequestBloc() : super(RequestState.uninitialized());
 
   @override
   Stream<RequestState> mapEventToState(

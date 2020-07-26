@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import './response_extension.dart';
+import '../response/response_extension.dart';
 
 ///Data source for RSS bloc
 class RssDataSource {

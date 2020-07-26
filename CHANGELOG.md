@@ -1,3 +1,8 @@
+## [3.0.0]
+* Now also Cubits
+* Minor issues solved
+* Update dependecies
+
 ## [2.0.3]
 * Update dependencies
 

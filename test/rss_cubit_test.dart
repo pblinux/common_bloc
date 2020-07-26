@@ -3,24 +3,24 @@ import 'package:common_bloc/common_bloc.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Rss bloc', () {
+  group('Rss cubit', () {
     test('initial request state', () {
-      expect(RssBloc().state, isA<UninitializedRssState>());
+      expect(RssCubit().state, isA<UninitializedRssState>());
     });
 
     blocTest('get rss feed',
-        act: (bloc) =>
-            bloc.getFeed('http://www.publicbooks.org/tag/fiction/feed'),
-        build: () => RssBloc(),
+        act: (cubit) =>
+            cubit.getFeed('http://www.publicbooks.org/tag/fiction/feed'),
+        build: () => RssCubit(),
         expect: [isA<LoadingRssState>(), isA<LoadedRssState>()],
         skip: 0);
   });
 
-  group('Rss bloc errors', () {
+  group('Rss cubit errors', () {
     blocTest('fail geting rss feed',
-        act: (bloc) =>
-            bloc.getFeed('http://www.publicbooks.org/tag/fiction/feeed'),
-        build: () => RssBloc(),
+        act: (cubit) =>
+            cubit.getFeed('http://www.publicbooks.org/tag/fiction/feeed'),
+        build: () => RssCubit(),
         expect: [isA<LoadingRssState>(), isA<ErrorRssState>()],
         skip: 0);
   });

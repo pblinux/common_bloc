@@ -8,16 +8,16 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
-  bloc: ^4.0.0
+  bloc: ^6.0.1
   dio: ^3.0.9
   freezed_annotation: ^0.11.0
-  meta: ^1.1.8
+  meta: ^1.2.2
   webfeed: ^0.4.2
 
 dev_dependencies:
-  bloc_test: ^5.1.0
+  bloc_test: ^7.0.0
   build_runner: ^1.10.0
-  effective_dart: ^1.2.2
-  freezed: ^0.11.0
-  test: ^1.14.7
-  test_coverage: ^0.4.1
+  effective_dart: ^1.2.4
+  freezed: ^0.11.4
+  test: ^1.15.3
+  test_coverage: ^0.4.3
