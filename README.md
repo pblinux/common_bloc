@@ -1,5 +1,5 @@
 # common_bloc
-[![pub](https://img.shields.io/badge/pub-2.0.3-blue)](https://pub.dev/packages/common_bloc)
+[![pub](https://img.shields.io/badge/pub-3.0.0-blue)](https://pub.dev/packages/common_bloc)
 ![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
 [![codecov](https://codecov.io/gh/pblinux/common_bloc/branch/master/graph/badge.svg)](https://codecov.io/gh/pblinux/common_bloc)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@ A collection of common blocs that maybe will be used very often.
 Sometimes we need to create various blocs in the same project to do almost the same thing. This is a collection of blocs to no write so many code.
 
 ## Powered by
-- [bloc](https://pub.dev/packages/bloc)
+- [bloc and cubit](https://pub.dev/packages/bloc)
 - [freezed](https://pub.dev/packages/freezed)
 - [dio](https://pub.dev/packages/dio)
 - [webfeed](https://pub.dev/packages/webfeed)
@@ -113,7 +113,8 @@ rssBloc.getFeed('http://www.publicbooks.org/tag/fiction/feed');
 #### States
 This bloc use the same states of RestBloc and RequestState.
 
-## In the future
-- [X] Bloc for RSS feed.
-- [ ] Tab Bloc (for controlling tab behaviour).
-- [ ] A suggestion?
+## Cubits
+
+A cubit version for `Request`, `Rest` and `RSS` is available with the same states.
+
+

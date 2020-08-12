@@ -1,13 +1,15 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import '../../common/data_source.dart';
-import '../../common/response.dart';
-import 'rest_event.dart';
-import 'rest_state.dart';
 
-export 'package:common_bloc/src/rest/bloc/rest_event.dart';
-export 'package:common_bloc/src/rest/bloc/rest_state.dart';
+import '../../common/models/rest/rest_event.dart';
+import '../../common/models/rest/rest_state.dart';
+import '../../common/response/response.dart';
+import '../../common/source/data_source.dart';
+
+// export 'package:common_bloc/src/common/models/rest/rest_event.dart';
+export 'package:common_bloc/src/common/models/rest/rest_state.dart';
 
 ///RestBloc - A bloc to make request to a REST API
 ///
@@ -16,15 +18,13 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   RestDataSource _restDataSource;
 
   ///Main constructor
-  RestBloc(String baseUrl, {List<Interceptor> interceptors}) {
+  RestBloc(String baseUrl, {List<Interceptor> interceptors})
+      : super(RestState.uninitialized()) {
     _restDataSource = RestDataSource(
         baseURL: baseUrl,
         client: Dio()
           ..interceptors.addAll([if (interceptors != null) ...interceptors]));
   }
-
-  @override
-  RestState get initialState => RestState.uninitialized();
 
   ///Get current base url
   String get currentBaseUrl => _restDataSource.currentBaseUrl;

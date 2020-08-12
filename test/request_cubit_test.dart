@@ -1,39 +1,39 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:common_bloc/common_bloc.dart';
+import 'package:common_bloc/src/cubit/request/request_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Request bloc', () {
+  group('Request cubit', () {
     test('initial request state', () {
-      expect(RequestBloc().state, isA<UninitializedRequestState>());
+      expect(RequestCubit().state, isA<UninitializedRequestState>());
     });
 
     blocTest('make a simple task',
-        act: (bloc) => bloc.perform(
+        act: (cubit) => cubit.perform(
             () async => Future.delayed(Duration(seconds: 3), () => true),
             'TimerTask'),
-        build: () => RequestBloc(),
+        build: () => RequestCubit(),
         expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()]);
 
     blocTest('make a simple request on internet',
-        act: (bloc) => bloc.perform(
+        act: (cubit) => cubit.perform(
             () async => await (Dio()..interceptors.add(logginInterceptor))
                 .get('https://jsonplaceholder.cypress.io/posts/1')
               ..data,
             'NetworkRequest'),
-        build: () => RequestBloc(),
+        build: () => RequestCubit(),
         expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
         skip: 0);
   });
 
-  group('Request bloc errors', () {
+  group('Request cubit errors', () {
     blocTest('simple task fail',
-        act: (bloc) => bloc.perform(
+        act: (cubit) => cubit.perform(
             () async => Future.delayed(
                 Duration(seconds: 3), () => throw Exception('failed')),
             'FailTask'),
-        build: () => RequestBloc(),
+        build: () => RequestCubit(),
         expect: [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
         skip: 0);
   });

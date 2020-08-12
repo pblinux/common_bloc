@@ -1,19 +1,19 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:webfeed/webfeed.dart';
-import '../../common/rss_source.dart';
-import 'rss_event.dart';
-import 'rss_state.dart';
+import '../../common/models/rss/rss_event.dart';
+import '../../common/models/rss/rss_state.dart';
+import '../../common/source/rss_source.dart';
 
-export 'package:common_bloc/src/rss/bloc/rss_state.dart';
+export 'package:common_bloc/src/common/models/rss/rss_state.dart';
 
 ///RequestBloc - A bloc to fetch RSS feed
 ///
 class RssBloc extends Bloc<RssEvent, RssState> {
   final RssDataSource _rssDataSource = RssDataSource();
 
-  @override
-  RssState get initialState => RssState.uninitialized();
+  ///Default constructor
+  RssBloc() : super(RssState.uninitialized());
 
   @override
   Stream<RssState> mapEventToState(

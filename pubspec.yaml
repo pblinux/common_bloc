@@ -1,6 +1,6 @@
 name: common_bloc
-description: A collection of common blocs that maybe will be used very often (powered by the bloc library).
-version: 2.0.3
+description: A collection of common blocs and cubits that maybe will be used very often (powered by the bloc library).
+version: 3.0.0
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc
 
@@ -8,16 +8,16 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
-  bloc: ^4.0.0
+  bloc: ^6.0.1
   dio: ^3.0.9
-  freezed_annotation: ^0.11.0
-  meta: ^1.1.8
-  webfeed: ^0.4.2
+  freezed_annotation: ^0.11.0+1
+  meta: ^1.2.2
+  webfeed: ^0.5.2
 
 dev_dependencies:
-  bloc_test: ^5.1.0
-  build_runner: ^1.10.0
-  effective_dart: ^1.2.2
-  freezed: ^0.11.0
-  test: ^1.14.7
-  test_coverage: ^0.4.1
+  bloc_test: ^7.0.0
+  build_runner: ^1.10.1
+  effective_dart: ^1.2.4
+  freezed: ^0.11.5
+  test: ^1.15.3
+  test_coverage: ^0.4.3

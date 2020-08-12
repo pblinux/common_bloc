@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'rest_event.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$RestEventTearOff {
   const _$RestEventTearOff();
 
+// ignore: unused_element
   GetEvent get(String path,
       {bool withLoading = true,
       dynamic Function(Map<String, dynamic>) fromJson,
@@ -26,6 +27,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   PostEvent post(String path,
       {bool withLoading = true,
       dynamic Function(Map<String, dynamic>) fromJson,
@@ -42,6 +44,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   PutEvent put(String path,
       {bool withLoading = true,
       dynamic Function(Map<String, dynamic>) fromJson,
@@ -58,6 +61,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   PatchEvent patch(String path,
       {bool withLoading = true,
       dynamic Function(Map<String, dynamic>) fromJson,
@@ -74,6 +78,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   DeleteEvent delete(String path,
       {bool withLoading = true, Map<String, String> headers}) {
     return DeleteEvent(
@@ -83,6 +88,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   FromDataEvent formData(String path,
       {bool withLoading = true,
       FormData body,
@@ -101,6 +107,7 @@ class _$RestEventTearOff {
     );
   }
 
+// ignore: unused_element
   ClearEvent clear(String path, {bool withLoading = false}) {
     return ClearEvent(
       path,
