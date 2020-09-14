@@ -1,3 +1,7 @@
+## [3.0.1]
+* Update dependencies
+* Replaces emitsExactly with blocTest in some tests. 
+
 ## [3.0.0]
 * Now also Cubits
 * Minor issues solved

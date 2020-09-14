@@ -35,14 +35,14 @@ packages:
       name: bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.1"
+    version: "6.0.3"
   bloc_test:
     dependency: "direct dev"
     description:
       name: bloc_test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "7.0.0"
+    version: "7.0.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -182,7 +182,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.9"
+    version: "3.0.10"
   effective_dart:
     dependency: "direct dev"
     description:
@@ -203,7 +203,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.5"
+    version: "0.11.6"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -308,7 +308,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.2.3"
   mime:
     dependency: transitive
     description:
@@ -567,7 +567,7 @@ packages:
       name: webfeed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.2"
+    version: "0.6.0"
   webkit_inspection_protocol:
     dependency: transitive
     description:

@@ -62,19 +62,18 @@ void main() {
         expect: [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0);
 
-    test('clear rest bloc state', () async {
-      final bloc = RestBloc('https://jsonplaceholder.cypress.io');
-      bloc.get('/posts');
-      bloc.clear();
-      await emitsExactly(
-          bloc,
-          [
-            isA<LoadingRestState>(),
-            isA<LoadedRestState>(),
-            isA<UninitializedRestState>()
-          ],
-          skip: 0);
-    });
+    blocTest('clear rest bloc state',
+        act: (bloc) {
+          bloc.get('/posts');
+          bloc.clear();
+        },
+        build: () => RestBloc('https://jsonplaceholder.cypress.io'),
+        expect: [
+          isA<LoadingRestState>(),
+          isA<LoadedRestState>(),
+          isA<UninitializedRestState>()
+        ],
+        skip: 0);
 
     test('check base url', () {
       final bloc = RestBloc('https://jsonplaceholder.cypress.io');
