@@ -9,6 +9,7 @@ part of 'rss_event.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RssEventTearOff {
   const _$RssEventTearOff();
 
@@ -21,9 +22,11 @@ class _$RssEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RssEvent = _$RssEventTearOff();
 
+/// @nodoc
 mixin _$RssEvent {
   String get rssUrl;
   bool get withLoading;
@@ -31,12 +34,14 @@ mixin _$RssEvent {
   $RssEventCopyWith<RssEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $RssEventCopyWith<$Res> {
   factory $RssEventCopyWith(RssEvent value, $Res Function(RssEvent) then) =
       _$RssEventCopyWithImpl<$Res>;
   $Res call({String rssUrl, bool withLoading});
 }
 
+/// @nodoc
 class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
   _$RssEventCopyWithImpl(this._value, this._then);
 
@@ -57,6 +62,7 @@ class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
   factory _$RssEventCopyWith(_RssEvent value, $Res Function(_RssEvent) then) =
       __$RssEventCopyWithImpl<$Res>;
@@ -64,6 +70,7 @@ abstract class _$RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
   $Res call({String rssUrl, bool withLoading});
 }
 
+/// @nodoc
 class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
     implements _$RssEventCopyWith<$Res> {
   __$RssEventCopyWithImpl(_RssEvent _value, $Res Function(_RssEvent) _then)
@@ -85,6 +92,7 @@ class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_RssEvent implements _RssEvent {
   _$_RssEvent(this.rssUrl, {this.withLoading = true})
       : assert(rssUrl != null),

@@ -9,6 +9,7 @@ part of 'request_event.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RequestEventTearOff {
   const _$RequestEventTearOff();
 
@@ -23,9 +24,11 @@ class _$RequestEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RequestEvent = _$RequestEventTearOff();
 
+/// @nodoc
 mixin _$RequestEvent {
   Function get requestAction;
   String get requestName;
@@ -34,6 +37,7 @@ mixin _$RequestEvent {
   $RequestEventCopyWith<RequestEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $RequestEventCopyWith<$Res> {
   factory $RequestEventCopyWith(
           RequestEvent value, $Res Function(RequestEvent) then) =
@@ -41,6 +45,7 @@ abstract class $RequestEventCopyWith<$Res> {
   $Res call({Function requestAction, String requestName, bool withLoading});
 }
 
+/// @nodoc
 class _$RequestEventCopyWithImpl<$Res> implements $RequestEventCopyWith<$Res> {
   _$RequestEventCopyWithImpl(this._value, this._then);
 
@@ -66,6 +71,7 @@ class _$RequestEventCopyWithImpl<$Res> implements $RequestEventCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$RequestEventCopyWith<$Res>
     implements $RequestEventCopyWith<$Res> {
   factory _$RequestEventCopyWith(
@@ -75,6 +81,7 @@ abstract class _$RequestEventCopyWith<$Res>
   $Res call({Function requestAction, String requestName, bool withLoading});
 }
 
+/// @nodoc
 class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
     implements _$RequestEventCopyWith<$Res> {
   __$RequestEventCopyWithImpl(
@@ -101,6 +108,7 @@ class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_RequestEvent implements _RequestEvent {
   _$_RequestEvent(this.requestAction, this.requestName,
       {this.withLoading = true})

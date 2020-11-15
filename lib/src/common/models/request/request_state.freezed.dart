@@ -9,6 +9,7 @@ part of 'request_state.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RequestStateTearOff {
   const _$RequestStateTearOff();
 
@@ -40,9 +41,11 @@ class _$RequestStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RequestState = _$RequestStateTearOff();
 
+/// @nodoc
 mixin _$RequestState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -76,12 +79,14 @@ mixin _$RequestState {
   });
 }
 
+/// @nodoc
 abstract class $RequestStateCopyWith<$Res> {
   factory $RequestStateCopyWith(
           RequestState value, $Res Function(RequestState) then) =
       _$RequestStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RequestStateCopyWithImpl<$Res> implements $RequestStateCopyWith<$Res> {
   _$RequestStateCopyWithImpl(this._value, this._then);
 
@@ -90,12 +95,14 @@ class _$RequestStateCopyWithImpl<$Res> implements $RequestStateCopyWith<$Res> {
   final $Res Function(RequestState) _then;
 }
 
+/// @nodoc
 abstract class $UninitializedRequestStateCopyWith<$Res> {
   factory $UninitializedRequestStateCopyWith(UninitializedRequestState value,
           $Res Function(UninitializedRequestState) then) =
       _$UninitializedRequestStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UninitializedRequestStateCopyWithImpl<$Res>
     extends _$RequestStateCopyWithImpl<$Res>
     implements $UninitializedRequestStateCopyWith<$Res> {
@@ -108,6 +115,7 @@ class _$UninitializedRequestStateCopyWithImpl<$Res>
       super._value as UninitializedRequestState;
 }
 
+/// @nodoc
 class _$UninitializedRequestState implements UninitializedRequestState {
   _$UninitializedRequestState();
 
@@ -191,6 +199,7 @@ abstract class UninitializedRequestState implements RequestState {
   factory UninitializedRequestState() = _$UninitializedRequestState;
 }
 
+/// @nodoc
 abstract class $ErrorRequestStateCopyWith<$Res> {
   factory $ErrorRequestStateCopyWith(
           ErrorRequestState value, $Res Function(ErrorRequestState) then) =
@@ -198,6 +207,7 @@ abstract class $ErrorRequestStateCopyWith<$Res> {
   $Res call({String message});
 }
 
+/// @nodoc
 class _$ErrorRequestStateCopyWithImpl<$Res>
     extends _$RequestStateCopyWithImpl<$Res>
     implements $ErrorRequestStateCopyWith<$Res> {
@@ -218,6 +228,7 @@ class _$ErrorRequestStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$ErrorRequestState implements ErrorRequestState {
   _$ErrorRequestState({this.message});
 
@@ -315,12 +326,14 @@ abstract class ErrorRequestState implements RequestState {
   $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith;
 }
 
+/// @nodoc
 abstract class $LoadingRequestStateCopyWith<$Res> {
   factory $LoadingRequestStateCopyWith(
           LoadingRequestState value, $Res Function(LoadingRequestState) then) =
       _$LoadingRequestStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingRequestStateCopyWithImpl<$Res>
     extends _$RequestStateCopyWithImpl<$Res>
     implements $LoadingRequestStateCopyWith<$Res> {
@@ -332,6 +345,7 @@ class _$LoadingRequestStateCopyWithImpl<$Res>
   LoadingRequestState get _value => super._value as LoadingRequestState;
 }
 
+/// @nodoc
 class _$LoadingRequestState implements LoadingRequestState {
   _$LoadingRequestState();
 
@@ -415,6 +429,7 @@ abstract class LoadingRequestState implements RequestState {
   factory LoadingRequestState() = _$LoadingRequestState;
 }
 
+/// @nodoc
 abstract class $LoadedRequestStateCopyWith<$Res> {
   factory $LoadedRequestStateCopyWith(
           LoadedRequestState value, $Res Function(LoadedRequestState) then) =
@@ -422,6 +437,7 @@ abstract class $LoadedRequestStateCopyWith<$Res> {
   $Res call({dynamic data, String lastRequest, String timestamp});
 }
 
+/// @nodoc
 class _$LoadedRequestStateCopyWithImpl<$Res>
     extends _$RequestStateCopyWithImpl<$Res>
     implements $LoadedRequestStateCopyWith<$Res> {
@@ -447,6 +463,7 @@ class _$LoadedRequestStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$LoadedRequestState implements LoadedRequestState {
   _$LoadedRequestState({this.data, this.lastRequest, this.timestamp});
 

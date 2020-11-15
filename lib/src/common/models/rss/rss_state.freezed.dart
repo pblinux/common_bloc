@@ -9,6 +9,7 @@ part of 'rss_state.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RssStateTearOff {
   const _$RssStateTearOff();
 
@@ -38,9 +39,11 @@ class _$RssStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RssState = _$RssStateTearOff();
 
+/// @nodoc
 mixin _$RssState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -74,11 +77,13 @@ mixin _$RssState {
   });
 }
 
+/// @nodoc
 abstract class $RssStateCopyWith<$Res> {
   factory $RssStateCopyWith(RssState value, $Res Function(RssState) then) =
       _$RssStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RssStateCopyWithImpl<$Res> implements $RssStateCopyWith<$Res> {
   _$RssStateCopyWithImpl(this._value, this._then);
 
@@ -87,12 +92,14 @@ class _$RssStateCopyWithImpl<$Res> implements $RssStateCopyWith<$Res> {
   final $Res Function(RssState) _then;
 }
 
+/// @nodoc
 abstract class $UninitializedRssStateCopyWith<$Res> {
   factory $UninitializedRssStateCopyWith(UninitializedRssState value,
           $Res Function(UninitializedRssState) then) =
       _$UninitializedRssStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UninitializedRssStateCopyWithImpl<$Res>
     extends _$RssStateCopyWithImpl<$Res>
     implements $UninitializedRssStateCopyWith<$Res> {
@@ -104,6 +111,7 @@ class _$UninitializedRssStateCopyWithImpl<$Res>
   UninitializedRssState get _value => super._value as UninitializedRssState;
 }
 
+/// @nodoc
 class _$UninitializedRssState implements UninitializedRssState {
   _$UninitializedRssState();
 
@@ -187,6 +195,7 @@ abstract class UninitializedRssState implements RssState {
   factory UninitializedRssState() = _$UninitializedRssState;
 }
 
+/// @nodoc
 abstract class $ErrorRssStateCopyWith<$Res> {
   factory $ErrorRssStateCopyWith(
           ErrorRssState value, $Res Function(ErrorRssState) then) =
@@ -194,6 +203,7 @@ abstract class $ErrorRssStateCopyWith<$Res> {
   $Res call({String message});
 }
 
+/// @nodoc
 class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
     implements $ErrorRssStateCopyWith<$Res> {
   _$ErrorRssStateCopyWithImpl(
@@ -213,6 +223,7 @@ class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$ErrorRssState implements ErrorRssState {
   _$ErrorRssState({this.message});
 
@@ -310,12 +321,14 @@ abstract class ErrorRssState implements RssState {
   $ErrorRssStateCopyWith<ErrorRssState> get copyWith;
 }
 
+/// @nodoc
 abstract class $LoadingRssStateCopyWith<$Res> {
   factory $LoadingRssStateCopyWith(
           LoadingRssState value, $Res Function(LoadingRssState) then) =
       _$LoadingRssStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
     implements $LoadingRssStateCopyWith<$Res> {
   _$LoadingRssStateCopyWithImpl(
@@ -326,6 +339,7 @@ class _$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
   LoadingRssState get _value => super._value as LoadingRssState;
 }
 
+/// @nodoc
 class _$LoadingRssState implements LoadingRssState {
   _$LoadingRssState();
 
@@ -409,6 +423,7 @@ abstract class LoadingRssState implements RssState {
   factory LoadingRssState() = _$LoadingRssState;
 }
 
+/// @nodoc
 abstract class $LoadedRssStateCopyWith<$Res> {
   factory $LoadedRssStateCopyWith(
           LoadedRssState value, $Res Function(LoadedRssState) then) =
@@ -416,6 +431,7 @@ abstract class $LoadedRssStateCopyWith<$Res> {
   $Res call({RssFeed data, String timestamp});
 }
 
+/// @nodoc
 class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
     implements $LoadedRssStateCopyWith<$Res> {
   _$LoadedRssStateCopyWithImpl(
@@ -437,6 +453,7 @@ class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$LoadedRssState implements LoadedRssState {
   _$LoadedRssState({this.data, this.timestamp});
 
