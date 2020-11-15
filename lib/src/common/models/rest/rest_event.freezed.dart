@@ -9,6 +9,7 @@ part of 'rest_event.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RestEventTearOff {
   const _$RestEventTearOff();
 
@@ -116,9 +117,11 @@ class _$RestEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RestEvent = _$RestEventTearOff();
 
+/// @nodoc
 mixin _$RestEvent {
   String get path;
   bool get withLoading;
@@ -236,12 +239,14 @@ mixin _$RestEvent {
   $RestEventCopyWith<RestEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $RestEventCopyWith<$Res> {
   factory $RestEventCopyWith(RestEvent value, $Res Function(RestEvent) then) =
       _$RestEventCopyWithImpl<$Res>;
   $Res call({String path, bool withLoading});
 }
 
+/// @nodoc
 class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
   _$RestEventCopyWithImpl(this._value, this._then);
 
@@ -262,6 +267,7 @@ class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class $GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $GetEventCopyWith(GetEvent value, $Res Function(GetEvent) then) =
       _$GetEventCopyWithImpl<$Res>;
@@ -274,6 +280,7 @@ abstract class $GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
       Map<String, String> params});
 }
 
+/// @nodoc
 class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $GetEventCopyWith<$Res> {
   _$GetEventCopyWithImpl(GetEvent _value, $Res Function(GetEvent) _then)
@@ -304,6 +311,7 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$GetEvent implements GetEvent {
   _$GetEvent(this.path,
       {this.withLoading = true, this.fromJson, this.headers, this.params})
@@ -525,6 +533,7 @@ abstract class GetEvent implements RestEvent {
   $GetEventCopyWith<GetEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $PostEventCopyWith(PostEvent value, $Res Function(PostEvent) then) =
       _$PostEventCopyWithImpl<$Res>;
@@ -538,6 +547,7 @@ abstract class $PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
       String contentType});
 }
 
+/// @nodoc
 class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $PostEventCopyWith<$Res> {
   _$PostEventCopyWithImpl(PostEvent _value, $Res Function(PostEvent) _then)
@@ -571,6 +581,7 @@ class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$PostEvent implements PostEvent {
   _$PostEvent(this.path,
       {this.withLoading = true,
@@ -804,6 +815,7 @@ abstract class PostEvent implements RestEvent {
   $PostEventCopyWith<PostEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $PutEventCopyWith(PutEvent value, $Res Function(PutEvent) then) =
       _$PutEventCopyWithImpl<$Res>;
@@ -817,6 +829,7 @@ abstract class $PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
       String contentType});
 }
 
+/// @nodoc
 class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $PutEventCopyWith<$Res> {
   _$PutEventCopyWithImpl(PutEvent _value, $Res Function(PutEvent) _then)
@@ -850,6 +863,7 @@ class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$PutEvent implements PutEvent {
   _$PutEvent(this.path,
       {this.withLoading = true,
@@ -1083,6 +1097,7 @@ abstract class PutEvent implements RestEvent {
   $PutEventCopyWith<PutEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $PatchEventCopyWith(
           PatchEvent value, $Res Function(PatchEvent) then) =
@@ -1097,6 +1112,7 @@ abstract class $PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
       String contentType});
 }
 
+/// @nodoc
 class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $PatchEventCopyWith<$Res> {
   _$PatchEventCopyWithImpl(PatchEvent _value, $Res Function(PatchEvent) _then)
@@ -1130,6 +1146,7 @@ class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$PatchEvent implements PatchEvent {
   _$PatchEvent(this.path,
       {this.withLoading = true,
@@ -1363,6 +1380,7 @@ abstract class PatchEvent implements RestEvent {
   $PatchEventCopyWith<PatchEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $DeleteEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $DeleteEventCopyWith(
           DeleteEvent value, $Res Function(DeleteEvent) then) =
@@ -1371,6 +1389,7 @@ abstract class $DeleteEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call({String path, bool withLoading, Map<String, String> headers});
 }
 
+/// @nodoc
 class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $DeleteEventCopyWith<$Res> {
   _$DeleteEventCopyWithImpl(
@@ -1396,6 +1415,7 @@ class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DeleteEvent implements DeleteEvent {
   _$DeleteEvent(this.path, {this.withLoading = true, this.headers})
       : assert(path != null),
@@ -1599,6 +1619,7 @@ abstract class DeleteEvent implements RestEvent {
   $DeleteEventCopyWith<DeleteEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $FromDataEventCopyWith<$Res>
     implements $RestEventCopyWith<$Res> {
   factory $FromDataEventCopyWith(
@@ -1615,6 +1636,7 @@ abstract class $FromDataEventCopyWith<$Res>
       String contentType});
 }
 
+/// @nodoc
 class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $FromDataEventCopyWith<$Res> {
   _$FromDataEventCopyWithImpl(
@@ -1653,6 +1675,7 @@ class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$FromDataEvent implements FromDataEvent {
   _$FromDataEvent(this.path,
       {this.withLoading = true,
@@ -1897,6 +1920,7 @@ abstract class FromDataEvent implements RestEvent {
   $FromDataEventCopyWith<FromDataEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   factory $ClearEventCopyWith(
           ClearEvent value, $Res Function(ClearEvent) then) =
@@ -1905,6 +1929,7 @@ abstract class $ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
   $Res call({String path, bool withLoading});
 }
 
+/// @nodoc
 class _$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     implements $ClearEventCopyWith<$Res> {
   _$ClearEventCopyWithImpl(ClearEvent _value, $Res Function(ClearEvent) _then)
@@ -1926,6 +1951,7 @@ class _$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$ClearEvent implements ClearEvent {
   _$ClearEvent(this.path, {this.withLoading = false})
       : assert(path != null),
