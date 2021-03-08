@@ -7,16 +7,16 @@ import '../../common/source/data_source.dart';
 ///
 ///GET, POST, PUT, PATCH, DELETE available
 class RestCubit extends Cubit<RestState> {
-  RestDataSource _restDataSource;
-
   ///Main constructor
-  RestCubit(String baseUrl, {List<Interceptor> interceptors})
+  RestCubit(String baseUrl, {List<Interceptor>? interceptors})
       : super(RestState.uninitialized()) {
     _restDataSource = RestDataSource(
         baseURL: baseUrl,
         client: Dio()
           ..interceptors.addAll([if (interceptors != null) ...interceptors]));
   }
+
+  late RestDataSource _restDataSource;
 
   ///Get current base url
   String get currentBaseUrl => _restDataSource.currentBaseUrl;
@@ -30,11 +30,13 @@ class RestCubit extends Cubit<RestState> {
   ///[path], you can send the [headers], [params]
   ///and a [fromJson] method to parse the result
   ///json to a specific object.
-  void get(String path,
-      {Function(Map<String, dynamic>) fromJson,
-      Map<String, String> headers,
-      Map<String, String> params,
-      bool withLoading = true}) async {
+  void get(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, String>? params,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.get(path,
@@ -55,12 +57,14 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void post(String path,
-      {Function(Map<String, dynamic>) fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType,
-      bool withLoading = true}) async {
+  void post(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.post(path,
@@ -84,12 +88,14 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void put(String path,
-      {Function(Map<String, dynamic>) fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType,
-      bool withLoading = true}) async {
+  void put(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.put(path,
@@ -113,12 +119,14 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void patch(String path,
-      {Function(Map<String, dynamic>) fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType,
-      bool withLoading = true}) async {
+  void patch(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.patch(path,
@@ -141,8 +149,8 @@ class RestCubit extends Cubit<RestState> {
   ///Perform a DELETE request to API with specific
   ///[path]. You can send the [headers] for request.
   void delete(String path,
-      {Function(Map<String, dynamic>) fromJson,
-      Map<String, String> headers,
+      {Function(Map<String, dynamic>)? fromJson,
+      Map<String, String>? headers,
       bool withLoading = true}) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -165,13 +173,15 @@ class RestCubit extends Cubit<RestState> {
   ///Usefull for uploading files
   ///
   ///You can specify the [headers] for request.
-  void formData(String path,
-      {FormData body,
-      Function(Map<String, dynamic>) fromJson,
-      Function(int, int) onProgressChanged,
-      Map<String, String> headers,
-      String contentType,
-      bool withLoading = true}) async {
+  void formData(
+    String path, {
+    required FormData body,
+    Function(Map<String, dynamic>)? fromJson,
+    Function(int, int)? onProgressChanged,
+    Map<String, String>? headers,
+    String? contentType,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.formData(path, body,

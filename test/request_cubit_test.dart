@@ -10,31 +10,31 @@ void main() {
     });
 
     blocTest('make a simple task',
-        act: (cubit) => cubit.perform(
-            () async => Future.delayed(Duration(seconds: 3), () => true),
+        act: (cubit) => (cubit as RequestCubit).perform(
+            () async => Future.delayed(const Duration(seconds: 3), () => true),
             'TimerTask'),
         build: () => RequestCubit(),
-        expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()]);
+        expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()]);
 
     blocTest('make a simple request on internet',
-        act: (cubit) => cubit.perform(
+        act: (cubit) => (cubit as RequestCubit).perform(
             () async => await (Dio()..interceptors.add(logginInterceptor))
                 .get('https://jsonplaceholder.cypress.io/posts/1')
               ..data,
             'NetworkRequest'),
         build: () => RequestCubit(),
-        expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
+        expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
         skip: 0);
   });
 
   group('Request cubit errors', () {
     blocTest('simple task fail',
-        act: (cubit) => cubit.perform(
+        act: (cubit) => (cubit as RequestCubit).perform(
             () async => Future.delayed(
-                Duration(seconds: 3), () => throw Exception('failed')),
+                const Duration(seconds: 3), () => throw Exception('failed')),
             'FailTask'),
         build: () => RequestCubit(),
-        expect: [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
+        expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
         skip: 0);
   });
 }

@@ -1,3 +1,9 @@
+## [4.0.0-nullsafety.1]
+* **BREAKING**: Null safety support
+* Removes webfeed temporarily
+* Improves error management
+* Update dependencies
+
 ## [3.0.2]
 * Update dependencies
 

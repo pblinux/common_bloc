@@ -1,9 +1,9 @@
 # common_bloc
-[![pub](https://img.shields.io/badge/pub-3.0.2-blue)](https://pub.dev/packages/common_bloc)
+[![pub](https://img.shields.io/badge/pub-4.0.0-blue)](https://pub.dev/packages/common_bloc)
 ![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
 [![codecov](https://codecov.io/gh/pblinux/common_bloc/branch/master/graph/badge.svg)](https://codecov.io/gh/pblinux/common_bloc)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/pblinux/end_credits)
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
 A collection of common blocs that maybe will be used very often.
 
@@ -14,7 +14,7 @@ Sometimes we need to create various blocs in the same project to do almost the s
 - [bloc and cubit](https://pub.dev/packages/bloc)
 - [freezed](https://pub.dev/packages/freezed)
 - [dio](https://pub.dev/packages/dio)
-- [webfeed](https://pub.dev/packages/webfeed)
+<!-- - [webfeed](https://pub.dev/packages/webfeed) -->
 
 ## Blocs
 
@@ -96,7 +96,7 @@ This use the same states of RestBloc:
 - error
 - loaded
 
-### RssBloc
+<!-- ### RssBloc
 This bloc make a request to an RSS url and returns an formatted object.
 
 #### Usage
@@ -111,10 +111,10 @@ rssBloc.getFeed('http://www.publicbooks.org/tag/fiction/feed');
 ```
 
 #### States
-This bloc use the same states of RestBloc and RequestState.
+This bloc use the same states of RestBloc and RequestState. -->
 
 ## Cubits
 
-A cubit version for `Request`, `Rest` and `RSS` is available with the same states.
+Cubit versions for `Request` and `Rest` are available with the same states and events.
 
 

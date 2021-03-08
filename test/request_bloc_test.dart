@@ -9,32 +9,37 @@ void main() {
       expect(RequestBloc().state, isA<UninitializedRequestState>());
     });
 
-    blocTest('make a simple task',
-        act: (bloc) => bloc.perform(
-            () async => Future.delayed(Duration(seconds: 3), () => true),
-            'TimerTask'),
-        build: () => RequestBloc(),
-        expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()]);
+    blocTest(
+      'make a simple task',
+      act: (bloc) => (bloc as RequestBloc).perform(
+          () async => await (Dio()..interceptors.add(logginInterceptor))
+              .get('https://jsonplaceholder.cypress.io/posts/1')
+            ..data,
+          'NetworkRequest'),
+      build: () => RequestBloc(),
+      expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
+      skip: 0,
+    );
 
     blocTest('make a simple request on internet',
-        act: (bloc) => bloc.perform(
+        act: (bloc) => (bloc as RequestBloc).perform(
             () async => await (Dio()..interceptors.add(logginInterceptor))
                 .get('https://jsonplaceholder.cypress.io/posts/1')
               ..data,
             'NetworkRequest'),
         build: () => RequestBloc(),
-        expect: [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
+        expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
         skip: 0);
   });
 
   group('Request bloc errors', () {
     blocTest('simple task fail',
-        act: (bloc) => bloc.perform(
+        act: (bloc) => (bloc as RequestBloc).perform(
             () async => Future.delayed(
-                Duration(seconds: 3), () => throw Exception('failed')),
+                const Duration(seconds: 3), () => throw Exception('failed')),
             'FailTask'),
         build: () => RequestBloc(),
-        expect: [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
+        expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
         skip: 0);
   });
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'request_event.dart';
 
@@ -9,11 +9,13 @@ part of 'request_event.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RequestEventTearOff {
   const _$RequestEventTearOff();
 
-// ignore: unused_element
   _RequestEvent call(Function requestAction, String requestName,
       {bool withLoading = true}) {
     return _RequestEvent(
@@ -25,16 +27,17 @@ class _$RequestEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RequestEvent = _$RequestEventTearOff();
 
 /// @nodoc
 mixin _$RequestEvent {
-  Function get requestAction;
-  String get requestName;
-  bool get withLoading;
+  Function get requestAction => throw _privateConstructorUsedError;
+  String get requestName => throw _privateConstructorUsedError;
+  bool get withLoading => throw _privateConstructorUsedError;
 
-  $RequestEventCopyWith<RequestEvent> get copyWith;
+  @JsonKey(ignore: true)
+  $RequestEventCopyWith<RequestEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,18 +58,23 @@ class _$RequestEventCopyWithImpl<$Res> implements $RequestEventCopyWith<$Res> {
 
   @override
   $Res call({
-    Object requestAction = freezed,
-    Object requestName = freezed,
-    Object withLoading = freezed,
+    Object? requestAction = freezed,
+    Object? requestName = freezed,
+    Object? withLoading = freezed,
   }) {
     return _then(_value.copyWith(
       requestAction: requestAction == freezed
           ? _value.requestAction
-          : requestAction as Function,
-      requestName:
-          requestName == freezed ? _value.requestName : requestName as String,
-      withLoading:
-          withLoading == freezed ? _value.withLoading : withLoading as bool,
+          : requestAction // ignore: cast_nullable_to_non_nullable
+              as Function,
+      requestName: requestName == freezed
+          ? _value.requestName
+          : requestName // ignore: cast_nullable_to_non_nullable
+              as String,
+      withLoading: withLoading == freezed
+          ? _value.withLoading
+          : withLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -93,17 +101,23 @@ class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object requestAction = freezed,
-    Object requestName = freezed,
-    Object withLoading = freezed,
+    Object? requestAction = freezed,
+    Object? requestName = freezed,
+    Object? withLoading = freezed,
   }) {
     return _then(_RequestEvent(
       requestAction == freezed
           ? _value.requestAction
-          : requestAction as Function,
-      requestName == freezed ? _value.requestName : requestName as String,
-      withLoading:
-          withLoading == freezed ? _value.withLoading : withLoading as bool,
+          : requestAction // ignore: cast_nullable_to_non_nullable
+              as Function,
+      requestName == freezed
+          ? _value.requestName
+          : requestName // ignore: cast_nullable_to_non_nullable
+              as String,
+      withLoading: withLoading == freezed
+          ? _value.withLoading
+          : withLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -111,10 +125,7 @@ class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
 /// @nodoc
 class _$_RequestEvent implements _RequestEvent {
   _$_RequestEvent(this.requestAction, this.requestName,
-      {this.withLoading = true})
-      : assert(requestAction != null),
-        assert(requestName != null),
-        assert(withLoading != null);
+      {this.withLoading = true});
 
   @override
   final Function requestAction;
@@ -151,6 +162,7 @@ class _$_RequestEvent implements _RequestEvent {
       const DeepCollectionEquality().hash(requestName) ^
       const DeepCollectionEquality().hash(withLoading);
 
+  @JsonKey(ignore: true)
   @override
   _$RequestEventCopyWith<_RequestEvent> get copyWith =>
       __$RequestEventCopyWithImpl<_RequestEvent>(this, _$identity);
@@ -161,11 +173,13 @@ abstract class _RequestEvent implements RequestEvent {
       {bool withLoading}) = _$_RequestEvent;
 
   @override
-  Function get requestAction;
+  Function get requestAction => throw _privateConstructorUsedError;
   @override
-  String get requestName;
+  String get requestName => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
+  bool get withLoading => throw _privateConstructorUsedError;
   @override
-  _$RequestEventCopyWith<_RequestEvent> get copyWith;
+  @JsonKey(ignore: true)
+  _$RequestEventCopyWith<_RequestEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }

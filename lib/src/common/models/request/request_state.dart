@@ -4,19 +4,22 @@ part 'request_state.freezed.dart';
 
 ///State of RequestBloc
 @freezed
-abstract class RequestState with _$RequestState {
+class RequestState with _$RequestState {
   ///Initial state
   factory RequestState.uninitialized() = UninitializedRequestState;
 
   ///State when throws an error
-  factory RequestState.error({String message}) = ErrorRequestState;
+  factory RequestState.error({
+    required String message,
+  }) = ErrorRequestState;
 
   ///State for loading request
   factory RequestState.loading() = LoadingRequestState;
 
   ///Finished state
-  factory RequestState.loaded(
-      {dynamic data,
-      String lastRequest,
-      String timestamp}) = LoadedRequestState;
+  factory RequestState.loaded({
+    required dynamic data,
+    required String lastRequest,
+    required String timestamp,
+  }) = LoadedRequestState;
 }
