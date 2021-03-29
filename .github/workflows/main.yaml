@@ -18,7 +18,7 @@ jobs:
       - name: Analyze code
         run: dart analyze --fatal-infos --fatal-warnings .
       - name: Testing
-        run: dart test --coverage=coverage && pub run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
+        run: dart test --coverage=coverage && pub run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
       - name: Code Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
         with:
