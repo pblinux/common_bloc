@@ -14,7 +14,10 @@ Sometimes we need to create various blocs in the same project to do almost the s
 - [bloc and cubit](https://pub.dev/packages/bloc)
 - [freezed](https://pub.dev/packages/freezed)
 - [dio](https://pub.dev/packages/dio)
-<!-- - [webfeed](https://pub.dev/packages/webfeed) -->
+- [dart_rss](https://pub.dev/packages/dart_rss)
+
+## common_bloc 4.0.0
+As of version `4.0.0`, you must use Dart >= 2.12.
 
 ## Blocs
 
@@ -96,7 +99,7 @@ This use the same states of RestBloc:
 - error
 - loaded
 
-<!-- ### RssBloc
+### RssBloc
 This bloc make a request to an RSS url and returns an formatted object.
 
 #### Usage
@@ -111,7 +114,7 @@ rssBloc.getFeed('http://www.publicbooks.org/tag/fiction/feed');
 ```
 
 #### States
-This bloc use the same states of RestBloc and RequestState. -->
+This bloc use the same states of RestBloc and RequestState.
 
 ## Cubits
 

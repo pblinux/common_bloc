@@ -14,7 +14,7 @@ class _RssScreenState extends State<RssScreen> {
   @override
   void initState() {
     super.initState();
-    _rssBloc.getFeed('http://www.publicbooks.org/tag/fiction/feed/');
+    _rssBloc.getFeed('https://www.publicbooks.org/tag/fiction/feed/');
   }
 
   @override

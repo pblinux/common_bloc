@@ -1,3 +1,8 @@
+## [4.0.0]
+* Full null safety support 
+* Replace `webfeed` with `dart_rss`
+* Update dependencies
+
 ## [4.0.0-nullsafety.1]
 * **BREAKING**: Null safety support
 * Removes webfeed temporarily

@@ -39,9 +39,7 @@ void main() {
   });
 }
 
-InterceptorsWrapper get logginInterceptor =>
-    InterceptorsWrapper(onRequest: (request) {
-      return request;
-    }, onResponse: (response) {
-      return response;
-    });
+InterceptorsWrapper get logginInterceptor => InterceptorsWrapper(
+      onResponse: (response, handler) => handler.next(response),
+      onRequest: (options, handler) => handler.next(options),
+    );
