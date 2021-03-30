@@ -8,10 +8,11 @@ import 'response.dart';
 ///Used in RestBloc and RssBloc
 extension ResponseManagment on Response {
   ///Returns the response with data and headers
-  Map<String, dynamic> manageRestRequestResponse(
-          {Function(Map<String, dynamic>) fromJson}) =>
+  Map<String, dynamic> manageRestRequestResponse({
+    Function(Map<String, dynamic>)? fromJson,
+  }) =>
       {
-        'data': fromJson != null ? fromJson(data) : data,
+        'data': fromJson != null ? fromJson(data) : data ?? '',
         'headers': headers.map
       };
 
@@ -25,37 +26,37 @@ extension ResponseManagment on Response {
 extension ErrorManagment on DioError {
   ///Error managment
   ResponseException manageRequestError() {
-    switch (response.statusCode) {
+    switch (response?.statusCode) {
       case 400:
         return ResponseException(
             code: 400,
             humanMessage: 'Bad request',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
       case 401:
         return ResponseException(
             code: 401,
             humanMessage: 'Unauthorized',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
       case 403:
         return ResponseException(
             code: 403,
             humanMessage: 'Forbidden',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
       case 422:
         return ResponseException(
             code: 422,
             humanMessage: 'Unprocessable Entity',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
       case 500:
         return ResponseException(
             code: 500,
             humanMessage: 'Server error',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
       default:
         return ResponseException(
             code: 100,
             humanMessage: 'Unknown error',
-            message: json.encode(response.data));
+            message: json.encode(response?.data));
     }
   }
 }

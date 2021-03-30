@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'rss_state.dart';
 
@@ -9,29 +9,28 @@ part of 'rss_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RssStateTearOff {
   const _$RssStateTearOff();
 
-// ignore: unused_element
   UninitializedRssState uninitialized() {
     return UninitializedRssState();
   }
 
-// ignore: unused_element
-  ErrorRssState error({String message}) {
+  ErrorRssState error({required String message}) {
     return ErrorRssState(
       message: message,
     );
   }
 
-// ignore: unused_element
   LoadingRssState loading() {
     return LoadingRssState();
   }
 
-// ignore: unused_element
-  LoadedRssState loaded({RssFeed data, String timestamp}) {
+  LoadedRssState loaded({required RssFeed data, required String timestamp}) {
     return LoadedRssState(
       data: data,
       timestamp: timestamp,
@@ -40,41 +39,44 @@ class _$RssStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RssState = _$RssStateTearOff();
 
 /// @nodoc
 mixin _$RssState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(RssFeed data, String timestamp) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRssState value) uninitialized,
+    required TResult Function(ErrorRssState value) error,
+    required TResult Function(LoadingRssState value) loading,
+    required TResult Function(LoadedRssState value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -130,29 +132,24 @@ class _$UninitializedRssState implements UninitializedRssState {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return uninitialized();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uninitialized != null) {
       return uninitialized();
     }
@@ -161,29 +158,24 @@ class _$UninitializedRssState implements UninitializedRssState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRssState value) uninitialized,
+    required TResult Function(ErrorRssState value) error,
+    required TResult Function(LoadingRssState value) loading,
+    required TResult Function(LoadedRssState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return uninitialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uninitialized != null) {
       return uninitialized(this);
     }
@@ -215,17 +207,20 @@ class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(ErrorRssState(
-      message: message == freezed ? _value.message : message as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$ErrorRssState implements ErrorRssState {
-  _$ErrorRssState({this.message});
+  _$ErrorRssState({required this.message});
 
   @override
   final String message;
@@ -247,35 +242,31 @@ class _$ErrorRssState implements ErrorRssState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
       _$ErrorRssStateCopyWithImpl<ErrorRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(message);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(message);
     }
@@ -284,29 +275,24 @@ class _$ErrorRssState implements ErrorRssState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRssState value) uninitialized,
+    required TResult Function(ErrorRssState value) error,
+    required TResult Function(LoadingRssState value) loading,
+    required TResult Function(LoadedRssState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -315,10 +301,12 @@ class _$ErrorRssState implements ErrorRssState {
 }
 
 abstract class ErrorRssState implements RssState {
-  factory ErrorRssState({String message}) = _$ErrorRssState;
+  factory ErrorRssState({required String message}) = _$ErrorRssState;
 
-  String get message;
-  $ErrorRssStateCopyWith<ErrorRssState> get copyWith;
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -358,29 +346,24 @@ class _$LoadingRssState implements LoadingRssState {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -389,29 +372,24 @@ class _$LoadingRssState implements LoadingRssState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRssState value) uninitialized,
+    required TResult Function(ErrorRssState value) error,
+    required TResult Function(LoadingRssState value) loading,
+    required TResult Function(LoadedRssState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -443,19 +421,25 @@ class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object timestamp = freezed,
+    Object? data = freezed,
+    Object? timestamp = freezed,
   }) {
     return _then(LoadedRssState(
-      data: data == freezed ? _value.data : data as RssFeed,
-      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as RssFeed,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$LoadedRssState implements LoadedRssState {
-  _$LoadedRssState({this.data, this.timestamp});
+  _$LoadedRssState({required this.data, required this.timestamp});
 
   @override
   final RssFeed data;
@@ -484,35 +468,31 @@ class _$LoadedRssState implements LoadedRssState {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(timestamp);
 
+  @JsonKey(ignore: true)
   @override
   $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
       _$LoadedRssStateCopyWithImpl<LoadedRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(RssFeed data, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(data, timestamp);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(RssFeed data, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(data, timestamp);
     }
@@ -521,29 +501,24 @@ class _$LoadedRssState implements LoadedRssState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRssState value),
-    @required Result error(ErrorRssState value),
-    @required Result loading(LoadingRssState value),
-    @required Result loaded(LoadedRssState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRssState value) uninitialized,
+    required TResult Function(ErrorRssState value) error,
+    required TResult Function(LoadingRssState value) loading,
+    required TResult Function(LoadedRssState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRssState value),
-    Result error(ErrorRssState value),
-    Result loading(LoadingRssState value),
-    Result loaded(LoadedRssState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -552,9 +527,12 @@ class _$LoadedRssState implements LoadedRssState {
 }
 
 abstract class LoadedRssState implements RssState {
-  factory LoadedRssState({RssFeed data, String timestamp}) = _$LoadedRssState;
+  factory LoadedRssState({required RssFeed data, required String timestamp}) =
+      _$LoadedRssState;
 
-  RssFeed get data;
-  String get timestamp;
-  $LoadedRssStateCopyWith<LoadedRssState> get copyWith;
+  RssFeed get data => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

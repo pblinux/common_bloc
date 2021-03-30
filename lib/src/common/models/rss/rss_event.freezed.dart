@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'rss_event.dart';
 
@@ -9,11 +9,13 @@ part of 'rss_event.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RssEventTearOff {
   const _$RssEventTearOff();
 
-// ignore: unused_element
   _RssEvent call(String rssUrl, {bool withLoading = true}) {
     return _RssEvent(
       rssUrl,
@@ -23,15 +25,16 @@ class _$RssEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RssEvent = _$RssEventTearOff();
 
 /// @nodoc
 mixin _$RssEvent {
-  String get rssUrl;
-  bool get withLoading;
+  String get rssUrl => throw _privateConstructorUsedError;
+  bool get withLoading => throw _privateConstructorUsedError;
 
-  $RssEventCopyWith<RssEvent> get copyWith;
+  @JsonKey(ignore: true)
+  $RssEventCopyWith<RssEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -51,13 +54,18 @@ class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
 
   @override
   $Res call({
-    Object rssUrl = freezed,
-    Object withLoading = freezed,
+    Object? rssUrl = freezed,
+    Object? withLoading = freezed,
   }) {
     return _then(_value.copyWith(
-      rssUrl: rssUrl == freezed ? _value.rssUrl : rssUrl as String,
-      withLoading:
-          withLoading == freezed ? _value.withLoading : withLoading as bool,
+      rssUrl: rssUrl == freezed
+          ? _value.rssUrl
+          : rssUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      withLoading: withLoading == freezed
+          ? _value.withLoading
+          : withLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -81,22 +89,25 @@ class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object rssUrl = freezed,
-    Object withLoading = freezed,
+    Object? rssUrl = freezed,
+    Object? withLoading = freezed,
   }) {
     return _then(_RssEvent(
-      rssUrl == freezed ? _value.rssUrl : rssUrl as String,
-      withLoading:
-          withLoading == freezed ? _value.withLoading : withLoading as bool,
+      rssUrl == freezed
+          ? _value.rssUrl
+          : rssUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      withLoading: withLoading == freezed
+          ? _value.withLoading
+          : withLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_RssEvent implements _RssEvent {
-  _$_RssEvent(this.rssUrl, {this.withLoading = true})
-      : assert(rssUrl != null),
-        assert(withLoading != null);
+  _$_RssEvent(this.rssUrl, {this.withLoading = true});
 
   @override
   final String rssUrl;
@@ -126,6 +137,7 @@ class _$_RssEvent implements _RssEvent {
       const DeepCollectionEquality().hash(rssUrl) ^
       const DeepCollectionEquality().hash(withLoading);
 
+  @JsonKey(ignore: true)
   @override
   _$RssEventCopyWith<_RssEvent> get copyWith =>
       __$RssEventCopyWithImpl<_RssEvent>(this, _$identity);
@@ -135,9 +147,11 @@ abstract class _RssEvent implements RssEvent {
   factory _RssEvent(String rssUrl, {bool withLoading}) = _$_RssEvent;
 
   @override
-  String get rssUrl;
+  String get rssUrl => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
+  bool get withLoading => throw _privateConstructorUsedError;
   @override
-  _$RssEventCopyWith<_RssEvent> get copyWith;
+  @JsonKey(ignore: true)
+  _$RssEventCopyWith<_RssEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }

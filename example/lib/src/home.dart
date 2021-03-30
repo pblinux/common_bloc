@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
 /// Show item for common_bloc examples
 class HomeItem extends StatelessWidget {
   /// Item pressed
-  final Function onPressed;
+  final Function() onPressed;
 
   /// Item icon
   final IconData icon;
@@ -56,11 +56,12 @@ class HomeItem extends StatelessWidget {
   final String title;
 
   /// Main constructor
-  HomeItem(
-      {@required this.icon,
-      @required this.onPressed,
-      @required this.subtitle,
-      @required this.title});
+  HomeItem({
+    required this.icon,
+    required this.onPressed,
+    required this.subtitle,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {

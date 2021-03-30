@@ -8,20 +8,26 @@ void main() {
       expect(RssCubit().state, isA<UninitializedRssState>());
     });
 
-    blocTest('get rss feed',
-        act: (cubit) =>
-            cubit.getFeed('http://www.publicbooks.org/tag/fiction/feed'),
-        build: () => RssCubit(),
-        expect: [isA<LoadingRssState>(), isA<LoadedRssState>()],
-        skip: 0);
+    blocTest(
+      'get rss feed',
+      act: (cubit) => (cubit as RssCubit).getFeed(
+        'http://www.publicbooks.org/tag/fiction/feed',
+      ),
+      build: () => RssCubit(),
+      expect: () => [isA<LoadingRssState>(), isA<LoadedRssState>()],
+      skip: 0,
+    );
   });
 
   group('Rss cubit errors', () {
-    blocTest('fail geting rss feed',
-        act: (cubit) =>
-            cubit.getFeed('http://www.publicbooks.org/tag/fiction/feeed'),
-        build: () => RssCubit(),
-        expect: [isA<LoadingRssState>(), isA<ErrorRssState>()],
-        skip: 0);
+    blocTest(
+      'fail geting rss feed',
+      act: (cubit) => (cubit as RssCubit).getFeed(
+        'http://www.publicbooks.org/tag/fiction/feeed',
+      ),
+      build: () => RssCubit(),
+      expect: () => [isA<LoadingRssState>(), isA<ErrorRssState>()],
+      skip: 0,
+    );
   });
 }

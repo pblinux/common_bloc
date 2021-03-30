@@ -1,15 +1,15 @@
 import 'package:bloc/bloc.dart';
-import 'package:webfeed/webfeed.dart';
+import 'package:dart_rss/domain/rss_feed.dart';
 import '../../common/models/rss/rss_state.dart';
 import '../../common/source/rss_source.dart';
 
 ///RequestBloc - A bloc to fetch RSS feed
 ///
 class RssCubit extends Cubit<RssState> {
-  final RssDataSource _rssDataSource = RssDataSource();
-
   ///Default constructor
   RssCubit() : super(RssState.uninitialized());
+
+  final RssDataSource _rssDataSource = RssDataSource();
 
   ///Perfoms the fetch of a RSS feed.
   void getFeed(String rssUrl, {bool withLoading = true}) async {

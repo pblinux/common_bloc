@@ -1,19 +1,18 @@
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
 import '../response/response_extension.dart';
 
 ///Data source for RestBloc
 class RestDataSource {
+  ///Main constructor
+  RestDataSource({required this.baseURL, required this.client}) {
+    client.options.baseUrl = baseURL;
+  }
+
   ///Http client for requests
   final Dio client;
 
   ///Base url for requests
   String baseURL;
-
-  ///Main constructor
-  RestDataSource({@required this.baseURL, @required this.client}) {
-    client.options.baseUrl = baseURL;
-  }
 
   /// Get current base url
   String get currentBaseUrl => baseURL;
@@ -27,10 +26,12 @@ class RestDataSource {
   ///[path], you can send the [headers], [params]
   ///and a [fromJson] method to parse the result
   ///json to a specific object.
-  Future<Map<String, dynamic>> get(String path,
-      {Function fromJson,
-      Map<String, String> headers,
-      Map<String, String> params}) async {
+  Future<Map<String, dynamic>> get(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, String>? params,
+  }) async {
     try {
       final response = await client.get(path,
           queryParameters: params,
@@ -47,11 +48,13 @@ class RestDataSource {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  Future<Map<String, dynamic>> post(String path,
-      {Function fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType}) async {
+  Future<Map<String, dynamic>> post(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+  }) async {
     try {
       final response = await client.post(path,
           data: body,
@@ -71,11 +74,13 @@ class RestDataSource {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  Future<Map<String, dynamic>> put(String path,
-      {Function fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType}) async {
+  Future<Map<String, dynamic>> put(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+  }) async {
     try {
       final response = await client.put(path,
           data: body,
@@ -95,11 +100,13 @@ class RestDataSource {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  Future<Map<String, dynamic>> patch(String path,
-      {Function fromJson,
-      Map<String, String> headers,
-      Map<String, dynamic> body,
-      String contentType}) async {
+  Future<Map<String, dynamic>> patch(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    Map<String, dynamic>? body,
+    String? contentType,
+  }) async {
     try {
       final response = await client.patch(path,
           data: body,
@@ -117,8 +124,10 @@ class RestDataSource {
   ///
   ///Perform a DELETE request to API with specific
   ///[path]. You can send the [headers] for request.
-  Future<Map<String, dynamic>> delete(String path,
-      {Map<String, String> headers}) async {
+  Future<Map<String, dynamic>> delete(
+    String path, {
+    Map<String, String>? headers,
+  }) async {
     try {
       final response = await client.delete(path,
           options: Options(headers: headers, responseType: ResponseType.json));
@@ -136,11 +145,14 @@ class RestDataSource {
   ///Usefull for uploading files
   ///
   ///You can specify the [headers] for request.
-  Future<dynamic> formData(String path, FormData formData,
-      {Function fromJson,
-      Function(int, int) onProgressChanged,
-      Map<String, String> headers,
-      String contentType}) async {
+  Future<dynamic> formData(
+    String path,
+    FormData formData, {
+    Function(Map<String, dynamic>)? fromJson,
+    Function(int, int)? onProgressChanged,
+    Map<String, String>? headers,
+    String? contentType,
+  }) async {
     try {
       final response = await client.post(path,
           data: formData,

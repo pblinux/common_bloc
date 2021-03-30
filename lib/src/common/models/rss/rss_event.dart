@@ -4,7 +4,7 @@ part 'rss_event.freezed.dart';
 
 ///Events for RssBloc
 @freezed
-abstract class RssEvent with _$RssEvent {
+class RssEvent with _$RssEvent {
   ///Perform a RSS feed fetch
   factory RssEvent(String rssUrl, {@Default(true) bool withLoading}) =
       _RssEvent;

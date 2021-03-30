@@ -1,7 +1,12 @@
-import 'package:meta/meta.dart';
-
 ///Exception for RestBloc
 class ResponseException implements Exception {
+  ///Main constructor
+  ResponseException({
+    required this.code,
+    required this.humanMessage,
+    required this.message,
+  });
+
   ///Readable message
   final String humanMessage;
 
@@ -10,10 +15,4 @@ class ResponseException implements Exception {
 
   ///Status code
   final int code;
-
-  ///Main constructor
-  ResponseException(
-      {@required this.code,
-      @required this.humanMessage,
-      @required this.message});
 }

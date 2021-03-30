@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'request_state.dart';
 
@@ -9,30 +9,31 @@ part of 'request_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RequestStateTearOff {
   const _$RequestStateTearOff();
 
-// ignore: unused_element
   UninitializedRequestState uninitialized() {
     return UninitializedRequestState();
   }
 
-// ignore: unused_element
-  ErrorRequestState error({String message}) {
+  ErrorRequestState error({required String message}) {
     return ErrorRequestState(
       message: message,
     );
   }
 
-// ignore: unused_element
   LoadingRequestState loading() {
     return LoadingRequestState();
   }
 
-// ignore: unused_element
   LoadedRequestState loaded(
-      {dynamic data, String lastRequest, String timestamp}) {
+      {required dynamic data,
+      required String lastRequest,
+      required String timestamp}) {
     return LoadedRequestState(
       data: data,
       lastRequest: lastRequest,
@@ -42,41 +43,47 @@ class _$RequestStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RequestState = _$RequestStateTearOff();
 
 /// @nodoc
 mixin _$RequestState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(
+            dynamic data, String lastRequest, String timestamp)
+        loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRequestState value) uninitialized,
+    required TResult Function(ErrorRequestState value) error,
+    required TResult Function(LoadingRequestState value) loading,
+    required TResult Function(LoadedRequestState value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -134,29 +141,27 @@ class _$UninitializedRequestState implements UninitializedRequestState {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(
+            dynamic data, String lastRequest, String timestamp)
+        loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return uninitialized();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uninitialized != null) {
       return uninitialized();
     }
@@ -165,29 +170,24 @@ class _$UninitializedRequestState implements UninitializedRequestState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRequestState value) uninitialized,
+    required TResult Function(ErrorRequestState value) error,
+    required TResult Function(LoadingRequestState value) loading,
+    required TResult Function(LoadedRequestState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return uninitialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (uninitialized != null) {
       return uninitialized(this);
     }
@@ -220,17 +220,20 @@ class _$ErrorRequestStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(ErrorRequestState(
-      message: message == freezed ? _value.message : message as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$ErrorRequestState implements ErrorRequestState {
-  _$ErrorRequestState({this.message});
+  _$ErrorRequestState({required this.message});
 
   @override
   final String message;
@@ -252,35 +255,34 @@ class _$ErrorRequestState implements ErrorRequestState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith =>
       _$ErrorRequestStateCopyWithImpl<ErrorRequestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(
+            dynamic data, String lastRequest, String timestamp)
+        loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(message);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(message);
     }
@@ -289,29 +291,24 @@ class _$ErrorRequestState implements ErrorRequestState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRequestState value) uninitialized,
+    required TResult Function(ErrorRequestState value) error,
+    required TResult Function(LoadingRequestState value) loading,
+    required TResult Function(LoadedRequestState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -320,10 +317,12 @@ class _$ErrorRequestState implements ErrorRequestState {
 }
 
 abstract class ErrorRequestState implements RequestState {
-  factory ErrorRequestState({String message}) = _$ErrorRequestState;
+  factory ErrorRequestState({required String message}) = _$ErrorRequestState;
 
-  String get message;
-  $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith;
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -364,29 +363,27 @@ class _$LoadingRequestState implements LoadingRequestState {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(
+            dynamic data, String lastRequest, String timestamp)
+        loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -395,29 +392,24 @@ class _$LoadingRequestState implements LoadingRequestState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRequestState value) uninitialized,
+    required TResult Function(ErrorRequestState value) error,
+    required TResult Function(LoadingRequestState value) loading,
+    required TResult Function(LoadedRequestState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -450,22 +442,31 @@ class _$LoadedRequestStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object lastRequest = freezed,
-    Object timestamp = freezed,
+    Object? data = freezed,
+    Object? lastRequest = freezed,
+    Object? timestamp = freezed,
   }) {
     return _then(LoadedRequestState(
-      data: data == freezed ? _value.data : data as dynamic,
-      lastRequest:
-          lastRequest == freezed ? _value.lastRequest : lastRequest as String,
-      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      lastRequest: lastRequest == freezed
+          ? _value.lastRequest
+          : lastRequest // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$LoadedRequestState implements LoadedRequestState {
-  _$LoadedRequestState({this.data, this.lastRequest, this.timestamp});
+  _$LoadedRequestState(
+      {required this.data, required this.lastRequest, required this.timestamp});
 
   @override
   final dynamic data;
@@ -500,35 +501,34 @@ class _$LoadedRequestState implements LoadedRequestState {
       const DeepCollectionEquality().hash(lastRequest) ^
       const DeepCollectionEquality().hash(timestamp);
 
+  @JsonKey(ignore: true)
   @override
   $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith =>
       _$LoadedRequestStateCopyWithImpl<LoadedRequestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result uninitialized(),
-    @required Result error(String message),
-    @required Result loading(),
-    @required Result loaded(dynamic data, String lastRequest, String timestamp),
+  TResult when<TResult extends Object?>({
+    required TResult Function() uninitialized,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+    required TResult Function(
+            dynamic data, String lastRequest, String timestamp)
+        loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(data, lastRequest, timestamp);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result uninitialized(),
-    Result error(String message),
-    Result loading(),
-    Result loaded(dynamic data, String lastRequest, String timestamp),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(data, lastRequest, timestamp);
     }
@@ -537,29 +537,24 @@ class _$LoadedRequestState implements LoadedRequestState {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result uninitialized(UninitializedRequestState value),
-    @required Result error(ErrorRequestState value),
-    @required Result loading(LoadingRequestState value),
-    @required Result loaded(LoadedRequestState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(UninitializedRequestState value) uninitialized,
+    required TResult Function(ErrorRequestState value) error,
+    required TResult Function(LoadingRequestState value) loading,
+    required TResult Function(LoadedRequestState value) loaded,
   }) {
-    assert(uninitialized != null);
-    assert(error != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result uninitialized(UninitializedRequestState value),
-    Result error(ErrorRequestState value),
-    Result loading(LoadingRequestState value),
-    Result loaded(LoadedRequestState value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -569,12 +564,14 @@ class _$LoadedRequestState implements LoadedRequestState {
 
 abstract class LoadedRequestState implements RequestState {
   factory LoadedRequestState(
-      {dynamic data,
-      String lastRequest,
-      String timestamp}) = _$LoadedRequestState;
+      {required dynamic data,
+      required String lastRequest,
+      required String timestamp}) = _$LoadedRequestState;
 
-  dynamic get data;
-  String get lastRequest;
-  String get timestamp;
-  $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith;
+  dynamic get data => throw _privateConstructorUsedError;
+  String get lastRequest => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
