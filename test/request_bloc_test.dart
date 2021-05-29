@@ -13,7 +13,7 @@ void main() {
       'make a simple task',
       act: (bloc) => (bloc as RequestBloc).perform(
           () async => await (Dio()..interceptors.add(logginInterceptor))
-              .get('https://jsonplaceholder.cypress.io/posts/1')
+              .get('https://jsonplaceholder.typicode.com/posts/1')
             ..data,
           'NetworkRequest'),
       build: () => RequestBloc(),
@@ -24,7 +24,7 @@ void main() {
     blocTest('make a simple request on internet',
         act: (bloc) => (bloc as RequestBloc).perform(
             () async => await (Dio()..interceptors.add(logginInterceptor))
-                .get('https://jsonplaceholder.cypress.io/posts/1')
+                .get('https://jsonplaceholder.typicode.com/posts/1')
               ..data,
             'NetworkRequest'),
         build: () => RequestBloc(),

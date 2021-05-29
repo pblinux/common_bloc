@@ -1,5 +1,5 @@
-import 'package:dart_rss/dart_rss.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:webfeed/domain/rss_feed.dart';
 
 part 'rss_state.freezed.dart';
 

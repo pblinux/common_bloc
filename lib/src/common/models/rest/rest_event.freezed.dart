@@ -336,6 +336,7 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$GetEvent implements GetEvent {
   _$GetEvent(this.path,
       {this.withLoading = true, this.fromJson, this.headers, this.params});
@@ -612,6 +613,7 @@ class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PostEvent implements PostEvent {
   _$PostEvent(this.path,
       {this.withLoading = true,
@@ -900,6 +902,7 @@ class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PutEvent implements PutEvent {
   _$PutEvent(this.path,
       {this.withLoading = true,
@@ -1189,6 +1192,7 @@ class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PatchEvent implements PatchEvent {
   _$PatchEvent(this.path,
       {this.withLoading = true,
@@ -1458,6 +1462,7 @@ class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DeleteEvent implements DeleteEvent {
   _$DeleteEvent(this.path, {this.withLoading = true, this.headers});
 
@@ -1724,6 +1729,7 @@ class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$FromDataEvent implements FromDataEvent {
   _$FromDataEvent(this.path,
       {this.withLoading = true,
@@ -1999,6 +2005,7 @@ class _$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ClearEvent implements ClearEvent {
   _$ClearEvent(this.path, {this.withLoading = false});
 

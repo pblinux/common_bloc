@@ -126,6 +126,7 @@ class _$UninitializedRestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UninitializedRestState implements UninitializedRestState {
   _$UninitializedRestState();
 
@@ -240,6 +241,7 @@ class _$ErrorRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ErrorRestState implements ErrorRestState {
   _$ErrorRestState({required this.message, required this.humanMessage});
 
@@ -364,6 +366,7 @@ class _$LoadingRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadingRestState implements LoadingRestState {
   _$LoadingRestState();
 
@@ -492,6 +495,7 @@ class _$LoadedRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadedRestState implements LoadedRestState {
   _$LoadedRestState(
       {required this.headers,
