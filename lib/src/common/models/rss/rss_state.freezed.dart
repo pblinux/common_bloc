@@ -114,6 +114,7 @@ class _$UninitializedRssStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UninitializedRssState implements UninitializedRssState {
   _$UninitializedRssState();
 
@@ -219,6 +220,7 @@ class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ErrorRssState implements ErrorRssState {
   _$ErrorRssState({required this.message});
 
@@ -328,6 +330,7 @@ class _$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadingRssState implements LoadingRssState {
   _$LoadingRssState();
 
@@ -438,6 +441,7 @@ class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadedRssState implements LoadedRssState {
   _$LoadedRssState({required this.data, required this.timestamp});
 

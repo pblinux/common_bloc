@@ -13,14 +13,14 @@ class RequestCubit extends Cubit<RequestState> {
   ///Perfoms an action that be dispatched by RequestCubit
   ///
   ///requestAction needs to return the data you will need later.
-  void perform(Function requestAction, String requestName,
+  void perform(Future<dynamic> Function() response, String actionName,
       {bool withLoading = true}) async {
     if (withLoading) emit(RequestState.loading());
     try {
-      final result = await requestAction();
+      final result = await response();
       emit(RequestState.loaded(
           data: result,
-          lastRequest: requestName,
+          lastRequest: actionName,
           timestamp: DateTime.now().toIso8601String()));
     } on Exception catch (e) {
       emit(RequestState.error(message: e.toString()));

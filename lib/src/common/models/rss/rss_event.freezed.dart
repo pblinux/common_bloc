@@ -106,6 +106,7 @@ class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_RssEvent implements _RssEvent {
   _$_RssEvent(this.rssUrl, {this.withLoading = true});
 

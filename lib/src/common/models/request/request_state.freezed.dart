@@ -123,6 +123,7 @@ class _$UninitializedRequestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UninitializedRequestState implements UninitializedRequestState {
   _$UninitializedRequestState();
 
@@ -232,6 +233,7 @@ class _$ErrorRequestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ErrorRequestState implements ErrorRequestState {
   _$ErrorRequestState({required this.message});
 
@@ -345,6 +347,7 @@ class _$LoadingRequestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadingRequestState implements LoadingRequestState {
   _$LoadingRequestState();
 
@@ -464,6 +467,7 @@ class _$LoadedRequestStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadedRequestState implements LoadedRequestState {
   _$LoadedRequestState(
       {required this.data, required this.lastRequest, required this.timestamp});

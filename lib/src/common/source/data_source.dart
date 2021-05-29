@@ -145,7 +145,7 @@ class RestDataSource {
   ///Usefull for uploading files
   ///
   ///You can specify the [headers] for request.
-  Future<dynamic> formData(
+  Future<Map<String, dynamic>> formData(
     String path,
     FormData formData, {
     Function(Map<String, dynamic>)? fromJson,

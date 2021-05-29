@@ -1,3 +1,9 @@
+## [4.1.0]
+* Restore `webfeed` as rss provider
+* **BREAKING** params for `perform()` method in `Request Bloc` has been renamed
+* Change `Function` to `Future<T> Function()` for `RequestBloc`
+* Update dependencies
+
 ## [4.0.0]
 * Full null safety support 
 * Replace `webfeed` with `dart_rss`

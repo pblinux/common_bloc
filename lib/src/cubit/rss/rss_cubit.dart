@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:dart_rss/domain/rss_feed.dart';
+import 'package:webfeed/domain/rss_feed.dart';
 import '../../common/models/rss/rss_state.dart';
 import '../../common/source/rss_source.dart';
 

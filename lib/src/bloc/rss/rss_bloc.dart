@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:common_bloc/src/common/response/response.dart';
-import 'package:dart_rss/domain/rss_feed.dart';
+import 'package:webfeed/domain/rss_feed.dart';
 import '../../common/models/rss/rss_event.dart';
 import '../../common/models/rss/rss_state.dart';
 import '../../common/source/rss_source.dart';

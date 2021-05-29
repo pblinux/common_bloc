@@ -18,10 +18,10 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   ) async* {
     if (event.withLoading) yield RequestState.loading();
     try {
-      final result = await event.requestAction();
+      final result = await event.response();
       yield RequestState.loaded(
           data: result,
-          lastRequest: event.requestName,
+          lastRequest: event.actionName,
           timestamp: DateTime.now().toIso8601String());
     } on Exception catch (e) {
       yield RequestState.error(message: e.toString());
@@ -31,7 +31,7 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   ///Perfoms an action that be dispatched by RequestBloc
   ///
   ///requestAction needs to return the data you will need later.
-  void perform(Function requestAction, String requestName,
+  void perform(Future<dynamic> Function() response, String actionName,
           {bool withLoading = true}) =>
-      add(RequestEvent(requestAction, requestName, withLoading: withLoading));
+      add(RequestEvent(response, actionName, withLoading: withLoading));
 }

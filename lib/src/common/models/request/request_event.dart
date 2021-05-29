@@ -4,8 +4,8 @@ part 'request_event.freezed.dart';
 
 ///Events for RequestBloc
 @freezed
-abstract class RequestEvent with _$RequestEvent {
+class RequestEvent with _$RequestEvent {
   ///Perform an action event
-  factory RequestEvent(Function requestAction, String requestName,
+  factory RequestEvent(Future<dynamic> Function() response, String actionName,
       {@Default(true) bool withLoading}) = _RequestEvent;
 }
