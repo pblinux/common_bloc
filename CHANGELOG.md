@@ -1,3 +1,6 @@
+## [4.1.1]
+* `analyzer` added as dependency, solving score issue
+
 ## [4.1.0]
 * Restore `webfeed` as rss provider
 * **BREAKING** params for `perform()` method in `Request Bloc` has been renamed

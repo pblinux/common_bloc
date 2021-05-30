@@ -1,5 +1,5 @@
 # common_bloc
-[![pub](https://img.shields.io/badge/pub-4.1.0-blue)](https://pub.dev/packages/common_bloc)
+[![pub](https://img.shields.io/badge/pub-4.1.1-blue)](https://pub.dev/packages/common_bloc)
 ![common_bloc](https://github.com/pblinux/common_bloc/workflows/common_bloc/badge.svg?branch=master) 
 [![codecov](https://codecov.io/gh/pblinux/common_bloc/branch/master/graph/badge.svg)](https://codecov.io/gh/pblinux/common_bloc)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -14,7 +14,7 @@ Sometimes we need to create various blocs in the same project to do almost the s
 - [bloc and cubit](https://pub.dev/packages/bloc)
 - [freezed](https://pub.dev/packages/freezed)
 - [dio](https://pub.dev/packages/dio)
-- [dart_rss](https://pub.dev/packages/dart_rss)
+- [webfeed](https://pub.dev/packages/webfeed)
 
 ## common_bloc 4.0.0
 As of version `4.0.0`, you must use Dart >= 2.12.

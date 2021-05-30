@@ -1,6 +1,6 @@
 name: common_bloc
 description: A collection of common blocs and cubits that maybe will be used very often (powered by the bloc library).
-version: 4.1.0
+version: 4.1.1
 homepage: https://github.com/pblinux/common_bloc
 repository: https://github.com/pblinux/common_bloc
 
@@ -8,6 +8,7 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  analyzer: ^1.7.1
   bloc: ^7.0.0
   dio: ^4.0.0
   freezed_annotation: ^0.14.2
