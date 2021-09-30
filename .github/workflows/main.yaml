@@ -22,7 +22,7 @@ jobs:
           export PATH=$PATH:$HOME/.pub-cache/bin
           test_coverage    
       - name: Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.2.1
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           exclude: "**/*.g.dart **/*.freezed.dart example/**"
           min_coverage: 95
