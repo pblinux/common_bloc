@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:common_bloc/src/common/response/response.dart';
 import 'package:dio/dio.dart';
-import 'response.dart';
 
 ///Extension that manage the request
 ///
@@ -11,13 +11,15 @@ extension ResponseManagment on Response {
   Map<String, dynamic> manageRestRequestResponse({
     Function(Map<String, dynamic>)? fromJson,
   }) =>
-      {
-        'data': fromJson != null ? fromJson(data) : data ?? '',
-        'headers': headers.map
+      <String, dynamic>{
+        'data': fromJson != null
+            ? fromJson(data as Map<String, dynamic>)
+            : data ?? '',
+        'headers': headers.map,
       };
 
   ///Returns the response with fetched rss
-  String manageRssRequestResponse() => data;
+  String manageRssRequestResponse() => data.toString();
 }
 
 ///Extension that manage the request

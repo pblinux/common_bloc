@@ -1,10 +1,11 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
+import 'package:common_bloc/src/common/models/rss/rss_event.dart';
+import 'package:common_bloc/src/common/models/rss/rss_state.dart';
 import 'package:common_bloc/src/common/response/response.dart';
+import 'package:common_bloc/src/common/source/rss_source.dart';
 import 'package:webfeed/domain/rss_feed.dart';
-import '../../common/models/rss/rss_event.dart';
-import '../../common/models/rss/rss_state.dart';
-import '../../common/source/rss_source.dart';
 
 export 'package:common_bloc/src/common/models/rss/rss_state.dart';
 

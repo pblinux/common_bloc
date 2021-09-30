@@ -1,5 +1,5 @@
+import 'package:common_bloc/src/common/response/response_extension.dart';
 import 'package:dio/dio.dart';
-import '../response/response_extension.dart';
 
 ///Data source for RestBloc
 class RestDataSource {
@@ -33,7 +33,7 @@ class RestDataSource {
     Map<String, String>? params,
   }) async {
     try {
-      final response = await client.get(path,
+      final response = await client.get<dynamic>(path,
           queryParameters: params,
           options: Options(headers: headers, responseType: ResponseType.json));
       return response.manageRestRequestResponse(fromJson: fromJson);
@@ -56,7 +56,7 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.post(path,
+      final response = await client.post<dynamic>(path,
           data: body,
           options: Options(
               contentType: contentType,
@@ -82,7 +82,7 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.put(path,
+      final response = await client.put<dynamic>(path,
           data: body,
           options: Options(
               contentType: contentType,
@@ -108,7 +108,7 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.patch(path,
+      final response = await client.patch<dynamic>(path,
           data: body,
           options: Options(
               contentType: contentType,
@@ -129,7 +129,7 @@ class RestDataSource {
     Map<String, String>? headers,
   }) async {
     try {
-      final response = await client.delete(path,
+      final response = await client.delete<dynamic>(path,
           options: Options(headers: headers, responseType: ResponseType.json));
       return response.manageRestRequestResponse();
     } on DioError catch (e) {
@@ -154,7 +154,7 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.post(path,
+      final response = await client.post<dynamic>(path,
           data: formData,
           onSendProgress: onProgressChanged,
           options: Options(

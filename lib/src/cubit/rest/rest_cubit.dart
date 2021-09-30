@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import '../../../common_bloc.dart';
-import '../../common/models/rest/rest_state.dart';
-import '../../common/source/data_source.dart';
+import 'package:common_bloc/common_bloc.dart';
+import 'package:common_bloc/src/common/models/rest/rest_state.dart';
+import 'package:common_bloc/src/common/source/data_source.dart';
 
 ///RestCubit - A cubit to make request to a REST API
 ///
@@ -30,7 +30,7 @@ class RestCubit extends Cubit<RestState> {
   ///[path], you can send the [headers], [params]
   ///and a [fromJson] method to parse the result
   ///json to a specific object.
-  void get(
+  Future<void> get(
     String path, {
     Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
@@ -43,7 +43,7 @@ class RestCubit extends Cubit<RestState> {
           fromJson: fromJson, params: params, headers: headers);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {
@@ -57,7 +57,7 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void post(
+  Future<void> post(
     String path, {
     Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
@@ -74,7 +74,7 @@ class RestCubit extends Cubit<RestState> {
           headers: headers);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {
@@ -88,7 +88,7 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void put(
+  Future<void> put(
     String path, {
     Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
@@ -105,7 +105,7 @@ class RestCubit extends Cubit<RestState> {
           headers: headers);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {
@@ -119,7 +119,7 @@ class RestCubit extends Cubit<RestState> {
   ///[path] and a [body]. You can send the [headers], [contentType]
   ///and a [fromJson] method to parse the result json to
   ///a specific object.
-  void patch(
+  Future<void> patch(
     String path, {
     Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
@@ -136,7 +136,7 @@ class RestCubit extends Cubit<RestState> {
           headers: headers);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {
@@ -148,7 +148,7 @@ class RestCubit extends Cubit<RestState> {
   ///
   ///Perform a DELETE request to API with specific
   ///[path]. You can send the [headers] for request.
-  void delete(String path,
+  Future<void> delete(String path,
       {Function(Map<String, dynamic>)? fromJson,
       Map<String, String>? headers,
       bool withLoading = true}) async {
@@ -157,7 +157,7 @@ class RestCubit extends Cubit<RestState> {
       final result = await _restDataSource.delete(path, headers: headers);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {
@@ -173,7 +173,7 @@ class RestCubit extends Cubit<RestState> {
   ///Usefull for uploading files
   ///
   ///You can specify the [headers] for request.
-  void formData(
+  Future<void> formData(
     String path, {
     required FormData body,
     Function(Map<String, dynamic>)? fromJson,
@@ -191,7 +191,7 @@ class RestCubit extends Cubit<RestState> {
           onProgressChanged: onProgressChanged);
       emit(RestState.loaded(
           data: result['data'],
-          headers: result['headers'],
+          headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
           timestamp: DateTime.now().toIso8601String()));
     } on ResponseException catch (e) {

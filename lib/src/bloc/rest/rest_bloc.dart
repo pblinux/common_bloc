@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:common_bloc/src/common/models/rest/rest_event.dart';
+import 'package:common_bloc/src/common/models/rest/rest_state.dart';
+import 'package:common_bloc/src/common/response/response.dart';
+import 'package:common_bloc/src/common/source/data_source.dart';
 import 'package:dio/dio.dart';
-
-import '../../common/models/rest/rest_event.dart';
-import '../../common/models/rest/rest_state.dart';
-import '../../common/response/response.dart';
-import '../../common/source/data_source.dart';
 
 // export 'package:common_bloc/src/common/models/rest/rest_event.dart';
 export 'package:common_bloc/src/common/models/rest/rest_state.dart';
@@ -68,7 +67,7 @@ class RestBloc extends Bloc<RestEvent, RestState> {
       } else {
         yield RestState.loaded(
             data: result['data'],
-            headers: result['headers'],
+            headers: result['headers'] as Map<String, List<String>>,
             lastPath: event.path,
             timestamp: DateTime.now().toIso8601String());
       }

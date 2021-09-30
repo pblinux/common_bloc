@@ -8,9 +8,9 @@ void main() {
       expect(RssCubit().state, isA<UninitializedRssState>());
     });
 
-    blocTest(
+    blocTest<RssCubit, RssState>(
       'get rss feed',
-      act: (cubit) => (cubit as RssCubit).getFeed(
+      act: (cubit) => cubit.getFeed(
         'http://www.publicbooks.org/tag/fiction/feed',
       ),
       build: () => RssCubit(),
@@ -20,9 +20,9 @@ void main() {
   });
 
   group('Rss cubit errors', () {
-    blocTest(
+    blocTest<RssCubit, RssState>(
       'fail geting rss feed',
-      act: (cubit) => (cubit as RssCubit).getFeed(
+      act: (cubit) => cubit.getFeed(
         'http://www.publicbooks.org/tag/fiction/feeed',
       ),
       build: () => RssCubit(),

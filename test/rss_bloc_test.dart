@@ -8,9 +8,9 @@ void main() {
       expect(RssBloc().state, isA<UninitializedRssState>());
     });
 
-    blocTest(
+    blocTest<RssBloc, RssState>(
       'get rss feed',
-      act: (bloc) => (bloc as RssBloc).getFeed(
+      act: (bloc) => bloc.getFeed(
         'https://www.publicbooks.org/tag/fiction/feed',
       ),
       build: () => RssBloc(),
@@ -20,10 +20,10 @@ void main() {
   });
 
   group('Rss bloc errors', () {
-    blocTest(
+    blocTest<RssBloc, RssState>(
       'fail geting rss feed',
-      act: (bloc) => (bloc as RssBloc)
-          .getFeed('https://www.publicbooks.org/tag/fiction/feeed'),
+      act: (bloc) =>
+          bloc.getFeed('https://www.publicbooks.org/tag/fiction/feeed'),
       build: () => RssBloc(),
       expect: () => [isA<LoadingRssState>(), isA<ErrorRssState>()],
       skip: 0,

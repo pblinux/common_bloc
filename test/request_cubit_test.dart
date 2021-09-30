@@ -4,39 +4,60 @@ import 'package:dio/dio.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Request cubit', () {
-    test('initial request state', () {
-      expect(RequestCubit().state, isA<UninitializedRequestState>());
-    });
+  group(
+    'Request cubit',
+    () {
+      test(
+        'initial request state',
+        () {
+          expect(RequestCubit().state, isA<UninitializedRequestState>());
+        },
+      );
 
-    blocTest('make a simple task',
-        act: (cubit) => (cubit as RequestCubit).perform(
-            () async => Future.delayed(const Duration(seconds: 3), () => true),
+      blocTest<RequestCubit, RequestState>(
+        'make a simple task',
+        act: (cubit) => cubit.perform(
+            () async =>
+                Future<dynamic>.delayed(const Duration(seconds: 3), () => true),
             'TimerTask'),
         build: () => RequestCubit(),
-        expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()]);
+        expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
+      );
 
-    blocTest('make a simple request on internet',
-        act: (cubit) => (cubit as RequestCubit).perform(
-            () async => await (Dio()..interceptors.add(logginInterceptor))
-                .get('https://jsonplaceholder.typicode.com/posts/1')
-              ..data,
-            'NetworkRequest'),
+      blocTest<RequestCubit, RequestState>(
+        'make a simple request on internet',
+        act: (cubit) => cubit.perform(
+          () async => await (Dio()..interceptors.add(logginInterceptor))
+              .get<Map<String, dynamic>>(
+                  'https://jsonplaceholder.typicode.com/posts/1')
+            ..data,
+          'NetworkRequest',
+        ),
         build: () => RequestCubit(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
-        skip: 0);
-  });
+        skip: 0,
+      );
+    },
+  );
 
-  group('Request cubit errors', () {
-    blocTest('simple task fail',
-        act: (cubit) => (cubit as RequestCubit).perform(
-            () async => Future.delayed(
-                const Duration(seconds: 3), () => throw Exception('failed')),
-            'FailTask'),
+  group(
+    'Request cubit errors',
+    () {
+      blocTest<RequestCubit, RequestState>(
+        'simple task fail',
+        act: (cubit) => cubit.perform(
+          () async => Future<dynamic>.delayed(
+            const Duration(seconds: 3),
+            () => throw Exception('failed'),
+          ),
+          'FailTask',
+        ),
         build: () => RequestCubit(),
         expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
-        skip: 0);
-  });
+        skip: 0,
+      );
+    },
+  );
 }
 
 InterceptorsWrapper get logginInterceptor => InterceptorsWrapper(

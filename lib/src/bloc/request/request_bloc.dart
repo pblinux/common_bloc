@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import '../../common/models/request/request_event.dart';
-import '../../common/models/request/request_state.dart';
+import 'package:common_bloc/src/common/models/request/request_event.dart';
+import 'package:common_bloc/src/common/models/request/request_state.dart';
 
 export 'package:common_bloc/src/common/models/request/request_state.dart';
 
@@ -18,7 +18,7 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   ) async* {
     if (event.withLoading) yield RequestState.loading();
     try {
-      final result = await event.response();
+      final dynamic result = await event.response();
       yield RequestState.loaded(
           data: result,
           lastRequest: event.actionName,
