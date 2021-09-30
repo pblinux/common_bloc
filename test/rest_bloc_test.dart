@@ -98,6 +98,20 @@ void main() {
       );
 
       blocTest<RestBloc, RestState>(
+        'fromJson method',
+        act: (bloc) => bloc.get(
+          '/posts/1',
+          fromJson: (data) {
+            return data.length;
+          },
+        ),
+        build: () => RestBloc('https://jsonplaceholder.typicode.com'),
+        expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
+        skip: 0,
+        wait: const Duration(seconds: 3),
+      );
+
+      blocTest<RestBloc, RestState>(
         'clear rest bloc state',
         act: (bloc) {
           bloc
