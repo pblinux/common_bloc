@@ -41,4 +41,4 @@ jobs:
       - name: Install pana
         run: pub global activate pana
       - name: Check score
-        run: ../score.sh
+        run: ./score.sh
