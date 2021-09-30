@@ -1,3 +1,9 @@
+## [4.2.0]
+* Bloc v7.2
+* Migrate to new `on<Event>` Bloc API
+* Update dependencies
+* Fix pending lints
+
 ## [4.1.1]
 * `analyzer` added as dependency, solving score issue
 
