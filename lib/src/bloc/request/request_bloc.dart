@@ -10,22 +10,24 @@ export 'package:common_bloc/src/common/models/request/request_state.dart';
 ///Like fetching data, compute json, timers, etc.
 class RequestBloc extends Bloc<RequestEvent, RequestState> {
   ///Main Constructor
-  RequestBloc() : super(RequestState.uninitialized());
-
-  @override
-  Stream<RequestState> mapEventToState(
-    RequestEvent event,
-  ) async* {
-    if (event.withLoading) yield RequestState.loading();
-    try {
-      final dynamic result = await event.response();
-      yield RequestState.loaded(
-          data: result,
-          lastRequest: event.actionName,
-          timestamp: DateTime.now().toIso8601String());
-    } on Exception catch (e) {
-      yield RequestState.error(message: e.toString());
-    }
+  RequestBloc() : super(RequestState.uninitialized()) {
+    on<RequestEvent>(
+      (event, emit) async {
+        if (event.withLoading) emit(RequestState.loading());
+        try {
+          final dynamic result = await event.response();
+          emit(
+            RequestState.loaded(
+              data: result,
+              lastRequest: event.actionName,
+              timestamp: DateTime.now().toIso8601String(),
+            ),
+          );
+        } on Exception catch (e) {
+          emit(RequestState.error(message: e.toString()));
+        }
+      },
+    );
   }
 
   ///Perfoms an action that be dispatched by RequestBloc

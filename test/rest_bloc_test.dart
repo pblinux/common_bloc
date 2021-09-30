@@ -22,6 +22,7 @@ void main() {
             interceptors: [logginInterceptor]),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -37,6 +38,7 @@ void main() {
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -53,6 +55,7 @@ void main() {
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
       blocTest<RestBloc, RestState>(
         'update (with patch) to api',
@@ -63,6 +66,7 @@ void main() {
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -71,6 +75,7 @@ void main() {
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -89,6 +94,7 @@ void main() {
         build: () => RestBloc('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -105,6 +111,7 @@ void main() {
           isA<UninitializedRestState>()
         ],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       test(
@@ -138,6 +145,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -146,6 +154,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -154,6 +163,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -162,6 +172,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -170,6 +181,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
 
       blocTest<RestBloc, RestState>(
@@ -179,6 +191,7 @@ void main() {
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,
+        wait: const Duration(seconds: 3),
       );
     },
   );

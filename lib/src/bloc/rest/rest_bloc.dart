@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:common_bloc/src/common/models/rest/rest_event.dart';
 import 'package:common_bloc/src/common/models/rest/rest_state.dart';
 import 'package:common_bloc/src/common/response/response.dart';
@@ -17,10 +18,17 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///Main constructor
   RestBloc(String baseUrl, {List<Interceptor>? interceptors})
       : super(RestState.uninitialized()) {
+    // Setup for the data source
     _restDataSource = RestDataSource(
-        baseURL: baseUrl,
-        client: Dio()
-          ..interceptors.addAll([if (interceptors != null) ...interceptors]));
+      baseURL: baseUrl,
+      client: Dio()
+        ..interceptors.addAll(
+          [if (interceptors != null) ...interceptors],
+        ),
+    );
+
+    // Event handling
+    on<RestEvent>(_restEventRequested, transformer: sequential());
   }
 
   late RestDataSource _restDataSource;
@@ -31,11 +39,12 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   set currentBaseUrl(String newBaseUrl) =>
       _restDataSource.currentBaseUrl = newBaseUrl;
 
-  @override
-  Stream<RestState> mapEventToState(
+  /// Handles the events and emit the necesary states
+  FutureOr<void> _restEventRequested(
     RestEvent event,
-  ) async* {
-    if (event.withLoading) yield RestState.loading();
+    Emitter<RestState> emit,
+  ) async {
+    if (event.withLoading) emit(RestState.loading());
     try {
       final result = await event.map(
           clear: (e) => null,
@@ -63,16 +72,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
               headers: e.headers,
               onProgressChanged: e.onProgressChanged));
       if (result == null) {
-        yield RestState.uninitialized();
+        emit(RestState.uninitialized());
       } else {
-        yield RestState.loaded(
+        emit(RestState.loaded(
             data: result['data'],
             headers: result['headers'] as Map<String, List<String>>,
             lastPath: event.path,
-            timestamp: DateTime.now().toIso8601String());
+            timestamp: DateTime.now().toIso8601String()));
       }
     } on ResponseException catch (e) {
-      yield RestState.error(humanMessage: e.humanMessage, message: e.message);
+      emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
   }
 
