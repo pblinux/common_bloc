@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import '../../common/models/request/request_state.dart';
+import 'package:common_bloc/src/common/models/request/request_state.dart';
 
 export 'package:common_bloc/src/common/models/request/request_state.dart';
 
@@ -13,11 +13,11 @@ class RequestCubit extends Cubit<RequestState> {
   ///Perfoms an action that be dispatched by RequestCubit
   ///
   ///requestAction needs to return the data you will need later.
-  void perform(Future<dynamic> Function() response, String actionName,
+  Future<void> perform(Future<dynamic> Function() response, String actionName,
       {bool withLoading = true}) async {
     if (withLoading) emit(RequestState.loading());
     try {
-      final result = await response();
+      final dynamic result = await response();
       emit(RequestState.loaded(
           data: result,
           lastRequest: actionName,
