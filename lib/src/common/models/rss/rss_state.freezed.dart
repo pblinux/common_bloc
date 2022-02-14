@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rss_state.dart';
 
@@ -52,6 +54,14 @@ mixin _$RssState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? uninitialized,
     TResult Function(String message)? error,
@@ -66,6 +76,14 @@ mixin _$RssState {
     required TResult Function(ErrorRssState value) error,
     required TResult Function(LoadingRssState value) loading,
     required TResult Function(LoadedRssState value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,7 +143,8 @@ class _$UninitializedRssState implements UninitializedRssState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UninitializedRssState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UninitializedRssState);
   }
 
   @override
@@ -140,6 +159,17 @@ class _$UninitializedRssState implements UninitializedRssState {
     required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
     return uninitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+  }) {
+    return uninitialized?.call();
   }
 
   @override
@@ -166,6 +196,17 @@ class _$UninitializedRssState implements UninitializedRssState {
     required TResult Function(LoadedRssState value) loaded,
   }) {
     return uninitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+  }) {
+    return uninitialized?.call(this);
   }
 
   @override
@@ -235,14 +276,14 @@ class _$ErrorRssState implements ErrorRssState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorRssState &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is ErrorRssState &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -258,6 +299,17 @@ class _$ErrorRssState implements ErrorRssState {
     required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
     return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+  }) {
+    return error?.call(message);
   }
 
   @override
@@ -288,6 +340,17 @@ class _$ErrorRssState implements ErrorRssState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRssState value)? uninitialized,
     TResult Function(ErrorRssState value)? error,
@@ -305,7 +368,7 @@ class _$ErrorRssState implements ErrorRssState {
 abstract class ErrorRssState implements RssState {
   factory ErrorRssState({required String message}) = _$ErrorRssState;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -341,7 +404,8 @@ class _$LoadingRssState implements LoadingRssState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingRssState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadingRssState);
   }
 
   @override
@@ -356,6 +420,17 @@ class _$LoadingRssState implements LoadingRssState {
     required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -382,6 +457,17 @@ class _$LoadingRssState implements LoadingRssState {
     required TResult Function(LoadedRssState value) loaded,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -458,19 +544,17 @@ class _$LoadedRssState implements LoadedRssState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadedRssState &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)));
+        (other.runtimeType == runtimeType &&
+            other is LoadedRssState &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.timestamp, timestamp));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(timestamp);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(timestamp));
 
   @JsonKey(ignore: true)
   @override
@@ -486,6 +570,17 @@ class _$LoadedRssState implements LoadedRssState {
     required TResult Function(RssFeed data, String timestamp) loaded,
   }) {
     return loaded(data, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(RssFeed data, String timestamp)? loaded,
+  }) {
+    return loaded?.call(data, timestamp);
   }
 
   @override
@@ -516,6 +611,17 @@ class _$LoadedRssState implements LoadedRssState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRssState value)? uninitialized,
+    TResult Function(ErrorRssState value)? error,
+    TResult Function(LoadingRssState value)? loading,
+    TResult Function(LoadedRssState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRssState value)? uninitialized,
     TResult Function(ErrorRssState value)? error,
@@ -534,8 +640,8 @@ abstract class LoadedRssState implements RssState {
   factory LoadedRssState({required RssFeed data, required String timestamp}) =
       _$LoadedRssState;
 
-  RssFeed get data => throw _privateConstructorUsedError;
-  String get timestamp => throw _privateConstructorUsedError;
+  RssFeed get data;
+  String get timestamp;
   @JsonKey(ignore: true)
   $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
       throw _privateConstructorUsedError;

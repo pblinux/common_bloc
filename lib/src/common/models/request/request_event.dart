@@ -6,6 +6,9 @@ part 'request_event.freezed.dart';
 @freezed
 class RequestEvent with _$RequestEvent {
   ///Perform an action event
-  factory RequestEvent(Future<dynamic> Function() response, String actionName,
-      {@Default(true) bool withLoading}) = _RequestEvent;
+  factory RequestEvent(
+    Future<dynamic> Function() response,
+    String actionName, {
+    @Default(true) bool withLoading,
+  }) = _RequestEvent;
 }

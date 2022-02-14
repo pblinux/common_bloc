@@ -17,9 +17,10 @@ void main() {
       blocTest<RequestCubit, RequestState>(
         'make a simple task',
         act: (cubit) => cubit.perform(
-            () async =>
-                Future<dynamic>.delayed(const Duration(seconds: 3), () => true),
-            'TimerTask'),
+          () async =>
+              Future<dynamic>.delayed(const Duration(seconds: 3), () => true),
+          'TimerTask',
+        ),
         build: () => RequestCubit(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
       );
@@ -29,7 +30,8 @@ void main() {
         act: (cubit) => cubit.perform(
           () async => await (Dio()..interceptors.add(logginInterceptor))
               .get<Map<String, dynamic>>(
-                  'https://jsonplaceholder.typicode.com/posts/1')
+            'https://jsonplaceholder.typicode.com/posts/1',
+          )
             ..data,
           'NetworkRequest',
         ),

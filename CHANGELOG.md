@@ -1,3 +1,8 @@
+## [4.2.1]
+* Update models
+* Update dependencies
+* Fix lint errors
+
 ## [4.2.0]
 * Bloc v7.2
 * Migrate to new `on<Event>` Bloc API

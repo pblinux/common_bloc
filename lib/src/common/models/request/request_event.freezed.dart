@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'request_event.dart';
 
@@ -137,7 +139,7 @@ class _$_RequestEvent implements _RequestEvent {
   final Future<dynamic> Function() response;
   @override
   final String actionName;
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   @override
   final bool withLoading;
 
@@ -149,24 +151,22 @@ class _$_RequestEvent implements _RequestEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RequestEvent &&
+        (other.runtimeType == runtimeType &&
+            other is _RequestEvent &&
             (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)) &&
-            (identical(other.actionName, actionName) ||
-                const DeepCollectionEquality()
-                    .equals(other.actionName, actionName)) &&
-            (identical(other.withLoading, withLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.withLoading, withLoading)));
+                other.response == response) &&
+            const DeepCollectionEquality()
+                .equals(other.actionName, actionName) &&
+            const DeepCollectionEquality()
+                .equals(other.withLoading, withLoading));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(response) ^
-      const DeepCollectionEquality().hash(actionName) ^
-      const DeepCollectionEquality().hash(withLoading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      response,
+      const DeepCollectionEquality().hash(actionName),
+      const DeepCollectionEquality().hash(withLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -179,11 +179,11 @@ abstract class _RequestEvent implements RequestEvent {
       {bool withLoading}) = _$_RequestEvent;
 
   @override
-  Future<dynamic> Function() get response => throw _privateConstructorUsedError;
+  Future<dynamic> Function() get response;
   @override
-  String get actionName => throw _privateConstructorUsedError;
+  String get actionName;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
+  bool get withLoading;
   @override
   @JsonKey(ignore: true)
   _$RequestEventCopyWith<_RequestEvent> get copyWith =>
