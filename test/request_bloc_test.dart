@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -30,11 +29,13 @@ void main() {
       blocTest<RequestBloc, RequestState>(
         'make a simple request on internet',
         act: (bloc) => bloc.perform(
-            () async => await (Dio()..interceptors.add(logginInterceptor))
-                .get<Map<String, dynamic>>(
-                    'https://jsonplaceholder.typicode.com/posts/1')
-              ..data,
-            'NetworkRequest'),
+          () async => await (Dio()..interceptors.add(logginInterceptor))
+              .get<Map<String, dynamic>>(
+            'https://jsonplaceholder.typicode.com/posts/1',
+          )
+            ..data,
+          'NetworkRequest',
+        ),
         build: () => RequestBloc(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
         skip: 0,
@@ -49,11 +50,12 @@ void main() {
       blocTest<RequestBloc, RequestState>(
         'simple task fail',
         act: (bloc) => bloc.perform(
-            () async => Future<dynamic>.delayed(
-                  const Duration(seconds: 2),
-                  () => throw Exception('failed'),
-                ),
-            'FailTask'),
+          () async => Future<dynamic>.delayed(
+            const Duration(seconds: 2),
+            () => throw Exception('failed'),
+          ),
+          'FailTask',
+        ),
         build: () => RequestBloc(),
         expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
         skip: 0,

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rest_state.dart';
 
@@ -62,6 +64,16 @@ mixin _$RestState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message, String humanMessage)? error,
+    TResult Function()? loading,
+    TResult Function(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data)?
+        loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? uninitialized,
     TResult Function(String message, String humanMessage)? error,
@@ -78,6 +90,14 @@ mixin _$RestState {
     required TResult Function(ErrorRestState value) error,
     required TResult Function(LoadingRestState value) loading,
     required TResult Function(LoadedRestState value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRestState value)? uninitialized,
+    TResult Function(ErrorRestState value)? error,
+    TResult Function(LoadingRestState value)? loading,
+    TResult Function(LoadedRestState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -137,7 +157,8 @@ class _$UninitializedRestState implements UninitializedRestState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UninitializedRestState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UninitializedRestState);
   }
 
   @override
@@ -154,6 +175,19 @@ class _$UninitializedRestState implements UninitializedRestState {
         loaded,
   }) {
     return uninitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message, String humanMessage)? error,
+    TResult Function()? loading,
+    TResult Function(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data)?
+        loaded,
+  }) {
+    return uninitialized?.call();
   }
 
   @override
@@ -182,6 +216,17 @@ class _$UninitializedRestState implements UninitializedRestState {
     required TResult Function(LoadedRestState value) loaded,
   }) {
     return uninitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRestState value)? uninitialized,
+    TResult Function(ErrorRestState value)? error,
+    TResult Function(LoadingRestState value)? loading,
+    TResult Function(LoadedRestState value)? loaded,
+  }) {
+    return uninitialized?.call(this);
   }
 
   @override
@@ -258,20 +303,18 @@ class _$ErrorRestState implements ErrorRestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorRestState &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
-            (identical(other.humanMessage, humanMessage) ||
-                const DeepCollectionEquality()
-                    .equals(other.humanMessage, humanMessage)));
+        (other.runtimeType == runtimeType &&
+            other is ErrorRestState &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.humanMessage, humanMessage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(humanMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(humanMessage));
 
   @JsonKey(ignore: true)
   @override
@@ -289,6 +332,19 @@ class _$ErrorRestState implements ErrorRestState {
         loaded,
   }) {
     return error(message, humanMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message, String humanMessage)? error,
+    TResult Function()? loading,
+    TResult Function(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data)?
+        loaded,
+  }) {
+    return error?.call(message, humanMessage);
   }
 
   @override
@@ -321,6 +377,17 @@ class _$ErrorRestState implements ErrorRestState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRestState value)? uninitialized,
+    TResult Function(ErrorRestState value)? error,
+    TResult Function(LoadingRestState value)? loading,
+    TResult Function(LoadedRestState value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRestState value)? uninitialized,
     TResult Function(ErrorRestState value)? error,
@@ -340,8 +407,8 @@ abstract class ErrorRestState implements RestState {
       {required String message,
       required String humanMessage}) = _$ErrorRestState;
 
-  String get message => throw _privateConstructorUsedError;
-  String get humanMessage => throw _privateConstructorUsedError;
+  String get message;
+  String get humanMessage;
   @JsonKey(ignore: true)
   $ErrorRestStateCopyWith<ErrorRestState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -377,7 +444,8 @@ class _$LoadingRestState implements LoadingRestState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingRestState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadingRestState);
   }
 
   @override
@@ -394,6 +462,19 @@ class _$LoadingRestState implements LoadingRestState {
         loaded,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message, String humanMessage)? error,
+    TResult Function()? loading,
+    TResult Function(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data)?
+        loaded,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -422,6 +503,17 @@ class _$LoadingRestState implements LoadingRestState {
     required TResult Function(LoadedRestState value) loaded,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRestState value)? uninitialized,
+    TResult Function(ErrorRestState value)? error,
+    TResult Function(LoadingRestState value)? loading,
+    TResult Function(LoadedRestState value)? loaded,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -520,27 +612,21 @@ class _$LoadedRestState implements LoadedRestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadedRestState &&
-            (identical(other.headers, headers) ||
-                const DeepCollectionEquality()
-                    .equals(other.headers, headers)) &&
-            (identical(other.lastPath, lastPath) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastPath, lastPath)) &&
-            (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is LoadedRestState &&
+            const DeepCollectionEquality().equals(other.headers, headers) &&
+            const DeepCollectionEquality().equals(other.lastPath, lastPath) &&
+            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(headers) ^
-      const DeepCollectionEquality().hash(lastPath) ^
-      const DeepCollectionEquality().hash(timestamp) ^
-      const DeepCollectionEquality().hash(data);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(headers),
+      const DeepCollectionEquality().hash(lastPath),
+      const DeepCollectionEquality().hash(timestamp),
+      const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -558,6 +644,19 @@ class _$LoadedRestState implements LoadedRestState {
         loaded,
   }) {
     return loaded(headers, lastPath, timestamp, data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message, String humanMessage)? error,
+    TResult Function()? loading,
+    TResult Function(Map<String, List<String>> headers, String lastPath,
+            String timestamp, dynamic data)?
+        loaded,
+  }) {
+    return loaded?.call(headers, lastPath, timestamp, data);
   }
 
   @override
@@ -590,6 +689,17 @@ class _$LoadedRestState implements LoadedRestState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRestState value)? uninitialized,
+    TResult Function(ErrorRestState value)? error,
+    TResult Function(LoadingRestState value)? loading,
+    TResult Function(LoadedRestState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRestState value)? uninitialized,
     TResult Function(ErrorRestState value)? error,
@@ -611,10 +721,10 @@ abstract class LoadedRestState implements RestState {
       required String timestamp,
       required dynamic data}) = _$LoadedRestState;
 
-  Map<String, List<String>> get headers => throw _privateConstructorUsedError;
-  String get lastPath => throw _privateConstructorUsedError;
-  String get timestamp => throw _privateConstructorUsedError;
-  dynamic get data => throw _privateConstructorUsedError;
+  Map<String, List<String>> get headers;
+  String get lastPath;
+  String get timestamp;
+  dynamic get data;
   @JsonKey(ignore: true)
   $LoadedRestStateCopyWith<LoadedRestState> get copyWith =>
       throw _privateConstructorUsedError;

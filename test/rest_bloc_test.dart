@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:common_bloc/common_bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -10,16 +9,20 @@ void main() {
       test(
         'initial rest state',
         () {
-          expect(RestBloc('https://jsonplaceholder.typicode.com').state,
-              isA<UninitializedRestState>());
+          expect(
+            RestBloc('https://jsonplaceholder.typicode.com').state,
+            isA<UninitializedRestState>(),
+          );
         },
       );
 
       blocTest<RestBloc, RestState>(
         'get from api',
         act: (bloc) => bloc.get('/posts'),
-        build: () => RestBloc('https://jsonplaceholder.typicode.com',
-            interceptors: [logginInterceptor]),
+        build: () => RestBloc(
+          'https://jsonplaceholder.typicode.com',
+          interceptors: [logginInterceptor],
+        ),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
         skip: 0,
         wait: const Duration(seconds: 3),
@@ -200,8 +203,10 @@ void main() {
 
       blocTest<RestBloc, RestState>(
         'unknown request response from api',
-        act: (bloc) => bloc.formData('/5eb7c68c3100006a00c8a272',
-            body: FormData.fromMap(<String, dynamic>{})),
+        act: (bloc) => bloc.formData(
+          '/5eb7c68c3100006a00c8a272',
+          body: FormData.fromMap(<String, dynamic>{}),
+        ),
         build: () => RestBloc('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
         skip: 0,

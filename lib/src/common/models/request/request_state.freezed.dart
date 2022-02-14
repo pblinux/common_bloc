@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'request_state.dart';
 
@@ -58,6 +60,15 @@ mixin _$RequestState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? uninitialized,
     TResult Function(String message)? error,
@@ -73,6 +84,14 @@ mixin _$RequestState {
     required TResult Function(ErrorRequestState value) error,
     required TResult Function(LoadingRequestState value) loading,
     required TResult Function(LoadedRequestState value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -134,7 +153,9 @@ class _$UninitializedRequestState implements UninitializedRequestState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UninitializedRequestState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UninitializedRequestState);
   }
 
   @override
@@ -151,6 +172,18 @@ class _$UninitializedRequestState implements UninitializedRequestState {
         loaded,
   }) {
     return uninitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+  }) {
+    return uninitialized?.call();
   }
 
   @override
@@ -178,6 +211,17 @@ class _$UninitializedRequestState implements UninitializedRequestState {
     required TResult Function(LoadedRequestState value) loaded,
   }) {
     return uninitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+  }) {
+    return uninitialized?.call(this);
   }
 
   @override
@@ -248,14 +292,14 @@ class _$ErrorRequestState implements ErrorRequestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorRequestState &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is ErrorRequestState &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -273,6 +317,18 @@ class _$ErrorRequestState implements ErrorRequestState {
         loaded,
   }) {
     return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+  }) {
+    return error?.call(message);
   }
 
   @override
@@ -304,6 +360,17 @@ class _$ErrorRequestState implements ErrorRequestState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRequestState value)? uninitialized,
     TResult Function(ErrorRequestState value)? error,
@@ -321,7 +388,7 @@ class _$ErrorRequestState implements ErrorRequestState {
 abstract class ErrorRequestState implements RequestState {
   factory ErrorRequestState({required String message}) = _$ErrorRequestState;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -358,7 +425,8 @@ class _$LoadingRequestState implements LoadingRequestState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingRequestState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadingRequestState);
   }
 
   @override
@@ -375,6 +443,18 @@ class _$LoadingRequestState implements LoadingRequestState {
         loaded,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -402,6 +482,17 @@ class _$LoadingRequestState implements LoadingRequestState {
     required TResult Function(LoadedRequestState value) loaded,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -487,23 +578,20 @@ class _$LoadedRequestState implements LoadedRequestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadedRequestState &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.lastRequest, lastRequest) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastRequest, lastRequest)) &&
-            (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)));
+        (other.runtimeType == runtimeType &&
+            other is LoadedRequestState &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality()
+                .equals(other.lastRequest, lastRequest) &&
+            const DeepCollectionEquality().equals(other.timestamp, timestamp));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(lastRequest) ^
-      const DeepCollectionEquality().hash(timestamp);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(lastRequest),
+      const DeepCollectionEquality().hash(timestamp));
 
   @JsonKey(ignore: true)
   @override
@@ -521,6 +609,18 @@ class _$LoadedRequestState implements LoadedRequestState {
         loaded,
   }) {
     return loaded(data, lastRequest, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? uninitialized,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    TResult Function(dynamic data, String lastRequest, String timestamp)?
+        loaded,
+  }) {
+    return loaded?.call(data, lastRequest, timestamp);
   }
 
   @override
@@ -552,6 +652,17 @@ class _$LoadedRequestState implements LoadedRequestState {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UninitializedRequestState value)? uninitialized,
+    TResult Function(ErrorRequestState value)? error,
+    TResult Function(LoadingRequestState value)? loading,
+    TResult Function(LoadedRequestState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UninitializedRequestState value)? uninitialized,
     TResult Function(ErrorRequestState value)? error,
@@ -572,9 +683,9 @@ abstract class LoadedRequestState implements RequestState {
       required String lastRequest,
       required String timestamp}) = _$LoadedRequestState;
 
-  dynamic get data => throw _privateConstructorUsedError;
-  String get lastRequest => throw _privateConstructorUsedError;
-  String get timestamp => throw _privateConstructorUsedError;
+  dynamic get data;
+  String get lastRequest;
+  String get timestamp;
   @JsonKey(ignore: true)
   $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith =>
       throw _privateConstructorUsedError;

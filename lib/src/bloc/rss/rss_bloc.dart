@@ -18,8 +18,12 @@ class RssBloc extends Bloc<RssEvent, RssState> {
         try {
           final result = await _rssDataSource.get(event.rssUrl);
           final feed = RssFeed.parse(result);
-          emit(RssState.loaded(
-              data: feed, timestamp: DateTime.now().toString()));
+          emit(
+            RssState.loaded(
+              data: feed,
+              timestamp: DateTime.now().toString(),
+            ),
+          );
         } on ResponseException catch (e) {
           emit(RssState.error(message: e.message));
         }

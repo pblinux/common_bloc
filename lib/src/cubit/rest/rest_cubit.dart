@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:common_bloc/common_bloc.dart';
-import 'package:common_bloc/src/common/models/rest/rest_state.dart';
 import 'package:common_bloc/src/common/source/data_source.dart';
 
 ///RestCubit - A cubit to make request to a REST API
@@ -11,9 +10,10 @@ class RestCubit extends Cubit<RestState> {
   RestCubit(String baseUrl, {List<Interceptor>? interceptors})
       : super(RestState.uninitialized()) {
     _restDataSource = RestDataSource(
-        baseURL: baseUrl,
-        client: Dio()
-          ..interceptors.addAll([if (interceptors != null) ...interceptors]));
+      baseURL: baseUrl,
+      client: Dio()
+        ..interceptors.addAll([if (interceptors != null) ...interceptors]),
+    );
   }
 
   late RestDataSource _restDataSource;
@@ -39,13 +39,20 @@ class RestCubit extends Cubit<RestState> {
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
-      final result = await _restDataSource.get(path,
-          fromJson: fromJson, params: params, headers: headers);
-      emit(RestState.loaded(
+      final result = await _restDataSource.get(
+        path,
+        fromJson: fromJson,
+        params: params,
+        headers: headers,
+      );
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
@@ -67,16 +74,21 @@ class RestCubit extends Cubit<RestState> {
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
-      final result = await _restDataSource.post(path,
-          body: body,
-          contentType: contentType,
-          fromJson: fromJson,
-          headers: headers);
-      emit(RestState.loaded(
+      final result = await _restDataSource.post(
+        path,
+        body: body,
+        contentType: contentType,
+        fromJson: fromJson,
+        headers: headers,
+      );
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
@@ -98,16 +110,21 @@ class RestCubit extends Cubit<RestState> {
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
-      final result = await _restDataSource.put(path,
-          body: body,
-          contentType: contentType,
-          fromJson: fromJson,
-          headers: headers);
-      emit(RestState.loaded(
+      final result = await _restDataSource.put(
+        path,
+        body: body,
+        contentType: contentType,
+        fromJson: fromJson,
+        headers: headers,
+      );
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
@@ -129,16 +146,21 @@ class RestCubit extends Cubit<RestState> {
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
-      final result = await _restDataSource.patch(path,
-          body: body,
-          contentType: contentType,
-          fromJson: fromJson,
-          headers: headers);
-      emit(RestState.loaded(
+      final result = await _restDataSource.patch(
+        path,
+        body: body,
+        contentType: contentType,
+        fromJson: fromJson,
+        headers: headers,
+      );
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
@@ -148,18 +170,23 @@ class RestCubit extends Cubit<RestState> {
   ///
   ///Perform a DELETE request to API with specific
   ///[path]. You can send the [headers] for request.
-  Future<void> delete(String path,
-      {Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      bool withLoading = true}) async {
+  Future<void> delete(
+    String path, {
+    Function(Map<String, dynamic>)? fromJson,
+    Map<String, String>? headers,
+    bool withLoading = true,
+  }) async {
     if (withLoading) emit(RestState.loading());
     try {
       final result = await _restDataSource.delete(path, headers: headers);
-      emit(RestState.loaded(
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }
@@ -184,16 +211,22 @@ class RestCubit extends Cubit<RestState> {
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
-      final result = await _restDataSource.formData(path, body,
-          contentType: contentType,
-          fromJson: fromJson,
-          headers: headers,
-          onProgressChanged: onProgressChanged);
-      emit(RestState.loaded(
+      final result = await _restDataSource.formData(
+        path,
+        body,
+        contentType: contentType,
+        fromJson: fromJson,
+        headers: headers,
+        onProgressChanged: onProgressChanged,
+      );
+      emit(
+        RestState.loaded(
           data: result['data'],
           headers: result['headers'] as Map<String, List<String>>,
           lastPath: path,
-          timestamp: DateTime.now().toIso8601String()));
+          timestamp: DateTime.now().toIso8601String(),
+        ),
+      );
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
     }

@@ -33,9 +33,11 @@ class RestDataSource {
     Map<String, String>? params,
   }) async {
     try {
-      final response = await client.get<dynamic>(path,
-          queryParameters: params,
-          options: Options(headers: headers, responseType: ResponseType.json));
+      final response = await client.get<dynamic>(
+        path,
+        queryParameters: params,
+        options: Options(headers: headers, responseType: ResponseType.json),
+      );
       return response.manageRestRequestResponse(fromJson: fromJson);
     } on DioError catch (e) {
       throw e.manageRequestError();
@@ -56,12 +58,15 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.post<dynamic>(path,
-          data: body,
-          options: Options(
-              contentType: contentType,
-              headers: headers,
-              responseType: ResponseType.json));
+      final response = await client.post<dynamic>(
+        path,
+        data: body,
+        options: Options(
+          contentType: contentType,
+          headers: headers,
+          responseType: ResponseType.json,
+        ),
+      );
       return response.manageRestRequestResponse(fromJson: fromJson);
     } on DioError catch (e) {
       throw e.manageRequestError();
@@ -82,12 +87,15 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.put<dynamic>(path,
-          data: body,
-          options: Options(
-              contentType: contentType,
-              headers: headers,
-              responseType: ResponseType.json));
+      final response = await client.put<dynamic>(
+        path,
+        data: body,
+        options: Options(
+          contentType: contentType,
+          headers: headers,
+          responseType: ResponseType.json,
+        ),
+      );
       return response.manageRestRequestResponse(fromJson: fromJson);
     } on DioError catch (e) {
       throw e.manageRequestError();
@@ -108,12 +116,15 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.patch<dynamic>(path,
-          data: body,
-          options: Options(
-              contentType: contentType,
-              headers: headers,
-              responseType: ResponseType.json));
+      final response = await client.patch<dynamic>(
+        path,
+        data: body,
+        options: Options(
+          contentType: contentType,
+          headers: headers,
+          responseType: ResponseType.json,
+        ),
+      );
       return response.manageRestRequestResponse(fromJson: fromJson);
     } on DioError catch (e) {
       throw e.manageRequestError();
@@ -129,8 +140,10 @@ class RestDataSource {
     Map<String, String>? headers,
   }) async {
     try {
-      final response = await client.delete<dynamic>(path,
-          options: Options(headers: headers, responseType: ResponseType.json));
+      final response = await client.delete<dynamic>(
+        path,
+        options: Options(headers: headers, responseType: ResponseType.json),
+      );
       return response.manageRestRequestResponse();
     } on DioError catch (e) {
       throw e.manageRequestError();
@@ -154,13 +167,16 @@ class RestDataSource {
     String? contentType,
   }) async {
     try {
-      final response = await client.post<dynamic>(path,
-          data: formData,
-          onSendProgress: onProgressChanged,
-          options: Options(
-              contentType: contentType,
-              headers: headers,
-              responseType: ResponseType.json));
+      final response = await client.post<dynamic>(
+        path,
+        data: formData,
+        onSendProgress: onProgressChanged,
+        options: Options(
+          contentType: contentType,
+          headers: headers,
+          responseType: ResponseType.json,
+        ),
+      );
       return response.manageRestRequestResponse(fromJson: fromJson);
     } on DioError catch (e) {
       throw e.manageRequestError();

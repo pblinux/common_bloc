@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rss_event.dart';
 
@@ -112,7 +114,7 @@ class _$_RssEvent implements _RssEvent {
 
   @override
   final String rssUrl;
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   @override
   final bool withLoading;
 
@@ -124,19 +126,18 @@ class _$_RssEvent implements _RssEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RssEvent &&
-            (identical(other.rssUrl, rssUrl) ||
-                const DeepCollectionEquality().equals(other.rssUrl, rssUrl)) &&
-            (identical(other.withLoading, withLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.withLoading, withLoading)));
+        (other.runtimeType == runtimeType &&
+            other is _RssEvent &&
+            const DeepCollectionEquality().equals(other.rssUrl, rssUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.withLoading, withLoading));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(rssUrl) ^
-      const DeepCollectionEquality().hash(withLoading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(rssUrl),
+      const DeepCollectionEquality().hash(withLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -148,9 +149,9 @@ abstract class _RssEvent implements RssEvent {
   factory _RssEvent(String rssUrl, {bool withLoading}) = _$_RssEvent;
 
   @override
-  String get rssUrl => throw _privateConstructorUsedError;
+  String get rssUrl;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
+  bool get withLoading;
   @override
   @JsonKey(ignore: true)
   _$RssEventCopyWith<_RssEvent> get copyWith =>

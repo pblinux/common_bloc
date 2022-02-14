@@ -47,38 +47,58 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     if (event.withLoading) emit(RestState.loading());
     try {
       final result = await event.map(
-          clear: (e) => null,
-          delete: (e) => _restDataSource.delete(e.path, headers: e.headers),
-          get: (e) => _restDataSource.get(e.path,
-              fromJson: e.fromJson, params: e.params, headers: e.headers),
-          patch: (e) => _restDataSource.patch(e.path,
-              body: e.body,
-              contentType: e.contentType,
-              fromJson: e.fromJson,
-              headers: e.headers),
-          post: (e) => _restDataSource.post(e.path,
-              body: e.body,
-              contentType: e.contentType,
-              fromJson: e.fromJson,
-              headers: e.headers),
-          put: (e) => _restDataSource.put(e.path,
-              body: e.body,
-              contentType: e.contentType,
-              fromJson: e.fromJson,
-              headers: e.headers),
-          formData: (e) => _restDataSource.formData(e.path, e.body,
-              contentType: e.contentType,
-              fromJson: e.fromJson,
-              headers: e.headers,
-              onProgressChanged: e.onProgressChanged));
+        clear: (e) => null,
+        delete: (e) => _restDataSource.delete(
+          e.path,
+          headers: e.headers,
+        ),
+        get: (e) => _restDataSource.get(
+          e.path,
+          fromJson: e.fromJson,
+          params: e.params,
+          headers: e.headers,
+        ),
+        patch: (e) => _restDataSource.patch(
+          e.path,
+          body: e.body,
+          contentType: e.contentType,
+          fromJson: e.fromJson,
+          headers: e.headers,
+        ),
+        post: (e) => _restDataSource.post(
+          e.path,
+          body: e.body,
+          contentType: e.contentType,
+          fromJson: e.fromJson,
+          headers: e.headers,
+        ),
+        put: (e) => _restDataSource.put(
+          e.path,
+          body: e.body,
+          contentType: e.contentType,
+          fromJson: e.fromJson,
+          headers: e.headers,
+        ),
+        formData: (e) => _restDataSource.formData(
+          e.path,
+          e.body,
+          contentType: e.contentType,
+          fromJson: e.fromJson,
+          headers: e.headers,
+          onProgressChanged: e.onProgressChanged,
+        ),
+      );
       if (result == null) {
         emit(RestState.uninitialized());
       } else {
-        emit(RestState.loaded(
+        emit(
+          RestState.loaded(
             data: result['data'],
             headers: result['headers'] as Map<String, List<String>>,
             lastPath: event.path,
-            timestamp: DateTime.now().toIso8601String()));
+            timestamp: DateTime.now().toIso8601String(),
+          ),
+        );
       }
     } on ResponseException catch (e) {
       emit(RestState.error(humanMessage: e.humanMessage, message: e.message));
@@ -98,13 +118,15 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     Map<String, String>? params,
     bool withLoading = true,
   }) =>
-      add(RestEvent.get(
-        path,
-        params: params,
-        fromJson: fromJson,
-        headers: headers,
-        withLoading: withLoading,
-      ));
+      add(
+        RestEvent.get(
+          path,
+          params: params,
+          fromJson: fromJson,
+          headers: headers,
+          withLoading: withLoading,
+        ),
+      );
 
   ///POST request to API
   ///
@@ -120,12 +142,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     String? contentType,
     bool withLoading = true,
   }) =>
-      add(RestEvent.post(path,
+      add(
+        RestEvent.post(
+          path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
           headers: headers,
-          withLoading: withLoading));
+          withLoading: withLoading,
+        ),
+      );
 
   ///PUT request to API
   ///
@@ -141,12 +167,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     String? contentType,
     bool withLoading = true,
   }) =>
-      add(RestEvent.put(path,
+      add(
+        RestEvent.put(
+          path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
           headers: headers,
-          withLoading: withLoading));
+          withLoading: withLoading,
+        ),
+      );
 
   ///PATCH request to API
   ///
@@ -162,12 +192,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     String? contentType,
     bool withLoading = true,
   }) =>
-      add(RestEvent.patch(path,
+      add(
+        RestEvent.patch(
+          path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
           headers: headers,
-          withLoading: withLoading));
+          withLoading: withLoading,
+        ),
+      );
 
   ///DELETE request to API
   ///
@@ -198,12 +232,16 @@ class RestBloc extends Bloc<RestEvent, RestState> {
     String? contentType,
     bool withLoading = true,
   }) =>
-      add(RestEvent.formData(path,
+      add(
+        RestEvent.formData(
+          path,
           body: body,
           contentType: contentType,
           fromJson: fromJson,
           headers: headers,
-          withLoading: withLoading));
+          withLoading: withLoading,
+        ),
+      );
 
   ///Clear RestState
   ///

@@ -33,7 +33,10 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   ///Perfoms an action that be dispatched by RequestBloc
   ///
   ///requestAction needs to return the data you will need later.
-  void perform(Future<dynamic> Function() response, String actionName,
-          {bool withLoading = true}) =>
+  void perform(
+    Future<dynamic> Function() response,
+    String actionName, {
+    bool withLoading = true,
+  }) =>
       add(RequestEvent(response, actionName, withLoading: withLoading));
 }
