@@ -12,117 +12,12 @@ part of 'rest_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RestEventTearOff {
-  const _$RestEventTearOff();
-
-  GetEvent get(String path,
-      {bool withLoading = true,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, String>? params}) {
-    return GetEvent(
-      path,
-      withLoading: withLoading,
-      fromJson: fromJson,
-      headers: headers,
-      params: params,
-    );
-  }
-
-  PostEvent post(String path,
-      {bool withLoading = true,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) {
-    return PostEvent(
-      path,
-      withLoading: withLoading,
-      fromJson: fromJson,
-      headers: headers,
-      body: body,
-      contentType: contentType,
-    );
-  }
-
-  PutEvent put(String path,
-      {bool withLoading = true,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) {
-    return PutEvent(
-      path,
-      withLoading: withLoading,
-      fromJson: fromJson,
-      headers: headers,
-      body: body,
-      contentType: contentType,
-    );
-  }
-
-  PatchEvent patch(String path,
-      {bool withLoading = true,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) {
-    return PatchEvent(
-      path,
-      withLoading: withLoading,
-      fromJson: fromJson,
-      headers: headers,
-      body: body,
-      contentType: contentType,
-    );
-  }
-
-  DeleteEvent delete(String path,
-      {bool withLoading = true, Map<String, String>? headers}) {
-    return DeleteEvent(
-      path,
-      withLoading: withLoading,
-      headers: headers,
-    );
-  }
-
-  FromDataEvent formData(String path,
-      {bool withLoading = true,
-      required FormData body,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      dynamic Function(int, int)? onProgressChanged,
-      Map<String, String>? headers,
-      String? contentType}) {
-    return FromDataEvent(
-      path,
-      withLoading: withLoading,
-      body: body,
-      fromJson: fromJson,
-      onProgressChanged: onProgressChanged,
-      headers: headers,
-      contentType: contentType,
-    );
-  }
-
-  ClearEvent clear(String path, {bool withLoading = false}) {
-    return ClearEvent(
-      path,
-      withLoading: withLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $RestEvent = _$RestEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RestEvent {
   String get path => throw _privateConstructorUsedError;
   bool get withLoading => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -342,9 +237,10 @@ class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $GetEventCopyWith(GetEvent value, $Res Function(GetEvent) then) =
-      _$GetEventCopyWithImpl<$Res>;
+abstract class _$$GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory _$$GetEventCopyWith(
+          _$GetEvent value, $Res Function(_$GetEvent) then) =
+      __$$GetEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {String path,
@@ -355,13 +251,13 @@ abstract class $GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $GetEventCopyWith<$Res> {
-  _$GetEventCopyWithImpl(GetEvent _value, $Res Function(GetEvent) _then)
-      : super(_value, (v) => _then(v as GetEvent));
+class __$$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$GetEventCopyWith<$Res> {
+  __$$GetEventCopyWithImpl(_$GetEvent _value, $Res Function(_$GetEvent) _then)
+      : super(_value, (v) => _then(v as _$GetEvent));
 
   @override
-  GetEvent get _value => super._value as GetEvent;
+  _$GetEvent get _value => super._value as _$GetEvent;
 
   @override
   $Res call({
@@ -371,7 +267,7 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? headers = freezed,
     Object? params = freezed,
   }) {
-    return _then(GetEvent(
+    return _then(_$GetEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -385,11 +281,11 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       params: params == freezed
-          ? _value.params
+          ? _value._params
           : params // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
     ));
@@ -400,19 +296,37 @@ class _$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 
 class _$GetEvent implements GetEvent {
   _$GetEvent(this.path,
-      {this.withLoading = true, this.fromJson, this.headers, this.params});
+      {this.withLoading = true,
+      this.fromJson,
+      final Map<String, String>? headers,
+      final Map<String, String>? params})
+      : _headers = headers,
+        _params = params;
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, String>? _params;
   @override
-  final Map<String, String>? params;
+  Map<String, String>? get params {
+    final value = _params;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -423,14 +337,14 @@ class _$GetEvent implements GetEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetEvent &&
+            other is _$GetEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            const DeepCollectionEquality().equals(other.params, params));
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other._params, _params));
   }
 
   @override
@@ -439,13 +353,13 @@ class _$GetEvent implements GetEvent {
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(withLoading),
       fromJson,
-      const DeepCollectionEquality().hash(headers),
-      const DeepCollectionEquality().hash(params));
+      const DeepCollectionEquality().hash(_headers),
+      const DeepCollectionEquality().hash(_params));
 
   @JsonKey(ignore: true)
   @override
-  $GetEventCopyWith<GetEvent> get copyWith =>
-      _$GetEventCopyWithImpl<GetEvent>(this, _$identity);
+  _$$GetEventCopyWith<_$GetEvent> get copyWith =>
+      __$$GetEventCopyWithImpl<_$GetEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -652,29 +566,31 @@ class _$GetEvent implements GetEvent {
 }
 
 abstract class GetEvent implements RestEvent {
-  factory GetEvent(String path,
-      {bool withLoading,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, String>? params}) = _$GetEvent;
+  factory GetEvent(final String path,
+      {final bool withLoading,
+      final dynamic Function(Map<String, dynamic>)? fromJson,
+      final Map<String, String>? headers,
+      final Map<String, String>? params}) = _$GetEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  dynamic Function(Map<String, dynamic>)? get fromJson;
-  Map<String, String>? get headers;
-  Map<String, String>? get params;
+  bool get withLoading => throw _privateConstructorUsedError;
+  dynamic Function(Map<String, dynamic>)? get fromJson =>
+      throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  Map<String, String>? get params => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $GetEventCopyWith<GetEvent> get copyWith =>
+  _$$GetEventCopyWith<_$GetEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $PostEventCopyWith(PostEvent value, $Res Function(PostEvent) then) =
-      _$PostEventCopyWithImpl<$Res>;
+abstract class _$$PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory _$$PostEventCopyWith(
+          _$PostEvent value, $Res Function(_$PostEvent) then) =
+      __$$PostEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {String path,
@@ -686,13 +602,14 @@ abstract class $PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $PostEventCopyWith<$Res> {
-  _$PostEventCopyWithImpl(PostEvent _value, $Res Function(PostEvent) _then)
-      : super(_value, (v) => _then(v as PostEvent));
+class __$$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$PostEventCopyWith<$Res> {
+  __$$PostEventCopyWithImpl(
+      _$PostEvent _value, $Res Function(_$PostEvent) _then)
+      : super(_value, (v) => _then(v as _$PostEvent));
 
   @override
-  PostEvent get _value => super._value as PostEvent;
+  _$PostEvent get _value => super._value as _$PostEvent;
 
   @override
   $Res call({
@@ -703,7 +620,7 @@ class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
-    return _then(PostEvent(
+    return _then(_$PostEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -717,11 +634,11 @@ class _$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       body: body == freezed
-          ? _value.body
+          ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       contentType: contentType == freezed
@@ -738,21 +655,37 @@ class _$PostEvent implements PostEvent {
   _$PostEvent(this.path,
       {this.withLoading = true,
       this.fromJson,
-      this.headers,
-      this.body,
-      this.contentType});
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      this.contentType})
+      : _headers = headers,
+        _body = body;
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _body;
   @override
-  final Map<String, dynamic>? body;
+  Map<String, dynamic>? get body {
+    final value = _body;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? contentType;
 
@@ -765,14 +698,14 @@ class _$PostEvent implements PostEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PostEvent &&
+            other is _$PostEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other._body, _body) &&
             const DeepCollectionEquality()
                 .equals(other.contentType, contentType));
   }
@@ -783,14 +716,14 @@ class _$PostEvent implements PostEvent {
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(withLoading),
       fromJson,
-      const DeepCollectionEquality().hash(headers),
-      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(_headers),
+      const DeepCollectionEquality().hash(_body),
       const DeepCollectionEquality().hash(contentType));
 
   @JsonKey(ignore: true)
   @override
-  $PostEventCopyWith<PostEvent> get copyWith =>
-      _$PostEventCopyWithImpl<PostEvent>(this, _$identity);
+  _$$PostEventCopyWith<_$PostEvent> get copyWith =>
+      __$$PostEventCopyWithImpl<_$PostEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -997,31 +930,33 @@ class _$PostEvent implements PostEvent {
 }
 
 abstract class PostEvent implements RestEvent {
-  factory PostEvent(String path,
-      {bool withLoading,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) = _$PostEvent;
+  factory PostEvent(final String path,
+      {final bool withLoading,
+      final dynamic Function(Map<String, dynamic>)? fromJson,
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      final String? contentType}) = _$PostEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  dynamic Function(Map<String, dynamic>)? get fromJson;
-  Map<String, String>? get headers;
-  Map<String, dynamic>? get body;
-  String? get contentType;
+  bool get withLoading => throw _privateConstructorUsedError;
+  dynamic Function(Map<String, dynamic>)? get fromJson =>
+      throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  String? get contentType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $PostEventCopyWith<PostEvent> get copyWith =>
+  _$$PostEventCopyWith<_$PostEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $PutEventCopyWith(PutEvent value, $Res Function(PutEvent) then) =
-      _$PutEventCopyWithImpl<$Res>;
+abstract class _$$PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory _$$PutEventCopyWith(
+          _$PutEvent value, $Res Function(_$PutEvent) then) =
+      __$$PutEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {String path,
@@ -1033,13 +968,13 @@ abstract class $PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $PutEventCopyWith<$Res> {
-  _$PutEventCopyWithImpl(PutEvent _value, $Res Function(PutEvent) _then)
-      : super(_value, (v) => _then(v as PutEvent));
+class __$$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$PutEventCopyWith<$Res> {
+  __$$PutEventCopyWithImpl(_$PutEvent _value, $Res Function(_$PutEvent) _then)
+      : super(_value, (v) => _then(v as _$PutEvent));
 
   @override
-  PutEvent get _value => super._value as PutEvent;
+  _$PutEvent get _value => super._value as _$PutEvent;
 
   @override
   $Res call({
@@ -1050,7 +985,7 @@ class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
-    return _then(PutEvent(
+    return _then(_$PutEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1064,11 +999,11 @@ class _$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       body: body == freezed
-          ? _value.body
+          ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       contentType: contentType == freezed
@@ -1085,21 +1020,37 @@ class _$PutEvent implements PutEvent {
   _$PutEvent(this.path,
       {this.withLoading = true,
       this.fromJson,
-      this.headers,
-      this.body,
-      this.contentType});
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      this.contentType})
+      : _headers = headers,
+        _body = body;
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _body;
   @override
-  final Map<String, dynamic>? body;
+  Map<String, dynamic>? get body {
+    final value = _body;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? contentType;
 
@@ -1112,14 +1063,14 @@ class _$PutEvent implements PutEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PutEvent &&
+            other is _$PutEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other._body, _body) &&
             const DeepCollectionEquality()
                 .equals(other.contentType, contentType));
   }
@@ -1130,14 +1081,14 @@ class _$PutEvent implements PutEvent {
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(withLoading),
       fromJson,
-      const DeepCollectionEquality().hash(headers),
-      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(_headers),
+      const DeepCollectionEquality().hash(_body),
       const DeepCollectionEquality().hash(contentType));
 
   @JsonKey(ignore: true)
   @override
-  $PutEventCopyWith<PutEvent> get copyWith =>
-      _$PutEventCopyWithImpl<PutEvent>(this, _$identity);
+  _$$PutEventCopyWith<_$PutEvent> get copyWith =>
+      __$$PutEventCopyWithImpl<_$PutEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1344,32 +1295,33 @@ class _$PutEvent implements PutEvent {
 }
 
 abstract class PutEvent implements RestEvent {
-  factory PutEvent(String path,
-      {bool withLoading,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) = _$PutEvent;
+  factory PutEvent(final String path,
+      {final bool withLoading,
+      final dynamic Function(Map<String, dynamic>)? fromJson,
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      final String? contentType}) = _$PutEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  dynamic Function(Map<String, dynamic>)? get fromJson;
-  Map<String, String>? get headers;
-  Map<String, dynamic>? get body;
-  String? get contentType;
+  bool get withLoading => throw _privateConstructorUsedError;
+  dynamic Function(Map<String, dynamic>)? get fromJson =>
+      throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  String? get contentType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $PutEventCopyWith<PutEvent> get copyWith =>
+  _$$PutEventCopyWith<_$PutEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $PatchEventCopyWith(
-          PatchEvent value, $Res Function(PatchEvent) then) =
-      _$PatchEventCopyWithImpl<$Res>;
+abstract class _$$PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory _$$PatchEventCopyWith(
+          _$PatchEvent value, $Res Function(_$PatchEvent) then) =
+      __$$PatchEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {String path,
@@ -1381,13 +1333,14 @@ abstract class $PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $PatchEventCopyWith<$Res> {
-  _$PatchEventCopyWithImpl(PatchEvent _value, $Res Function(PatchEvent) _then)
-      : super(_value, (v) => _then(v as PatchEvent));
+class __$$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$PatchEventCopyWith<$Res> {
+  __$$PatchEventCopyWithImpl(
+      _$PatchEvent _value, $Res Function(_$PatchEvent) _then)
+      : super(_value, (v) => _then(v as _$PatchEvent));
 
   @override
-  PatchEvent get _value => super._value as PatchEvent;
+  _$PatchEvent get _value => super._value as _$PatchEvent;
 
   @override
   $Res call({
@@ -1398,7 +1351,7 @@ class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
-    return _then(PatchEvent(
+    return _then(_$PatchEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1412,11 +1365,11 @@ class _$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       body: body == freezed
-          ? _value.body
+          ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       contentType: contentType == freezed
@@ -1433,21 +1386,37 @@ class _$PatchEvent implements PatchEvent {
   _$PatchEvent(this.path,
       {this.withLoading = true,
       this.fromJson,
-      this.headers,
-      this.body,
-      this.contentType});
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      this.contentType})
+      : _headers = headers,
+        _body = body;
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _body;
   @override
-  final Map<String, dynamic>? body;
+  Map<String, dynamic>? get body {
+    final value = _body;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? contentType;
 
@@ -1460,14 +1429,14 @@ class _$PatchEvent implements PatchEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PatchEvent &&
+            other is _$PatchEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other._body, _body) &&
             const DeepCollectionEquality()
                 .equals(other.contentType, contentType));
   }
@@ -1478,14 +1447,14 @@ class _$PatchEvent implements PatchEvent {
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(withLoading),
       fromJson,
-      const DeepCollectionEquality().hash(headers),
-      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(_headers),
+      const DeepCollectionEquality().hash(_body),
       const DeepCollectionEquality().hash(contentType));
 
   @JsonKey(ignore: true)
   @override
-  $PatchEventCopyWith<PatchEvent> get copyWith =>
-      _$PatchEventCopyWithImpl<PatchEvent>(this, _$identity);
+  _$$PatchEventCopyWith<_$PatchEvent> get copyWith =>
+      __$$PatchEventCopyWithImpl<_$PatchEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1692,45 +1661,47 @@ class _$PatchEvent implements PatchEvent {
 }
 
 abstract class PatchEvent implements RestEvent {
-  factory PatchEvent(String path,
-      {bool withLoading,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      Map<String, String>? headers,
-      Map<String, dynamic>? body,
-      String? contentType}) = _$PatchEvent;
+  factory PatchEvent(final String path,
+      {final bool withLoading,
+      final dynamic Function(Map<String, dynamic>)? fromJson,
+      final Map<String, String>? headers,
+      final Map<String, dynamic>? body,
+      final String? contentType}) = _$PatchEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  dynamic Function(Map<String, dynamic>)? get fromJson;
-  Map<String, String>? get headers;
-  Map<String, dynamic>? get body;
-  String? get contentType;
+  bool get withLoading => throw _privateConstructorUsedError;
+  dynamic Function(Map<String, dynamic>)? get fromJson =>
+      throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  String? get contentType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $PatchEventCopyWith<PatchEvent> get copyWith =>
+  _$$PatchEventCopyWith<_$PatchEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $DeleteEventCopyWith(
-          DeleteEvent value, $Res Function(DeleteEvent) then) =
-      _$DeleteEventCopyWithImpl<$Res>;
+abstract class _$$DeleteEventCopyWith<$Res>
+    implements $RestEventCopyWith<$Res> {
+  factory _$$DeleteEventCopyWith(
+          _$DeleteEvent value, $Res Function(_$DeleteEvent) then) =
+      __$$DeleteEventCopyWithImpl<$Res>;
   @override
   $Res call({String path, bool withLoading, Map<String, String>? headers});
 }
 
 /// @nodoc
-class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $DeleteEventCopyWith<$Res> {
-  _$DeleteEventCopyWithImpl(
-      DeleteEvent _value, $Res Function(DeleteEvent) _then)
-      : super(_value, (v) => _then(v as DeleteEvent));
+class __$$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$DeleteEventCopyWith<$Res> {
+  __$$DeleteEventCopyWithImpl(
+      _$DeleteEvent _value, $Res Function(_$DeleteEvent) _then)
+      : super(_value, (v) => _then(v as _$DeleteEvent));
 
   @override
-  DeleteEvent get _value => super._value as DeleteEvent;
+  _$DeleteEvent get _value => super._value as _$DeleteEvent;
 
   @override
   $Res call({
@@ -1738,7 +1709,7 @@ class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? withLoading = freezed,
     Object? headers = freezed,
   }) {
-    return _then(DeleteEvent(
+    return _then(_$DeleteEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1748,7 +1719,7 @@ class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
     ));
@@ -1758,15 +1729,23 @@ class _$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteEvent implements DeleteEvent {
-  _$DeleteEvent(this.path, {this.withLoading = true, this.headers});
+  _$DeleteEvent(this.path,
+      {this.withLoading = true, final Map<String, String>? headers})
+      : _headers = headers;
 
   @override
   final String path;
+  @override
   @JsonKey()
-  @override
   final bool withLoading;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -1777,11 +1756,11 @@ class _$DeleteEvent implements DeleteEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DeleteEvent &&
+            other is _$DeleteEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
-            const DeepCollectionEquality().equals(other.headers, headers));
+            const DeepCollectionEquality().equals(other._headers, _headers));
   }
 
   @override
@@ -1789,12 +1768,12 @@ class _$DeleteEvent implements DeleteEvent {
       runtimeType,
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(withLoading),
-      const DeepCollectionEquality().hash(headers));
+      const DeepCollectionEquality().hash(_headers));
 
   @JsonKey(ignore: true)
   @override
-  $DeleteEventCopyWith<DeleteEvent> get copyWith =>
-      _$DeleteEventCopyWithImpl<DeleteEvent>(this, _$identity);
+  _$$DeleteEventCopyWith<_$DeleteEvent> get copyWith =>
+      __$$DeleteEventCopyWithImpl<_$DeleteEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2001,26 +1980,27 @@ class _$DeleteEvent implements DeleteEvent {
 }
 
 abstract class DeleteEvent implements RestEvent {
-  factory DeleteEvent(String path,
-      {bool withLoading, Map<String, String>? headers}) = _$DeleteEvent;
+  factory DeleteEvent(final String path,
+      {final bool withLoading,
+      final Map<String, String>? headers}) = _$DeleteEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  Map<String, String>? get headers;
+  bool get withLoading => throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DeleteEventCopyWith<DeleteEvent> get copyWith =>
+  _$$DeleteEventCopyWith<_$DeleteEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FromDataEventCopyWith<$Res>
+abstract class _$$FromDataEventCopyWith<$Res>
     implements $RestEventCopyWith<$Res> {
-  factory $FromDataEventCopyWith(
-          FromDataEvent value, $Res Function(FromDataEvent) then) =
-      _$FromDataEventCopyWithImpl<$Res>;
+  factory _$$FromDataEventCopyWith(
+          _$FromDataEvent value, $Res Function(_$FromDataEvent) then) =
+      __$$FromDataEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {String path,
@@ -2033,14 +2013,14 @@ abstract class $FromDataEventCopyWith<$Res>
 }
 
 /// @nodoc
-class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $FromDataEventCopyWith<$Res> {
-  _$FromDataEventCopyWithImpl(
-      FromDataEvent _value, $Res Function(FromDataEvent) _then)
-      : super(_value, (v) => _then(v as FromDataEvent));
+class __$$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$FromDataEventCopyWith<$Res> {
+  __$$FromDataEventCopyWithImpl(
+      _$FromDataEvent _value, $Res Function(_$FromDataEvent) _then)
+      : super(_value, (v) => _then(v as _$FromDataEvent));
 
   @override
-  FromDataEvent get _value => super._value as FromDataEvent;
+  _$FromDataEvent get _value => super._value as _$FromDataEvent;
 
   @override
   $Res call({
@@ -2052,7 +2032,7 @@ class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
     Object? headers = freezed,
     Object? contentType = freezed,
   }) {
-    return _then(FromDataEvent(
+    return _then(_$FromDataEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -2074,7 +2054,7 @@ class _$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
           : onProgressChanged // ignore: cast_nullable_to_non_nullable
               as dynamic Function(int, int)?,
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       contentType: contentType == freezed
@@ -2093,13 +2073,14 @@ class _$FromDataEvent implements FromDataEvent {
       required this.body,
       this.fromJson,
       this.onProgressChanged,
-      this.headers,
-      this.contentType});
+      final Map<String, String>? headers,
+      this.contentType})
+      : _headers = headers;
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
   @override
   final FormData body;
@@ -2107,8 +2088,15 @@ class _$FromDataEvent implements FromDataEvent {
   final dynamic Function(Map<String, dynamic>)? fromJson;
   @override
   final dynamic Function(int, int)? onProgressChanged;
+  final Map<String, String>? _headers;
   @override
-  final Map<String, String>? headers;
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? contentType;
 
@@ -2121,7 +2109,7 @@ class _$FromDataEvent implements FromDataEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FromDataEvent &&
+            other is _$FromDataEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading) &&
@@ -2130,7 +2118,7 @@ class _$FromDataEvent implements FromDataEvent {
                 other.fromJson == fromJson) &&
             (identical(other.onProgressChanged, onProgressChanged) ||
                 other.onProgressChanged == onProgressChanged) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality()
                 .equals(other.contentType, contentType));
   }
@@ -2143,13 +2131,13 @@ class _$FromDataEvent implements FromDataEvent {
       const DeepCollectionEquality().hash(body),
       fromJson,
       onProgressChanged,
-      const DeepCollectionEquality().hash(headers),
+      const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(contentType));
 
   @JsonKey(ignore: true)
   @override
-  $FromDataEventCopyWith<FromDataEvent> get copyWith =>
-      _$FromDataEventCopyWithImpl<FromDataEvent>(this, _$identity);
+  _$$FromDataEventCopyWith<_$FromDataEvent> get copyWith =>
+      __$$FromDataEventCopyWithImpl<_$FromDataEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2359,53 +2347,56 @@ class _$FromDataEvent implements FromDataEvent {
 }
 
 abstract class FromDataEvent implements RestEvent {
-  factory FromDataEvent(String path,
-      {bool withLoading,
-      required FormData body,
-      dynamic Function(Map<String, dynamic>)? fromJson,
-      dynamic Function(int, int)? onProgressChanged,
-      Map<String, String>? headers,
-      String? contentType}) = _$FromDataEvent;
+  factory FromDataEvent(final String path,
+      {final bool withLoading,
+      required final FormData body,
+      final dynamic Function(Map<String, dynamic>)? fromJson,
+      final dynamic Function(int, int)? onProgressChanged,
+      final Map<String, String>? headers,
+      final String? contentType}) = _$FromDataEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
-  FormData get body;
-  dynamic Function(Map<String, dynamic>)? get fromJson;
-  dynamic Function(int, int)? get onProgressChanged;
-  Map<String, String>? get headers;
-  String? get contentType;
+  bool get withLoading => throw _privateConstructorUsedError;
+  FormData get body => throw _privateConstructorUsedError;
+  dynamic Function(Map<String, dynamic>)? get fromJson =>
+      throw _privateConstructorUsedError;
+  dynamic Function(int, int)? get onProgressChanged =>
+      throw _privateConstructorUsedError;
+  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  String? get contentType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $FromDataEventCopyWith<FromDataEvent> get copyWith =>
+  _$$FromDataEventCopyWith<_$FromDataEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
-  factory $ClearEventCopyWith(
-          ClearEvent value, $Res Function(ClearEvent) then) =
-      _$ClearEventCopyWithImpl<$Res>;
+abstract class _$$ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
+  factory _$$ClearEventCopyWith(
+          _$ClearEvent value, $Res Function(_$ClearEvent) then) =
+      __$$ClearEventCopyWithImpl<$Res>;
   @override
   $Res call({String path, bool withLoading});
 }
 
 /// @nodoc
-class _$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
-    implements $ClearEventCopyWith<$Res> {
-  _$ClearEventCopyWithImpl(ClearEvent _value, $Res Function(ClearEvent) _then)
-      : super(_value, (v) => _then(v as ClearEvent));
+class __$$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+    implements _$$ClearEventCopyWith<$Res> {
+  __$$ClearEventCopyWithImpl(
+      _$ClearEvent _value, $Res Function(_$ClearEvent) _then)
+      : super(_value, (v) => _then(v as _$ClearEvent));
 
   @override
-  ClearEvent get _value => super._value as ClearEvent;
+  _$ClearEvent get _value => super._value as _$ClearEvent;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? withLoading = freezed,
   }) {
-    return _then(ClearEvent(
+    return _then(_$ClearEvent(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -2425,8 +2416,8 @@ class _$ClearEvent implements ClearEvent {
 
   @override
   final String path;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
 
   @override
@@ -2438,7 +2429,7 @@ class _$ClearEvent implements ClearEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ClearEvent &&
+            other is _$ClearEvent &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading));
@@ -2452,8 +2443,8 @@ class _$ClearEvent implements ClearEvent {
 
   @JsonKey(ignore: true)
   @override
-  $ClearEventCopyWith<ClearEvent> get copyWith =>
-      _$ClearEventCopyWithImpl<ClearEvent>(this, _$identity);
+  _$$ClearEventCopyWith<_$ClearEvent> get copyWith =>
+      __$$ClearEventCopyWithImpl<_$ClearEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2660,14 +2651,15 @@ class _$ClearEvent implements ClearEvent {
 }
 
 abstract class ClearEvent implements RestEvent {
-  factory ClearEvent(String path, {bool withLoading}) = _$ClearEvent;
+  factory ClearEvent(final String path, {final bool withLoading}) =
+      _$ClearEvent;
 
   @override
-  String get path;
+  String get path => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
+  bool get withLoading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $ClearEventCopyWith<ClearEvent> get copyWith =>
+  _$$ClearEventCopyWith<_$ClearEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }

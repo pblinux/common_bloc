@@ -1,3 +1,7 @@
+## [4.2.2]
+* Update models
+* Update dependencies
+
 ## [4.2.1]
 * Update models
 * Update dependencies

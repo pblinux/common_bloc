@@ -12,22 +12,7 @@ part of 'rss_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RssEventTearOff {
-  const _$RssEventTearOff();
-
-  _RssEvent call(String rssUrl, {bool withLoading = true}) {
-    return _RssEvent(
-      rssUrl,
-      withLoading: withLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $RssEvent = _$RssEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RssEvent {
@@ -73,28 +58,30 @@ class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
-  factory _$RssEventCopyWith(_RssEvent value, $Res Function(_RssEvent) then) =
-      __$RssEventCopyWithImpl<$Res>;
+abstract class _$$_RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
+  factory _$$_RssEventCopyWith(
+          _$_RssEvent value, $Res Function(_$_RssEvent) then) =
+      __$$_RssEventCopyWithImpl<$Res>;
   @override
   $Res call({String rssUrl, bool withLoading});
 }
 
 /// @nodoc
-class __$RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
-    implements _$RssEventCopyWith<$Res> {
-  __$RssEventCopyWithImpl(_RssEvent _value, $Res Function(_RssEvent) _then)
-      : super(_value, (v) => _then(v as _RssEvent));
+class __$$_RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
+    implements _$$_RssEventCopyWith<$Res> {
+  __$$_RssEventCopyWithImpl(
+      _$_RssEvent _value, $Res Function(_$_RssEvent) _then)
+      : super(_value, (v) => _then(v as _$_RssEvent));
 
   @override
-  _RssEvent get _value => super._value as _RssEvent;
+  _$_RssEvent get _value => super._value as _$_RssEvent;
 
   @override
   $Res call({
     Object? rssUrl = freezed,
     Object? withLoading = freezed,
   }) {
-    return _then(_RssEvent(
+    return _then(_$_RssEvent(
       rssUrl == freezed
           ? _value.rssUrl
           : rssUrl // ignore: cast_nullable_to_non_nullable
@@ -114,8 +101,8 @@ class _$_RssEvent implements _RssEvent {
 
   @override
   final String rssUrl;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
 
   @override
@@ -127,7 +114,7 @@ class _$_RssEvent implements _RssEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RssEvent &&
+            other is _$_RssEvent &&
             const DeepCollectionEquality().equals(other.rssUrl, rssUrl) &&
             const DeepCollectionEquality()
                 .equals(other.withLoading, withLoading));
@@ -141,19 +128,20 @@ class _$_RssEvent implements _RssEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$RssEventCopyWith<_RssEvent> get copyWith =>
-      __$RssEventCopyWithImpl<_RssEvent>(this, _$identity);
+  _$$_RssEventCopyWith<_$_RssEvent> get copyWith =>
+      __$$_RssEventCopyWithImpl<_$_RssEvent>(this, _$identity);
 }
 
 abstract class _RssEvent implements RssEvent {
-  factory _RssEvent(String rssUrl, {bool withLoading}) = _$_RssEvent;
+  factory _RssEvent(final String rssUrl, {final bool withLoading}) =
+      _$_RssEvent;
 
   @override
-  String get rssUrl;
+  String get rssUrl => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
+  bool get withLoading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RssEventCopyWith<_RssEvent> get copyWith =>
+  _$$_RssEventCopyWith<_$_RssEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
