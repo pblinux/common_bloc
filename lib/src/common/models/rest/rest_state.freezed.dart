@@ -12,44 +12,7 @@ part of 'rest_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RestStateTearOff {
-  const _$RestStateTearOff();
-
-  UninitializedRestState uninitialized() {
-    return UninitializedRestState();
-  }
-
-  ErrorRestState error(
-      {required String message, required String humanMessage}) {
-    return ErrorRestState(
-      message: message,
-      humanMessage: humanMessage,
-    );
-  }
-
-  LoadingRestState loading() {
-    return LoadingRestState();
-  }
-
-  LoadedRestState loaded(
-      {required Map<String, List<String>> headers,
-      required String lastPath,
-      required String timestamp,
-      required dynamic data}) {
-    return LoadedRestState(
-      headers: headers,
-      lastPath: lastPath,
-      timestamp: timestamp,
-      data: data,
-    );
-  }
-}
-
-/// @nodoc
-const $RestState = _$RestStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RestState {
@@ -127,22 +90,23 @@ class _$RestStateCopyWithImpl<$Res> implements $RestStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $UninitializedRestStateCopyWith<$Res> {
-  factory $UninitializedRestStateCopyWith(UninitializedRestState value,
-          $Res Function(UninitializedRestState) then) =
-      _$UninitializedRestStateCopyWithImpl<$Res>;
+abstract class _$$UninitializedRestStateCopyWith<$Res> {
+  factory _$$UninitializedRestStateCopyWith(_$UninitializedRestState value,
+          $Res Function(_$UninitializedRestState) then) =
+      __$$UninitializedRestStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UninitializedRestStateCopyWithImpl<$Res>
+class __$$UninitializedRestStateCopyWithImpl<$Res>
     extends _$RestStateCopyWithImpl<$Res>
-    implements $UninitializedRestStateCopyWith<$Res> {
-  _$UninitializedRestStateCopyWithImpl(UninitializedRestState _value,
-      $Res Function(UninitializedRestState) _then)
-      : super(_value, (v) => _then(v as UninitializedRestState));
+    implements _$$UninitializedRestStateCopyWith<$Res> {
+  __$$UninitializedRestStateCopyWithImpl(_$UninitializedRestState _value,
+      $Res Function(_$UninitializedRestState) _then)
+      : super(_value, (v) => _then(v as _$UninitializedRestState));
 
   @override
-  UninitializedRestState get _value => super._value as UninitializedRestState;
+  _$UninitializedRestState get _value =>
+      super._value as _$UninitializedRestState;
 }
 
 /// @nodoc
@@ -158,7 +122,7 @@ class _$UninitializedRestState implements UninitializedRestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is UninitializedRestState);
+        (other.runtimeType == runtimeType && other is _$UninitializedRestState);
   }
 
   @override
@@ -250,29 +214,29 @@ abstract class UninitializedRestState implements RestState {
 }
 
 /// @nodoc
-abstract class $ErrorRestStateCopyWith<$Res> {
-  factory $ErrorRestStateCopyWith(
-          ErrorRestState value, $Res Function(ErrorRestState) then) =
-      _$ErrorRestStateCopyWithImpl<$Res>;
+abstract class _$$ErrorRestStateCopyWith<$Res> {
+  factory _$$ErrorRestStateCopyWith(
+          _$ErrorRestState value, $Res Function(_$ErrorRestState) then) =
+      __$$ErrorRestStateCopyWithImpl<$Res>;
   $Res call({String message, String humanMessage});
 }
 
 /// @nodoc
-class _$ErrorRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
-    implements $ErrorRestStateCopyWith<$Res> {
-  _$ErrorRestStateCopyWithImpl(
-      ErrorRestState _value, $Res Function(ErrorRestState) _then)
-      : super(_value, (v) => _then(v as ErrorRestState));
+class __$$ErrorRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
+    implements _$$ErrorRestStateCopyWith<$Res> {
+  __$$ErrorRestStateCopyWithImpl(
+      _$ErrorRestState _value, $Res Function(_$ErrorRestState) _then)
+      : super(_value, (v) => _then(v as _$ErrorRestState));
 
   @override
-  ErrorRestState get _value => super._value as ErrorRestState;
+  _$ErrorRestState get _value => super._value as _$ErrorRestState;
 
   @override
   $Res call({
     Object? message = freezed,
     Object? humanMessage = freezed,
   }) {
-    return _then(ErrorRestState(
+    return _then(_$ErrorRestState(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -304,7 +268,7 @@ class _$ErrorRestState implements ErrorRestState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ErrorRestState &&
+            other is _$ErrorRestState &&
             const DeepCollectionEquality().equals(other.message, message) &&
             const DeepCollectionEquality()
                 .equals(other.humanMessage, humanMessage));
@@ -318,8 +282,8 @@ class _$ErrorRestState implements ErrorRestState {
 
   @JsonKey(ignore: true)
   @override
-  $ErrorRestStateCopyWith<ErrorRestState> get copyWith =>
-      _$ErrorRestStateCopyWithImpl<ErrorRestState>(this, _$identity);
+  _$$ErrorRestStateCopyWith<_$ErrorRestState> get copyWith =>
+      __$$ErrorRestStateCopyWithImpl<_$ErrorRestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -404,32 +368,33 @@ class _$ErrorRestState implements ErrorRestState {
 
 abstract class ErrorRestState implements RestState {
   factory ErrorRestState(
-      {required String message,
-      required String humanMessage}) = _$ErrorRestState;
+      {required final String message,
+      required final String humanMessage}) = _$ErrorRestState;
 
-  String get message;
-  String get humanMessage;
+  String get message => throw _privateConstructorUsedError;
+  String get humanMessage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorRestStateCopyWith<ErrorRestState> get copyWith =>
+  _$$ErrorRestStateCopyWith<_$ErrorRestState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingRestStateCopyWith<$Res> {
-  factory $LoadingRestStateCopyWith(
-          LoadingRestState value, $Res Function(LoadingRestState) then) =
-      _$LoadingRestStateCopyWithImpl<$Res>;
+abstract class _$$LoadingRestStateCopyWith<$Res> {
+  factory _$$LoadingRestStateCopyWith(
+          _$LoadingRestState value, $Res Function(_$LoadingRestState) then) =
+      __$$LoadingRestStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
-    implements $LoadingRestStateCopyWith<$Res> {
-  _$LoadingRestStateCopyWithImpl(
-      LoadingRestState _value, $Res Function(LoadingRestState) _then)
-      : super(_value, (v) => _then(v as LoadingRestState));
+class __$$LoadingRestStateCopyWithImpl<$Res>
+    extends _$RestStateCopyWithImpl<$Res>
+    implements _$$LoadingRestStateCopyWith<$Res> {
+  __$$LoadingRestStateCopyWithImpl(
+      _$LoadingRestState _value, $Res Function(_$LoadingRestState) _then)
+      : super(_value, (v) => _then(v as _$LoadingRestState));
 
   @override
-  LoadingRestState get _value => super._value as LoadingRestState;
+  _$LoadingRestState get _value => super._value as _$LoadingRestState;
 }
 
 /// @nodoc
@@ -445,7 +410,7 @@ class _$LoadingRestState implements LoadingRestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingRestState);
+        (other.runtimeType == runtimeType && other is _$LoadingRestState);
   }
 
   @override
@@ -537,10 +502,10 @@ abstract class LoadingRestState implements RestState {
 }
 
 /// @nodoc
-abstract class $LoadedRestStateCopyWith<$Res> {
-  factory $LoadedRestStateCopyWith(
-          LoadedRestState value, $Res Function(LoadedRestState) then) =
-      _$LoadedRestStateCopyWithImpl<$Res>;
+abstract class _$$LoadedRestStateCopyWith<$Res> {
+  factory _$$LoadedRestStateCopyWith(
+          _$LoadedRestState value, $Res Function(_$LoadedRestState) then) =
+      __$$LoadedRestStateCopyWithImpl<$Res>;
   $Res call(
       {Map<String, List<String>> headers,
       String lastPath,
@@ -549,14 +514,15 @@ abstract class $LoadedRestStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoadedRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
-    implements $LoadedRestStateCopyWith<$Res> {
-  _$LoadedRestStateCopyWithImpl(
-      LoadedRestState _value, $Res Function(LoadedRestState) _then)
-      : super(_value, (v) => _then(v as LoadedRestState));
+class __$$LoadedRestStateCopyWithImpl<$Res>
+    extends _$RestStateCopyWithImpl<$Res>
+    implements _$$LoadedRestStateCopyWith<$Res> {
+  __$$LoadedRestStateCopyWithImpl(
+      _$LoadedRestState _value, $Res Function(_$LoadedRestState) _then)
+      : super(_value, (v) => _then(v as _$LoadedRestState));
 
   @override
-  LoadedRestState get _value => super._value as LoadedRestState;
+  _$LoadedRestState get _value => super._value as _$LoadedRestState;
 
   @override
   $Res call({
@@ -565,9 +531,9 @@ class _$LoadedRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
     Object? timestamp = freezed,
     Object? data = freezed,
   }) {
-    return _then(LoadedRestState(
+    return _then(_$LoadedRestState(
       headers: headers == freezed
-          ? _value.headers
+          ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, List<String>>,
       lastPath: lastPath == freezed
@@ -590,13 +556,19 @@ class _$LoadedRestStateCopyWithImpl<$Res> extends _$RestStateCopyWithImpl<$Res>
 
 class _$LoadedRestState implements LoadedRestState {
   _$LoadedRestState(
-      {required this.headers,
+      {required final Map<String, List<String>> headers,
       required this.lastPath,
       required this.timestamp,
-      required this.data});
+      required this.data})
+      : _headers = headers;
 
+  final Map<String, List<String>> _headers;
   @override
-  final Map<String, List<String>> headers;
+  Map<String, List<String>> get headers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_headers);
+  }
+
   @override
   final String lastPath;
   @override
@@ -613,8 +585,8 @@ class _$LoadedRestState implements LoadedRestState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoadedRestState &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
+            other is _$LoadedRestState &&
+            const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other.lastPath, lastPath) &&
             const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -623,15 +595,15 @@ class _$LoadedRestState implements LoadedRestState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(headers),
+      const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(lastPath),
       const DeepCollectionEquality().hash(timestamp),
       const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
-  $LoadedRestStateCopyWith<LoadedRestState> get copyWith =>
-      _$LoadedRestStateCopyWithImpl<LoadedRestState>(this, _$identity);
+  _$$LoadedRestStateCopyWith<_$LoadedRestState> get copyWith =>
+      __$$LoadedRestStateCopyWithImpl<_$LoadedRestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -716,16 +688,16 @@ class _$LoadedRestState implements LoadedRestState {
 
 abstract class LoadedRestState implements RestState {
   factory LoadedRestState(
-      {required Map<String, List<String>> headers,
-      required String lastPath,
-      required String timestamp,
-      required dynamic data}) = _$LoadedRestState;
+      {required final Map<String, List<String>> headers,
+      required final String lastPath,
+      required final String timestamp,
+      required final dynamic data}) = _$LoadedRestState;
 
-  Map<String, List<String>> get headers;
-  String get lastPath;
-  String get timestamp;
-  dynamic get data;
+  Map<String, List<String>> get headers => throw _privateConstructorUsedError;
+  String get lastPath => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoadedRestStateCopyWith<LoadedRestState> get copyWith =>
+  _$$LoadedRestStateCopyWith<_$LoadedRestState> get copyWith =>
       throw _privateConstructorUsedError;
 }

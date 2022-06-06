@@ -12,24 +12,7 @@ part of 'request_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RequestEventTearOff {
-  const _$RequestEventTearOff();
-
-  _RequestEvent call(Future<dynamic> Function() response, String actionName,
-      {bool withLoading = true}) {
-    return _RequestEvent(
-      response,
-      actionName,
-      withLoading: withLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $RequestEvent = _$RequestEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RequestEvent {
@@ -85,11 +68,11 @@ class _$RequestEventCopyWithImpl<$Res> implements $RequestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RequestEventCopyWith<$Res>
+abstract class _$$_RequestEventCopyWith<$Res>
     implements $RequestEventCopyWith<$Res> {
-  factory _$RequestEventCopyWith(
-          _RequestEvent value, $Res Function(_RequestEvent) then) =
-      __$RequestEventCopyWithImpl<$Res>;
+  factory _$$_RequestEventCopyWith(
+          _$_RequestEvent value, $Res Function(_$_RequestEvent) then) =
+      __$$_RequestEventCopyWithImpl<$Res>;
   @override
   $Res call(
       {Future<dynamic> Function() response,
@@ -98,14 +81,15 @@ abstract class _$RequestEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
-    implements _$RequestEventCopyWith<$Res> {
-  __$RequestEventCopyWithImpl(
-      _RequestEvent _value, $Res Function(_RequestEvent) _then)
-      : super(_value, (v) => _then(v as _RequestEvent));
+class __$$_RequestEventCopyWithImpl<$Res>
+    extends _$RequestEventCopyWithImpl<$Res>
+    implements _$$_RequestEventCopyWith<$Res> {
+  __$$_RequestEventCopyWithImpl(
+      _$_RequestEvent _value, $Res Function(_$_RequestEvent) _then)
+      : super(_value, (v) => _then(v as _$_RequestEvent));
 
   @override
-  _RequestEvent get _value => super._value as _RequestEvent;
+  _$_RequestEvent get _value => super._value as _$_RequestEvent;
 
   @override
   $Res call({
@@ -113,7 +97,7 @@ class __$RequestEventCopyWithImpl<$Res> extends _$RequestEventCopyWithImpl<$Res>
     Object? actionName = freezed,
     Object? withLoading = freezed,
   }) {
-    return _then(_RequestEvent(
+    return _then(_$_RequestEvent(
       response == freezed
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
@@ -139,8 +123,8 @@ class _$_RequestEvent implements _RequestEvent {
   final Future<dynamic> Function() response;
   @override
   final String actionName;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool withLoading;
 
   @override
@@ -152,7 +136,7 @@ class _$_RequestEvent implements _RequestEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RequestEvent &&
+            other is _$_RequestEvent &&
             (identical(other.response, response) ||
                 other.response == response) &&
             const DeepCollectionEquality()
@@ -170,22 +154,23 @@ class _$_RequestEvent implements _RequestEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$RequestEventCopyWith<_RequestEvent> get copyWith =>
-      __$RequestEventCopyWithImpl<_RequestEvent>(this, _$identity);
+  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
+      __$$_RequestEventCopyWithImpl<_$_RequestEvent>(this, _$identity);
 }
 
 abstract class _RequestEvent implements RequestEvent {
-  factory _RequestEvent(Future<dynamic> Function() response, String actionName,
-      {bool withLoading}) = _$_RequestEvent;
+  factory _RequestEvent(
+      final Future<dynamic> Function() response, final String actionName,
+      {final bool withLoading}) = _$_RequestEvent;
 
   @override
-  Future<dynamic> Function() get response;
+  Future<dynamic> Function() get response => throw _privateConstructorUsedError;
   @override
-  String get actionName;
+  String get actionName => throw _privateConstructorUsedError;
   @override
-  bool get withLoading;
+  bool get withLoading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RequestEventCopyWith<_RequestEvent> get copyWith =>
+  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }

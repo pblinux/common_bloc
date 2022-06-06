@@ -12,36 +12,7 @@ part of 'rss_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RssStateTearOff {
-  const _$RssStateTearOff();
-
-  UninitializedRssState uninitialized() {
-    return UninitializedRssState();
-  }
-
-  ErrorRssState error({required String message}) {
-    return ErrorRssState(
-      message: message,
-    );
-  }
-
-  LoadingRssState loading() {
-    return LoadingRssState();
-  }
-
-  LoadedRssState loaded({required RssFeed data, required String timestamp}) {
-    return LoadedRssState(
-      data: data,
-      timestamp: timestamp,
-    );
-  }
-}
-
-/// @nodoc
-const $RssState = _$RssStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RssState {
@@ -113,22 +84,22 @@ class _$RssStateCopyWithImpl<$Res> implements $RssStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $UninitializedRssStateCopyWith<$Res> {
-  factory $UninitializedRssStateCopyWith(UninitializedRssState value,
-          $Res Function(UninitializedRssState) then) =
-      _$UninitializedRssStateCopyWithImpl<$Res>;
+abstract class _$$UninitializedRssStateCopyWith<$Res> {
+  factory _$$UninitializedRssStateCopyWith(_$UninitializedRssState value,
+          $Res Function(_$UninitializedRssState) then) =
+      __$$UninitializedRssStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UninitializedRssStateCopyWithImpl<$Res>
+class __$$UninitializedRssStateCopyWithImpl<$Res>
     extends _$RssStateCopyWithImpl<$Res>
-    implements $UninitializedRssStateCopyWith<$Res> {
-  _$UninitializedRssStateCopyWithImpl(
-      UninitializedRssState _value, $Res Function(UninitializedRssState) _then)
-      : super(_value, (v) => _then(v as UninitializedRssState));
+    implements _$$UninitializedRssStateCopyWith<$Res> {
+  __$$UninitializedRssStateCopyWithImpl(_$UninitializedRssState _value,
+      $Res Function(_$UninitializedRssState) _then)
+      : super(_value, (v) => _then(v as _$UninitializedRssState));
 
   @override
-  UninitializedRssState get _value => super._value as UninitializedRssState;
+  _$UninitializedRssState get _value => super._value as _$UninitializedRssState;
 }
 
 /// @nodoc
@@ -144,7 +115,7 @@ class _$UninitializedRssState implements UninitializedRssState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is UninitializedRssState);
+        (other.runtimeType == runtimeType && other is _$UninitializedRssState);
   }
 
   @override
@@ -230,28 +201,28 @@ abstract class UninitializedRssState implements RssState {
 }
 
 /// @nodoc
-abstract class $ErrorRssStateCopyWith<$Res> {
-  factory $ErrorRssStateCopyWith(
-          ErrorRssState value, $Res Function(ErrorRssState) then) =
-      _$ErrorRssStateCopyWithImpl<$Res>;
+abstract class _$$ErrorRssStateCopyWith<$Res> {
+  factory _$$ErrorRssStateCopyWith(
+          _$ErrorRssState value, $Res Function(_$ErrorRssState) then) =
+      __$$ErrorRssStateCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class _$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
-    implements $ErrorRssStateCopyWith<$Res> {
-  _$ErrorRssStateCopyWithImpl(
-      ErrorRssState _value, $Res Function(ErrorRssState) _then)
-      : super(_value, (v) => _then(v as ErrorRssState));
+class __$$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements _$$ErrorRssStateCopyWith<$Res> {
+  __$$ErrorRssStateCopyWithImpl(
+      _$ErrorRssState _value, $Res Function(_$ErrorRssState) _then)
+      : super(_value, (v) => _then(v as _$ErrorRssState));
 
   @override
-  ErrorRssState get _value => super._value as ErrorRssState;
+  _$ErrorRssState get _value => super._value as _$ErrorRssState;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(ErrorRssState(
+    return _then(_$ErrorRssState(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -277,7 +248,7 @@ class _$ErrorRssState implements ErrorRssState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ErrorRssState &&
+            other is _$ErrorRssState &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -287,8 +258,8 @@ class _$ErrorRssState implements ErrorRssState {
 
   @JsonKey(ignore: true)
   @override
-  $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
-      _$ErrorRssStateCopyWithImpl<ErrorRssState>(this, _$identity);
+  _$$ErrorRssStateCopyWith<_$ErrorRssState> get copyWith =>
+      __$$ErrorRssStateCopyWithImpl<_$ErrorRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -366,30 +337,30 @@ class _$ErrorRssState implements ErrorRssState {
 }
 
 abstract class ErrorRssState implements RssState {
-  factory ErrorRssState({required String message}) = _$ErrorRssState;
+  factory ErrorRssState({required final String message}) = _$ErrorRssState;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorRssStateCopyWith<ErrorRssState> get copyWith =>
+  _$$ErrorRssStateCopyWith<_$ErrorRssState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingRssStateCopyWith<$Res> {
-  factory $LoadingRssStateCopyWith(
-          LoadingRssState value, $Res Function(LoadingRssState) then) =
-      _$LoadingRssStateCopyWithImpl<$Res>;
+abstract class _$$LoadingRssStateCopyWith<$Res> {
+  factory _$$LoadingRssStateCopyWith(
+          _$LoadingRssState value, $Res Function(_$LoadingRssState) then) =
+      __$$LoadingRssStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
-    implements $LoadingRssStateCopyWith<$Res> {
-  _$LoadingRssStateCopyWithImpl(
-      LoadingRssState _value, $Res Function(LoadingRssState) _then)
-      : super(_value, (v) => _then(v as LoadingRssState));
+class __$$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements _$$LoadingRssStateCopyWith<$Res> {
+  __$$LoadingRssStateCopyWithImpl(
+      _$LoadingRssState _value, $Res Function(_$LoadingRssState) _then)
+      : super(_value, (v) => _then(v as _$LoadingRssState));
 
   @override
-  LoadingRssState get _value => super._value as LoadingRssState;
+  _$LoadingRssState get _value => super._value as _$LoadingRssState;
 }
 
 /// @nodoc
@@ -405,7 +376,7 @@ class _$LoadingRssState implements LoadingRssState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingRssState);
+        (other.runtimeType == runtimeType && other is _$LoadingRssState);
   }
 
   @override
@@ -491,29 +462,29 @@ abstract class LoadingRssState implements RssState {
 }
 
 /// @nodoc
-abstract class $LoadedRssStateCopyWith<$Res> {
-  factory $LoadedRssStateCopyWith(
-          LoadedRssState value, $Res Function(LoadedRssState) then) =
-      _$LoadedRssStateCopyWithImpl<$Res>;
+abstract class _$$LoadedRssStateCopyWith<$Res> {
+  factory _$$LoadedRssStateCopyWith(
+          _$LoadedRssState value, $Res Function(_$LoadedRssState) then) =
+      __$$LoadedRssStateCopyWithImpl<$Res>;
   $Res call({RssFeed data, String timestamp});
 }
 
 /// @nodoc
-class _$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
-    implements $LoadedRssStateCopyWith<$Res> {
-  _$LoadedRssStateCopyWithImpl(
-      LoadedRssState _value, $Res Function(LoadedRssState) _then)
-      : super(_value, (v) => _then(v as LoadedRssState));
+class __$$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+    implements _$$LoadedRssStateCopyWith<$Res> {
+  __$$LoadedRssStateCopyWithImpl(
+      _$LoadedRssState _value, $Res Function(_$LoadedRssState) _then)
+      : super(_value, (v) => _then(v as _$LoadedRssState));
 
   @override
-  LoadedRssState get _value => super._value as LoadedRssState;
+  _$LoadedRssState get _value => super._value as _$LoadedRssState;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? timestamp = freezed,
   }) {
-    return _then(LoadedRssState(
+    return _then(_$LoadedRssState(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -545,7 +516,7 @@ class _$LoadedRssState implements LoadedRssState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoadedRssState &&
+            other is _$LoadedRssState &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.timestamp, timestamp));
   }
@@ -558,8 +529,8 @@ class _$LoadedRssState implements LoadedRssState {
 
   @JsonKey(ignore: true)
   @override
-  $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
-      _$LoadedRssStateCopyWithImpl<LoadedRssState>(this, _$identity);
+  _$$LoadedRssStateCopyWith<_$LoadedRssState> get copyWith =>
+      __$$LoadedRssStateCopyWithImpl<_$LoadedRssState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -637,12 +608,13 @@ class _$LoadedRssState implements LoadedRssState {
 }
 
 abstract class LoadedRssState implements RssState {
-  factory LoadedRssState({required RssFeed data, required String timestamp}) =
-      _$LoadedRssState;
+  factory LoadedRssState(
+      {required final RssFeed data,
+      required final String timestamp}) = _$LoadedRssState;
 
-  RssFeed get data;
-  String get timestamp;
+  RssFeed get data => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoadedRssStateCopyWith<LoadedRssState> get copyWith =>
+  _$$LoadedRssStateCopyWith<_$LoadedRssState> get copyWith =>
       throw _privateConstructorUsedError;
 }
