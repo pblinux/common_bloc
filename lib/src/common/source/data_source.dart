@@ -28,9 +28,9 @@ class RestDataSource {
   ///json to a specific object.
   Future<Map<String, dynamic>> get(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, String>? params,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     try {
       final response = await client.get<dynamic>(
@@ -52,7 +52,7 @@ class RestDataSource {
   ///a specific object.
   Future<Map<String, dynamic>> post(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -81,7 +81,7 @@ class RestDataSource {
   ///a specific object.
   Future<Map<String, dynamic>> put(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -110,7 +110,7 @@ class RestDataSource {
   ///a specific object.
   Future<Map<String, dynamic>> patch(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -161,10 +161,10 @@ class RestDataSource {
   Future<Map<String, dynamic>> formData(
     String path,
     FormData formData, {
-    Function(Map<String, dynamic>)? fromJson,
-    Function(int, int)? onProgressChanged,
     Map<String, String>? headers,
     String? contentType,
+    dynamic Function(Map<String, dynamic>)? fromJson,
+    void Function(int, int)? onProgressChanged,
   }) async {
     try {
       final response = await client.post<dynamic>(

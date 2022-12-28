@@ -1,3 +1,8 @@
+## [4.2.3]
+* Update models
+* Fix lint errors
+* Update dependencies
+
 ## [4.2.2]
 * Update models
 * Update dependencies

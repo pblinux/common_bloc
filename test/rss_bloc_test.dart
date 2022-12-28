@@ -20,7 +20,6 @@ void main() {
         ),
         build: () => RssBloc(),
         expect: () => [isA<LoadingRssState>(), isA<LoadedRssState>()],
-        skip: 0,
         wait: const Duration(seconds: 3),
       );
     },
@@ -35,7 +34,6 @@ void main() {
             bloc.getFeed('https://www.publicbooks.org/tag/fiction/feeed'),
         build: () => RssBloc(),
         expect: () => [isA<LoadingRssState>(), isA<ErrorRssState>()],
-        skip: 0,
         wait: const Duration(seconds: 3),
       );
     },

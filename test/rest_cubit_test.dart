@@ -24,7 +24,6 @@ void main() {
           interceptors: [logginInterceptor],
         ),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -39,7 +38,6 @@ void main() {
         ),
         build: () => RestCubit('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -55,7 +53,6 @@ void main() {
         ),
         build: () => RestCubit('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
       blocTest<RestCubit, RestState>(
         'update (with patch) to api',
@@ -65,7 +62,6 @@ void main() {
         ),
         build: () => RestCubit('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -73,7 +69,6 @@ void main() {
         act: (cubit) => cubit.delete('/posts/1'),
         build: () => RestCubit('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -89,7 +84,6 @@ void main() {
         ),
         build: () => RestCubit('https://jsonplaceholder.typicode.com'),
         expect: () => [isA<LoadingRestState>(), isA<LoadedRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -129,7 +123,6 @@ void main() {
         act: (cubit) => cubit.get('/5e926cf33100003d26462ca1'),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -137,7 +130,6 @@ void main() {
         act: (cubit) => cubit.post('/5e926d0e3100005d00462ca2'),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -145,7 +137,6 @@ void main() {
         act: (cubit) => cubit.put('/5e926d183100003d26462ca3'),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -153,7 +144,6 @@ void main() {
         act: (cubit) => cubit.patch('/5e926d233100006100462ca4'),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -161,7 +151,6 @@ void main() {
         act: (cubit) => cubit.delete('/5e926d2d3100005d00462ca5'),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
 
       blocTest<RestCubit, RestState>(
@@ -172,13 +161,12 @@ void main() {
         ),
         build: () => RestCubit('http://www.mocky.io/v2'),
         expect: () => [isA<LoadingRestState>(), isA<ErrorRestState>()],
-        skip: 0,
       );
     },
   );
 }
 
-Function(int, int) get onProgressChange => (sent, total) {
+void Function(int, int) get onProgressChange => (sent, total) {
       // print("$sent $total");
     };
 

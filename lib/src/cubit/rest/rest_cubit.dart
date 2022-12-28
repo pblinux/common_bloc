@@ -32,10 +32,10 @@ class RestCubit extends Cubit<RestState> {
   ///json to a specific object.
   Future<void> get(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, String>? params,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -66,11 +66,11 @@ class RestCubit extends Cubit<RestState> {
   ///a specific object.
   Future<void> post(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -102,11 +102,11 @@ class RestCubit extends Cubit<RestState> {
   ///a specific object.
   Future<void> put(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -138,11 +138,11 @@ class RestCubit extends Cubit<RestState> {
   ///a specific object.
   Future<void> patch(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -172,9 +172,9 @@ class RestCubit extends Cubit<RestState> {
   ///[path]. You can send the [headers] for request.
   Future<void> delete(
     String path, {
-    Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {
@@ -202,12 +202,12 @@ class RestCubit extends Cubit<RestState> {
   ///You can specify the [headers] for request.
   Future<void> formData(
     String path, {
-    required FormData body,
-    Function(Map<String, dynamic>)? fromJson,
-    Function(int, int)? onProgressChanged,
     Map<String, String>? headers,
     String? contentType,
     bool withLoading = true,
+    dynamic Function(Map<String, dynamic>)? fromJson,
+    required FormData body,
+    void Function(int, int)? onProgressChanged,
   }) async {
     if (withLoading) emit(RestState.loading());
     try {

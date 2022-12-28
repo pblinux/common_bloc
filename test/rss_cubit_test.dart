@@ -20,7 +20,6 @@ void main() {
         ),
         build: () => RssCubit(),
         expect: () => [isA<LoadingRssState>(), isA<LoadedRssState>()],
-        skip: 0,
       );
     },
   );
@@ -35,7 +34,6 @@ void main() {
         ),
         build: () => RssCubit(),
         expect: () => [isA<LoadingRssState>(), isA<ErrorRssState>()],
-        skip: 0,
       );
     },
   );

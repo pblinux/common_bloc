@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rss_event.dart';
 
@@ -27,33 +27,37 @@ mixin _$RssEvent {
 /// @nodoc
 abstract class $RssEventCopyWith<$Res> {
   factory $RssEventCopyWith(RssEvent value, $Res Function(RssEvent) then) =
-      _$RssEventCopyWithImpl<$Res>;
+      _$RssEventCopyWithImpl<$Res, RssEvent>;
+  @useResult
   $Res call({String rssUrl, bool withLoading});
 }
 
 /// @nodoc
-class _$RssEventCopyWithImpl<$Res> implements $RssEventCopyWith<$Res> {
+class _$RssEventCopyWithImpl<$Res, $Val extends RssEvent>
+    implements $RssEventCopyWith<$Res> {
   _$RssEventCopyWithImpl(this._value, this._then);
 
-  final RssEvent _value;
   // ignore: unused_field
-  final $Res Function(RssEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rssUrl = freezed,
-    Object? withLoading = freezed,
+    Object? rssUrl = null,
+    Object? withLoading = null,
   }) {
     return _then(_value.copyWith(
-      rssUrl: rssUrl == freezed
+      rssUrl: null == rssUrl
           ? _value.rssUrl
           : rssUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -63,30 +67,30 @@ abstract class _$$_RssEventCopyWith<$Res> implements $RssEventCopyWith<$Res> {
           _$_RssEvent value, $Res Function(_$_RssEvent) then) =
       __$$_RssEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String rssUrl, bool withLoading});
 }
 
 /// @nodoc
-class __$$_RssEventCopyWithImpl<$Res> extends _$RssEventCopyWithImpl<$Res>
+class __$$_RssEventCopyWithImpl<$Res>
+    extends _$RssEventCopyWithImpl<$Res, _$_RssEvent>
     implements _$$_RssEventCopyWith<$Res> {
   __$$_RssEventCopyWithImpl(
       _$_RssEvent _value, $Res Function(_$_RssEvent) _then)
-      : super(_value, (v) => _then(v as _$_RssEvent));
+      : super(_value, _then);
 
-  @override
-  _$_RssEvent get _value => super._value as _$_RssEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rssUrl = freezed,
-    Object? withLoading = freezed,
+    Object? rssUrl = null,
+    Object? withLoading = null,
   }) {
     return _then(_$_RssEvent(
-      rssUrl == freezed
+      null == rssUrl
           ? _value.rssUrl
           : rssUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -115,19 +119,17 @@ class _$_RssEvent implements _RssEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RssEvent &&
-            const DeepCollectionEquality().equals(other.rssUrl, rssUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading));
+            (identical(other.rssUrl, rssUrl) || other.rssUrl == rssUrl) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(rssUrl),
-      const DeepCollectionEquality().hash(withLoading));
+  int get hashCode => Object.hash(runtimeType, rssUrl, withLoading);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RssEventCopyWith<_$_RssEvent> get copyWith =>
       __$$_RssEventCopyWithImpl<_$_RssEvent>(this, _$identity);
 }
@@ -137,9 +139,9 @@ abstract class _RssEvent implements RssEvent {
       _$_RssEvent;
 
   @override
-  String get rssUrl => throw _privateConstructorUsedError;
+  String get rssUrl;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
+  bool get withLoading;
   @override
   @JsonKey(ignore: true)
   _$$_RssEventCopyWith<_$_RssEvent> get copyWith =>

@@ -6,10 +6,10 @@ import 'package:dio/dio.dart';
 ///Extension that manage the request
 ///
 ///Used in RestBloc and RssBloc
-extension ResponseManagment on Response {
+extension ResponseManagment on Response<dynamic> {
   ///Returns the response with data and headers
   Map<String, dynamic> manageRestRequestResponse({
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
   }) =>
       <String, dynamic>{
         'data': fromJson != null
