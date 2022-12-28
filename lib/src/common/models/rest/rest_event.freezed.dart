@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rest_event.dart';
 
@@ -59,7 +59,7 @@ mixin _$RestEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -68,14 +68,14 @@ mixin _$RestEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -83,7 +83,7 @@ mixin _$RestEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -91,7 +91,7 @@ mixin _$RestEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -99,19 +99,19 @@ mixin _$RestEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -155,7 +155,7 @@ mixin _$RestEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -176,13 +176,13 @@ mixin _$RestEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -206,33 +206,37 @@ mixin _$RestEvent {
 /// @nodoc
 abstract class $RestEventCopyWith<$Res> {
   factory $RestEventCopyWith(RestEvent value, $Res Function(RestEvent) then) =
-      _$RestEventCopyWithImpl<$Res>;
+      _$RestEventCopyWithImpl<$Res, RestEvent>;
+  @useResult
   $Res call({String path, bool withLoading});
 }
 
 /// @nodoc
-class _$RestEventCopyWithImpl<$Res> implements $RestEventCopyWith<$Res> {
+class _$RestEventCopyWithImpl<$Res, $Val extends RestEvent>
+    implements $RestEventCopyWith<$Res> {
   _$RestEventCopyWithImpl(this._value, this._then);
 
-  final RestEvent _value;
   // ignore: unused_field
-  final $Res Function(RestEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
   }) {
     return _then(_value.copyWith(
-      path: path == freezed
+      path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -242,6 +246,7 @@ abstract class _$$GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
           _$GetEvent value, $Res Function(_$GetEvent) then) =
       __$$GetEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String path,
       bool withLoading,
@@ -251,40 +256,39 @@ abstract class _$$GetEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GetEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$GetEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$GetEvent>
     implements _$$GetEventCopyWith<$Res> {
   __$$GetEventCopyWithImpl(_$GetEvent _value, $Res Function(_$GetEvent) _then)
-      : super(_value, (v) => _then(v as _$GetEvent));
+      : super(_value, _then);
 
-  @override
-  _$GetEvent get _value => super._value as _$GetEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
     Object? fromJson = freezed,
     Object? headers = freezed,
     Object? params = freezed,
   }) {
     return _then(_$GetEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      fromJson: fromJson == freezed
+      fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
-      headers: headers == freezed
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      params: params == freezed
+      params: freezed == params
           ? _value._params
           : params // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
@@ -315,6 +319,7 @@ class _$GetEvent implements GetEvent {
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -324,6 +329,7 @@ class _$GetEvent implements GetEvent {
   Map<String, String>? get params {
     final value = _params;
     if (value == null) return null;
+    if (_params is EqualUnmodifiableMapView) return _params;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -338,9 +344,9 @@ class _$GetEvent implements GetEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
@@ -350,14 +356,15 @@ class _$GetEvent implements GetEvent {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
+      path,
+      withLoading,
       fromJson,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(_params));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GetEventCopyWith<_$GetEvent> get copyWith =>
       __$$GetEventCopyWithImpl<_$GetEvent>(this, _$identity);
 
@@ -403,7 +410,7 @@ class _$GetEvent implements GetEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -415,14 +422,14 @@ class _$GetEvent implements GetEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -430,7 +437,7 @@ class _$GetEvent implements GetEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -438,7 +445,7 @@ class _$GetEvent implements GetEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -446,19 +453,19 @@ class _$GetEvent implements GetEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return get?.call(path, withLoading, fromJson, headers, params);
   }
@@ -505,7 +512,7 @@ class _$GetEvent implements GetEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -535,13 +542,13 @@ class _$GetEvent implements GetEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return get?.call(this);
   }
@@ -573,13 +580,12 @@ abstract class GetEvent implements RestEvent {
       final Map<String, String>? params}) = _$GetEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  dynamic Function(Map<String, dynamic>)? get fromJson =>
-      throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
-  Map<String, String>? get params => throw _privateConstructorUsedError;
+  bool get withLoading;
+  dynamic Function(Map<String, dynamic>)? get fromJson;
+  Map<String, String>? get headers;
+  Map<String, String>? get params;
   @override
   @JsonKey(ignore: true)
   _$$GetEventCopyWith<_$GetEvent> get copyWith =>
@@ -592,6 +598,7 @@ abstract class _$$PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
           _$PostEvent value, $Res Function(_$PostEvent) then) =
       __$$PostEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String path,
       bool withLoading,
@@ -602,46 +609,45 @@ abstract class _$$PostEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PostEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$PostEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$PostEvent>
     implements _$$PostEventCopyWith<$Res> {
   __$$PostEventCopyWithImpl(
       _$PostEvent _value, $Res Function(_$PostEvent) _then)
-      : super(_value, (v) => _then(v as _$PostEvent));
+      : super(_value, _then);
 
-  @override
-  _$PostEvent get _value => super._value as _$PostEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
     Object? fromJson = freezed,
     Object? headers = freezed,
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
     return _then(_$PostEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      fromJson: fromJson == freezed
+      fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
-      headers: headers == freezed
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      body: body == freezed
+      body: freezed == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -673,6 +679,7 @@ class _$PostEvent implements PostEvent {
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -682,6 +689,7 @@ class _$PostEvent implements PostEvent {
   Map<String, dynamic>? get body {
     final value = _body;
     if (value == null) return null;
+    if (_body is EqualUnmodifiableMapView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -699,29 +707,30 @@ class _$PostEvent implements PostEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PostEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other._body, _body) &&
-            const DeepCollectionEquality()
-                .equals(other.contentType, contentType));
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
+      path,
+      withLoading,
       fromJson,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(_body),
-      const DeepCollectionEquality().hash(contentType));
+      contentType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PostEventCopyWith<_$PostEvent> get copyWith =>
       __$$PostEventCopyWithImpl<_$PostEvent>(this, _$identity);
 
@@ -767,7 +776,7 @@ class _$PostEvent implements PostEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -779,14 +788,14 @@ class _$PostEvent implements PostEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -794,7 +803,7 @@ class _$PostEvent implements PostEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -802,7 +811,7 @@ class _$PostEvent implements PostEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -810,19 +819,19 @@ class _$PostEvent implements PostEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return post?.call(path, withLoading, fromJson, headers, body, contentType);
   }
@@ -869,7 +878,7 @@ class _$PostEvent implements PostEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -899,13 +908,13 @@ class _$PostEvent implements PostEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return post?.call(this);
   }
@@ -938,14 +947,13 @@ abstract class PostEvent implements RestEvent {
       final String? contentType}) = _$PostEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  dynamic Function(Map<String, dynamic>)? get fromJson =>
-      throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
-  String? get contentType => throw _privateConstructorUsedError;
+  bool get withLoading;
+  dynamic Function(Map<String, dynamic>)? get fromJson;
+  Map<String, String>? get headers;
+  Map<String, dynamic>? get body;
+  String? get contentType;
   @override
   @JsonKey(ignore: true)
   _$$PostEventCopyWith<_$PostEvent> get copyWith =>
@@ -958,6 +966,7 @@ abstract class _$$PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
           _$PutEvent value, $Res Function(_$PutEvent) then) =
       __$$PutEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String path,
       bool withLoading,
@@ -968,45 +977,44 @@ abstract class _$$PutEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PutEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$PutEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$PutEvent>
     implements _$$PutEventCopyWith<$Res> {
   __$$PutEventCopyWithImpl(_$PutEvent _value, $Res Function(_$PutEvent) _then)
-      : super(_value, (v) => _then(v as _$PutEvent));
+      : super(_value, _then);
 
-  @override
-  _$PutEvent get _value => super._value as _$PutEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
     Object? fromJson = freezed,
     Object? headers = freezed,
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
     return _then(_$PutEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      fromJson: fromJson == freezed
+      fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
-      headers: headers == freezed
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      body: body == freezed
+      body: freezed == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1038,6 +1046,7 @@ class _$PutEvent implements PutEvent {
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -1047,6 +1056,7 @@ class _$PutEvent implements PutEvent {
   Map<String, dynamic>? get body {
     final value = _body;
     if (value == null) return null;
+    if (_body is EqualUnmodifiableMapView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -1064,29 +1074,30 @@ class _$PutEvent implements PutEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PutEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other._body, _body) &&
-            const DeepCollectionEquality()
-                .equals(other.contentType, contentType));
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
+      path,
+      withLoading,
       fromJson,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(_body),
-      const DeepCollectionEquality().hash(contentType));
+      contentType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PutEventCopyWith<_$PutEvent> get copyWith =>
       __$$PutEventCopyWithImpl<_$PutEvent>(this, _$identity);
 
@@ -1132,7 +1143,7 @@ class _$PutEvent implements PutEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -1144,14 +1155,14 @@ class _$PutEvent implements PutEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1159,7 +1170,7 @@ class _$PutEvent implements PutEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1167,7 +1178,7 @@ class _$PutEvent implements PutEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1175,19 +1186,19 @@ class _$PutEvent implements PutEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return put?.call(path, withLoading, fromJson, headers, body, contentType);
   }
@@ -1234,7 +1245,7 @@ class _$PutEvent implements PutEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -1264,13 +1275,13 @@ class _$PutEvent implements PutEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return put?.call(this);
   }
@@ -1303,14 +1314,13 @@ abstract class PutEvent implements RestEvent {
       final String? contentType}) = _$PutEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  dynamic Function(Map<String, dynamic>)? get fromJson =>
-      throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
-  String? get contentType => throw _privateConstructorUsedError;
+  bool get withLoading;
+  dynamic Function(Map<String, dynamic>)? get fromJson;
+  Map<String, String>? get headers;
+  Map<String, dynamic>? get body;
+  String? get contentType;
   @override
   @JsonKey(ignore: true)
   _$$PutEventCopyWith<_$PutEvent> get copyWith =>
@@ -1323,6 +1333,7 @@ abstract class _$$PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
           _$PatchEvent value, $Res Function(_$PatchEvent) then) =
       __$$PatchEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String path,
       bool withLoading,
@@ -1333,46 +1344,45 @@ abstract class _$$PatchEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PatchEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$PatchEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$PatchEvent>
     implements _$$PatchEventCopyWith<$Res> {
   __$$PatchEventCopyWithImpl(
       _$PatchEvent _value, $Res Function(_$PatchEvent) _then)
-      : super(_value, (v) => _then(v as _$PatchEvent));
+      : super(_value, _then);
 
-  @override
-  _$PatchEvent get _value => super._value as _$PatchEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
     Object? fromJson = freezed,
     Object? headers = freezed,
     Object? body = freezed,
     Object? contentType = freezed,
   }) {
     return _then(_$PatchEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      fromJson: fromJson == freezed
+      fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
-      headers: headers == freezed
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      body: body == freezed
+      body: freezed == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1404,6 +1414,7 @@ class _$PatchEvent implements PatchEvent {
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -1413,6 +1424,7 @@ class _$PatchEvent implements PatchEvent {
   Map<String, dynamic>? get body {
     final value = _body;
     if (value == null) return null;
+    if (_body is EqualUnmodifiableMapView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -1430,29 +1442,30 @@ class _$PatchEvent implements PatchEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PatchEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other._body, _body) &&
-            const DeepCollectionEquality()
-                .equals(other.contentType, contentType));
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
+      path,
+      withLoading,
       fromJson,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(_body),
-      const DeepCollectionEquality().hash(contentType));
+      contentType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PatchEventCopyWith<_$PatchEvent> get copyWith =>
       __$$PatchEventCopyWithImpl<_$PatchEvent>(this, _$identity);
 
@@ -1498,7 +1511,7 @@ class _$PatchEvent implements PatchEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -1510,14 +1523,14 @@ class _$PatchEvent implements PatchEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1525,7 +1538,7 @@ class _$PatchEvent implements PatchEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1533,7 +1546,7 @@ class _$PatchEvent implements PatchEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1541,19 +1554,19 @@ class _$PatchEvent implements PatchEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return patch?.call(path, withLoading, fromJson, headers, body, contentType);
   }
@@ -1600,7 +1613,7 @@ class _$PatchEvent implements PatchEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -1630,13 +1643,13 @@ class _$PatchEvent implements PatchEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return patch?.call(this);
   }
@@ -1669,14 +1682,13 @@ abstract class PatchEvent implements RestEvent {
       final String? contentType}) = _$PatchEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  dynamic Function(Map<String, dynamic>)? get fromJson =>
-      throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
-  String? get contentType => throw _privateConstructorUsedError;
+  bool get withLoading;
+  dynamic Function(Map<String, dynamic>)? get fromJson;
+  Map<String, String>? get headers;
+  Map<String, dynamic>? get body;
+  String? get contentType;
   @override
   @JsonKey(ignore: true)
   _$$PatchEventCopyWith<_$PatchEvent> get copyWith =>
@@ -1690,35 +1702,35 @@ abstract class _$$DeleteEventCopyWith<$Res>
           _$DeleteEvent value, $Res Function(_$DeleteEvent) then) =
       __$$DeleteEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String path, bool withLoading, Map<String, String>? headers});
 }
 
 /// @nodoc
-class __$$DeleteEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$DeleteEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$DeleteEvent>
     implements _$$DeleteEventCopyWith<$Res> {
   __$$DeleteEventCopyWithImpl(
       _$DeleteEvent _value, $Res Function(_$DeleteEvent) _then)
-      : super(_value, (v) => _then(v as _$DeleteEvent));
+      : super(_value, _then);
 
-  @override
-  _$DeleteEvent get _value => super._value as _$DeleteEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
     Object? headers = freezed,
   }) {
     return _then(_$DeleteEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      headers: headers == freezed
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
@@ -1743,6 +1755,7 @@ class _$DeleteEvent implements DeleteEvent {
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -1757,21 +1770,19 @@ class _$DeleteEvent implements DeleteEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeleteEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
             const DeepCollectionEquality().equals(other._headers, _headers));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
+  int get hashCode => Object.hash(runtimeType, path, withLoading,
       const DeepCollectionEquality().hash(_headers));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DeleteEventCopyWith<_$DeleteEvent> get copyWith =>
       __$$DeleteEventCopyWithImpl<_$DeleteEvent>(this, _$identity);
 
@@ -1817,7 +1828,7 @@ class _$DeleteEvent implements DeleteEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -1829,14 +1840,14 @@ class _$DeleteEvent implements DeleteEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1844,7 +1855,7 @@ class _$DeleteEvent implements DeleteEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1852,7 +1863,7 @@ class _$DeleteEvent implements DeleteEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -1860,19 +1871,19 @@ class _$DeleteEvent implements DeleteEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return delete?.call(path, withLoading, headers);
   }
@@ -1919,7 +1930,7 @@ class _$DeleteEvent implements DeleteEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -1949,13 +1960,13 @@ class _$DeleteEvent implements DeleteEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return delete?.call(this);
   }
@@ -1985,10 +1996,10 @@ abstract class DeleteEvent implements RestEvent {
       final Map<String, String>? headers}) = _$DeleteEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
+  bool get withLoading;
+  Map<String, String>? get headers;
   @override
   @JsonKey(ignore: true)
   _$$DeleteEventCopyWith<_$DeleteEvent> get copyWith =>
@@ -2002,62 +2013,62 @@ abstract class _$$FromDataEventCopyWith<$Res>
           _$FromDataEvent value, $Res Function(_$FromDataEvent) then) =
       __$$FromDataEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String path,
       bool withLoading,
       FormData body,
       dynamic Function(Map<String, dynamic>)? fromJson,
-      dynamic Function(int, int)? onProgressChanged,
+      void Function(int, int)? onProgressChanged,
       Map<String, String>? headers,
       String? contentType});
 }
 
 /// @nodoc
-class __$$FromDataEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$FromDataEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$FromDataEvent>
     implements _$$FromDataEventCopyWith<$Res> {
   __$$FromDataEventCopyWithImpl(
       _$FromDataEvent _value, $Res Function(_$FromDataEvent) _then)
-      : super(_value, (v) => _then(v as _$FromDataEvent));
+      : super(_value, _then);
 
-  @override
-  _$FromDataEvent get _value => super._value as _$FromDataEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
-    Object? body = freezed,
+    Object? path = null,
+    Object? withLoading = null,
+    Object? body = null,
     Object? fromJson = freezed,
     Object? onProgressChanged = freezed,
     Object? headers = freezed,
     Object? contentType = freezed,
   }) {
     return _then(_$FromDataEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      body: body == freezed
+      body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as FormData,
-      fromJson: fromJson == freezed
+      fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
               as dynamic Function(Map<String, dynamic>)?,
-      onProgressChanged: onProgressChanged == freezed
+      onProgressChanged: freezed == onProgressChanged
           ? _value.onProgressChanged
           : onProgressChanged // ignore: cast_nullable_to_non_nullable
-              as dynamic Function(int, int)?,
-      headers: headers == freezed
+              as void Function(int, int)?,
+      headers: freezed == headers
           ? _value._headers
           : headers // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -2087,12 +2098,13 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
   @override
-  final dynamic Function(int, int)? onProgressChanged;
+  final void Function(int, int)? onProgressChanged;
   final Map<String, String>? _headers;
   @override
   Map<String, String>? get headers {
     final value = _headers;
     if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -2110,32 +2122,33 @@ class _$FromDataEvent implements FromDataEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FromDataEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading) &&
+            (identical(other.body, body) || other.body == body) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             (identical(other.onProgressChanged, onProgressChanged) ||
                 other.onProgressChanged == onProgressChanged) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
-            const DeepCollectionEquality()
-                .equals(other.contentType, contentType));
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading),
-      const DeepCollectionEquality().hash(body),
+      path,
+      withLoading,
+      body,
       fromJson,
       onProgressChanged,
       const DeepCollectionEquality().hash(_headers),
-      const DeepCollectionEquality().hash(contentType));
+      contentType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$FromDataEventCopyWith<_$FromDataEvent> get copyWith =>
       __$$FromDataEventCopyWithImpl<_$FromDataEvent>(this, _$identity);
 
@@ -2181,7 +2194,7 @@ class _$FromDataEvent implements FromDataEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -2194,14 +2207,14 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2209,7 +2222,7 @@ class _$FromDataEvent implements FromDataEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2217,7 +2230,7 @@ class _$FromDataEvent implements FromDataEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2225,19 +2238,19 @@ class _$FromDataEvent implements FromDataEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return formData?.call(path, withLoading, body, fromJson, onProgressChanged,
         headers, contentType);
@@ -2285,7 +2298,7 @@ class _$FromDataEvent implements FromDataEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -2316,13 +2329,13 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return formData?.call(this);
   }
@@ -2351,21 +2364,19 @@ abstract class FromDataEvent implements RestEvent {
       {final bool withLoading,
       required final FormData body,
       final dynamic Function(Map<String, dynamic>)? fromJson,
-      final dynamic Function(int, int)? onProgressChanged,
+      final void Function(int, int)? onProgressChanged,
       final Map<String, String>? headers,
       final String? contentType}) = _$FromDataEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
-  FormData get body => throw _privateConstructorUsedError;
-  dynamic Function(Map<String, dynamic>)? get fromJson =>
-      throw _privateConstructorUsedError;
-  dynamic Function(int, int)? get onProgressChanged =>
-      throw _privateConstructorUsedError;
-  Map<String, String>? get headers => throw _privateConstructorUsedError;
-  String? get contentType => throw _privateConstructorUsedError;
+  bool get withLoading;
+  FormData get body;
+  dynamic Function(Map<String, dynamic>)? get fromJson;
+  void Function(int, int)? get onProgressChanged;
+  Map<String, String>? get headers;
+  String? get contentType;
   @override
   @JsonKey(ignore: true)
   _$$FromDataEventCopyWith<_$FromDataEvent> get copyWith =>
@@ -2378,30 +2389,30 @@ abstract class _$$ClearEventCopyWith<$Res> implements $RestEventCopyWith<$Res> {
           _$ClearEvent value, $Res Function(_$ClearEvent) then) =
       __$$ClearEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String path, bool withLoading});
 }
 
 /// @nodoc
-class __$$ClearEventCopyWithImpl<$Res> extends _$RestEventCopyWithImpl<$Res>
+class __$$ClearEventCopyWithImpl<$Res>
+    extends _$RestEventCopyWithImpl<$Res, _$ClearEvent>
     implements _$$ClearEventCopyWith<$Res> {
   __$$ClearEventCopyWithImpl(
       _$ClearEvent _value, $Res Function(_$ClearEvent) _then)
-      : super(_value, (v) => _then(v as _$ClearEvent));
+      : super(_value, _then);
 
-  @override
-  _$ClearEvent get _value => super._value as _$ClearEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = freezed,
-    Object? withLoading = freezed,
+    Object? path = null,
+    Object? withLoading = null,
   }) {
     return _then(_$ClearEvent(
-      path == freezed
+      null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: withLoading == freezed
+      withLoading: null == withLoading
           ? _value.withLoading
           : withLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2430,19 +2441,17 @@ class _$ClearEvent implements ClearEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClearEvent &&
-            const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality()
-                .equals(other.withLoading, withLoading));
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.withLoading, withLoading) ||
+                other.withLoading == withLoading));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(withLoading));
+  int get hashCode => Object.hash(runtimeType, path, withLoading);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ClearEventCopyWith<_$ClearEvent> get copyWith =>
       __$$ClearEventCopyWithImpl<_$ClearEvent>(this, _$identity);
 
@@ -2488,7 +2497,7 @@ class _$ClearEvent implements ClearEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)
         formData,
@@ -2500,14 +2509,14 @@ class _$ClearEvent implements ClearEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             Map<String, String>? headers,
             Map<String, String>? params)?
         get,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2515,7 +2524,7 @@ class _$ClearEvent implements ClearEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         post,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2523,7 +2532,7 @@ class _$ClearEvent implements ClearEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         put,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
@@ -2531,19 +2540,19 @@ class _$ClearEvent implements ClearEvent {
             Map<String, dynamic>? body,
             String? contentType)?
         patch,
-    TResult Function(
+    TResult? Function(
             String path, bool withLoading, Map<String, String>? headers)?
         delete,
-    TResult Function(
+    TResult? Function(
             String path,
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
-    TResult Function(String path, bool withLoading)? clear,
+    TResult? Function(String path, bool withLoading)? clear,
   }) {
     return clear?.call(path, withLoading);
   }
@@ -2590,7 +2599,7 @@ class _$ClearEvent implements ClearEvent {
             bool withLoading,
             FormData body,
             dynamic Function(Map<String, dynamic>)? fromJson,
-            dynamic Function(int, int)? onProgressChanged,
+            void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
             String? contentType)?
         formData,
@@ -2620,13 +2629,13 @@ class _$ClearEvent implements ClearEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetEvent value)? get,
-    TResult Function(PostEvent value)? post,
-    TResult Function(PutEvent value)? put,
-    TResult Function(PatchEvent value)? patch,
-    TResult Function(DeleteEvent value)? delete,
-    TResult Function(FromDataEvent value)? formData,
-    TResult Function(ClearEvent value)? clear,
+    TResult? Function(GetEvent value)? get,
+    TResult? Function(PostEvent value)? post,
+    TResult? Function(PutEvent value)? put,
+    TResult? Function(PatchEvent value)? patch,
+    TResult? Function(DeleteEvent value)? delete,
+    TResult? Function(FromDataEvent value)? formData,
+    TResult? Function(ClearEvent value)? clear,
   }) {
     return clear?.call(this);
   }
@@ -2655,9 +2664,9 @@ abstract class ClearEvent implements RestEvent {
       _$ClearEvent;
 
   @override
-  String get path => throw _privateConstructorUsedError;
+  String get path;
   @override
-  bool get withLoading => throw _privateConstructorUsedError;
+  bool get withLoading;
   @override
   @JsonKey(ignore: true)
   _$$ClearEventCopyWith<_$ClearEvent> get copyWith =>

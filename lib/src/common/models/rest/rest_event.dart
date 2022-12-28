@@ -10,7 +10,7 @@ class RestEvent with _$RestEvent {
   factory RestEvent.get(
     String path, {
     @Default(true) bool withLoading,
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, String>? params,
   }) = GetEvent;
@@ -19,7 +19,7 @@ class RestEvent with _$RestEvent {
   factory RestEvent.post(
     String path, {
     @Default(true) bool withLoading,
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -29,7 +29,7 @@ class RestEvent with _$RestEvent {
   factory RestEvent.put(
     String path, {
     @Default(true) bool withLoading,
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -39,7 +39,7 @@ class RestEvent with _$RestEvent {
   factory RestEvent.patch(
     String path, {
     @Default(true) bool withLoading,
-    Function(Map<String, dynamic>)? fromJson,
+    dynamic Function(Map<String, dynamic>)? fromJson,
     Map<String, String>? headers,
     Map<String, dynamic>? body,
     String? contentType,
@@ -57,8 +57,8 @@ class RestEvent with _$RestEvent {
     String path, {
     @Default(true) bool withLoading,
     required FormData body,
-    Function(Map<String, dynamic>)? fromJson,
-    Function(int, int)? onProgressChanged,
+    dynamic Function(Map<String, dynamic>)? fromJson,
+    void Function(int, int)? onProgressChanged,
     Map<String, String>? headers,
     String? contentType,
   }) = FromDataEvent;

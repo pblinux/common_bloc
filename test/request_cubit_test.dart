@@ -37,7 +37,6 @@ void main() {
         ),
         build: () => RequestCubit(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
-        skip: 0,
       );
     },
   );
@@ -56,7 +55,6 @@ void main() {
         ),
         build: () => RequestCubit(),
         expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
-        skip: 0,
       );
     },
   );

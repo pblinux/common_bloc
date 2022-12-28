@@ -22,7 +22,6 @@ void main() {
         ),
         build: () => RequestBloc(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
-        skip: 0,
         wait: const Duration(seconds: 3),
       );
 
@@ -38,7 +37,6 @@ void main() {
         ),
         build: () => RequestBloc(),
         expect: () => [isA<LoadingRequestState>(), isA<LoadedRequestState>()],
-        skip: 0,
         wait: const Duration(seconds: 3),
       );
     },
@@ -58,7 +56,6 @@ void main() {
         ),
         build: () => RequestBloc(),
         expect: () => [isA<LoadingRequestState>(), isA<ErrorRequestState>()],
-        skip: 0,
         wait: const Duration(seconds: 3),
       );
     },

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rss_state.dart';
 
@@ -26,10 +26,10 @@ mixin _$RssState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(RssFeed data, String timestamp)? loaded,
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(RssFeed data, String timestamp)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$RssState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRssState value)? uninitialized,
-    TResult Function(ErrorRssState value)? error,
-    TResult Function(LoadingRssState value)? loading,
-    TResult Function(LoadedRssState value)? loaded,
+    TResult? Function(UninitializedRssState value)? uninitialized,
+    TResult? Function(ErrorRssState value)? error,
+    TResult? Function(LoadingRssState value)? loading,
+    TResult? Function(LoadedRssState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,16 +71,18 @@ mixin _$RssState {
 /// @nodoc
 abstract class $RssStateCopyWith<$Res> {
   factory $RssStateCopyWith(RssState value, $Res Function(RssState) then) =
-      _$RssStateCopyWithImpl<$Res>;
+      _$RssStateCopyWithImpl<$Res, RssState>;
 }
 
 /// @nodoc
-class _$RssStateCopyWithImpl<$Res> implements $RssStateCopyWith<$Res> {
+class _$RssStateCopyWithImpl<$Res, $Val extends RssState>
+    implements $RssStateCopyWith<$Res> {
   _$RssStateCopyWithImpl(this._value, this._then);
 
-  final RssState _value;
   // ignore: unused_field
-  final $Res Function(RssState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,14 +94,11 @@ abstract class _$$UninitializedRssStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$UninitializedRssStateCopyWithImpl<$Res>
-    extends _$RssStateCopyWithImpl<$Res>
+    extends _$RssStateCopyWithImpl<$Res, _$UninitializedRssState>
     implements _$$UninitializedRssStateCopyWith<$Res> {
   __$$UninitializedRssStateCopyWithImpl(_$UninitializedRssState _value,
       $Res Function(_$UninitializedRssState) _then)
-      : super(_value, (v) => _then(v as _$UninitializedRssState));
-
-  @override
-  _$UninitializedRssState get _value => super._value as _$UninitializedRssState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -135,10 +134,10 @@ class _$UninitializedRssState implements UninitializedRssState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(RssFeed data, String timestamp)? loaded,
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(RssFeed data, String timestamp)? loaded,
   }) {
     return uninitialized?.call();
   }
@@ -172,10 +171,10 @@ class _$UninitializedRssState implements UninitializedRssState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRssState value)? uninitialized,
-    TResult Function(ErrorRssState value)? error,
-    TResult Function(LoadingRssState value)? loading,
-    TResult Function(LoadedRssState value)? loaded,
+    TResult? Function(UninitializedRssState value)? uninitialized,
+    TResult? Function(ErrorRssState value)? error,
+    TResult? Function(LoadingRssState value)? loading,
+    TResult? Function(LoadedRssState value)? loaded,
   }) {
     return uninitialized?.call(this);
   }
@@ -205,25 +204,25 @@ abstract class _$$ErrorRssStateCopyWith<$Res> {
   factory _$$ErrorRssStateCopyWith(
           _$ErrorRssState value, $Res Function(_$ErrorRssState) then) =
       __$$ErrorRssStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+class __$$ErrorRssStateCopyWithImpl<$Res>
+    extends _$RssStateCopyWithImpl<$Res, _$ErrorRssState>
     implements _$$ErrorRssStateCopyWith<$Res> {
   __$$ErrorRssStateCopyWithImpl(
       _$ErrorRssState _value, $Res Function(_$ErrorRssState) _then)
-      : super(_value, (v) => _then(v as _$ErrorRssState));
+      : super(_value, _then);
 
-  @override
-  _$ErrorRssState get _value => super._value as _$ErrorRssState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
     return _then(_$ErrorRssState(
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -249,15 +248,15 @@ class _$ErrorRssState implements ErrorRssState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorRssState &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorRssStateCopyWith<_$ErrorRssState> get copyWith =>
       __$$ErrorRssStateCopyWithImpl<_$ErrorRssState>(this, _$identity);
 
@@ -275,10 +274,10 @@ class _$ErrorRssState implements ErrorRssState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(RssFeed data, String timestamp)? loaded,
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(RssFeed data, String timestamp)? loaded,
   }) {
     return error?.call(message);
   }
@@ -312,10 +311,10 @@ class _$ErrorRssState implements ErrorRssState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRssState value)? uninitialized,
-    TResult Function(ErrorRssState value)? error,
-    TResult Function(LoadingRssState value)? loading,
-    TResult Function(LoadedRssState value)? loaded,
+    TResult? Function(UninitializedRssState value)? uninitialized,
+    TResult? Function(ErrorRssState value)? error,
+    TResult? Function(LoadingRssState value)? loading,
+    TResult? Function(LoadedRssState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -339,7 +338,7 @@ class _$ErrorRssState implements ErrorRssState {
 abstract class ErrorRssState implements RssState {
   factory ErrorRssState({required final String message}) = _$ErrorRssState;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   _$$ErrorRssStateCopyWith<_$ErrorRssState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -353,14 +352,12 @@ abstract class _$$LoadingRssStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadingRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+class __$$LoadingRssStateCopyWithImpl<$Res>
+    extends _$RssStateCopyWithImpl<$Res, _$LoadingRssState>
     implements _$$LoadingRssStateCopyWith<$Res> {
   __$$LoadingRssStateCopyWithImpl(
       _$LoadingRssState _value, $Res Function(_$LoadingRssState) _then)
-      : super(_value, (v) => _then(v as _$LoadingRssState));
-
-  @override
-  _$LoadingRssState get _value => super._value as _$LoadingRssState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -396,10 +393,10 @@ class _$LoadingRssState implements LoadingRssState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(RssFeed data, String timestamp)? loaded,
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(RssFeed data, String timestamp)? loaded,
   }) {
     return loading?.call();
   }
@@ -433,10 +430,10 @@ class _$LoadingRssState implements LoadingRssState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRssState value)? uninitialized,
-    TResult Function(ErrorRssState value)? error,
-    TResult Function(LoadingRssState value)? loading,
-    TResult Function(LoadedRssState value)? loaded,
+    TResult? Function(UninitializedRssState value)? uninitialized,
+    TResult? Function(ErrorRssState value)? error,
+    TResult? Function(LoadingRssState value)? loading,
+    TResult? Function(LoadedRssState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -466,30 +463,30 @@ abstract class _$$LoadedRssStateCopyWith<$Res> {
   factory _$$LoadedRssStateCopyWith(
           _$LoadedRssState value, $Res Function(_$LoadedRssState) then) =
       __$$LoadedRssStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({RssFeed data, String timestamp});
 }
 
 /// @nodoc
-class __$$LoadedRssStateCopyWithImpl<$Res> extends _$RssStateCopyWithImpl<$Res>
+class __$$LoadedRssStateCopyWithImpl<$Res>
+    extends _$RssStateCopyWithImpl<$Res, _$LoadedRssState>
     implements _$$LoadedRssStateCopyWith<$Res> {
   __$$LoadedRssStateCopyWithImpl(
       _$LoadedRssState _value, $Res Function(_$LoadedRssState) _then)
-      : super(_value, (v) => _then(v as _$LoadedRssState));
+      : super(_value, _then);
 
-  @override
-  _$LoadedRssState get _value => super._value as _$LoadedRssState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? timestamp = freezed,
+    Object? data = null,
+    Object? timestamp = null,
   }) {
     return _then(_$LoadedRssState(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as RssFeed,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
@@ -517,18 +514,17 @@ class _$LoadedRssState implements LoadedRssState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedRssState &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp));
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(timestamp));
+  int get hashCode => Object.hash(runtimeType, data, timestamp);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadedRssStateCopyWith<_$LoadedRssState> get copyWith =>
       __$$LoadedRssStateCopyWithImpl<_$LoadedRssState>(this, _$identity);
 
@@ -546,10 +542,10 @@ class _$LoadedRssState implements LoadedRssState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(RssFeed data, String timestamp)? loaded,
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(RssFeed data, String timestamp)? loaded,
   }) {
     return loaded?.call(data, timestamp);
   }
@@ -583,10 +579,10 @@ class _$LoadedRssState implements LoadedRssState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRssState value)? uninitialized,
-    TResult Function(ErrorRssState value)? error,
-    TResult Function(LoadingRssState value)? loading,
-    TResult Function(LoadedRssState value)? loaded,
+    TResult? Function(UninitializedRssState value)? uninitialized,
+    TResult? Function(ErrorRssState value)? error,
+    TResult? Function(LoadingRssState value)? loading,
+    TResult? Function(LoadedRssState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -612,8 +608,8 @@ abstract class LoadedRssState implements RssState {
       {required final RssFeed data,
       required final String timestamp}) = _$LoadedRssState;
 
-  RssFeed get data => throw _privateConstructorUsedError;
-  String get timestamp => throw _privateConstructorUsedError;
+  RssFeed get data;
+  String get timestamp;
   @JsonKey(ignore: true)
   _$$LoadedRssStateCopyWith<_$LoadedRssState> get copyWith =>
       throw _privateConstructorUsedError;

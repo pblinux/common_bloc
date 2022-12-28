@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'request_state.dart';
 
@@ -12,40 +12,7 @@ part of 'request_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RequestStateTearOff {
-  const _$RequestStateTearOff();
-
-  UninitializedRequestState uninitialized() {
-    return UninitializedRequestState();
-  }
-
-  ErrorRequestState error({required String message}) {
-    return ErrorRequestState(
-      message: message,
-    );
-  }
-
-  LoadingRequestState loading() {
-    return LoadingRequestState();
-  }
-
-  LoadedRequestState loaded(
-      {required dynamic data,
-      required String lastRequest,
-      required String timestamp}) {
-    return LoadedRequestState(
-      data: data,
-      lastRequest: lastRequest,
-      timestamp: timestamp,
-    );
-  }
-}
-
-/// @nodoc
-const $RequestState = _$RequestStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RequestState {
@@ -61,10 +28,10 @@ mixin _$RequestState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(dynamic data, String lastRequest, String timestamp)?
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(dynamic data, String lastRequest, String timestamp)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -88,10 +55,10 @@ mixin _$RequestState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRequestState value)? uninitialized,
-    TResult Function(ErrorRequestState value)? error,
-    TResult Function(LoadingRequestState value)? loading,
-    TResult Function(LoadedRequestState value)? loaded,
+    TResult? Function(UninitializedRequestState value)? uninitialized,
+    TResult? Function(ErrorRequestState value)? error,
+    TResult? Function(LoadingRequestState value)? loading,
+    TResult? Function(LoadedRequestState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,36 +76,35 @@ mixin _$RequestState {
 abstract class $RequestStateCopyWith<$Res> {
   factory $RequestStateCopyWith(
           RequestState value, $Res Function(RequestState) then) =
-      _$RequestStateCopyWithImpl<$Res>;
+      _$RequestStateCopyWithImpl<$Res, RequestState>;
 }
 
 /// @nodoc
-class _$RequestStateCopyWithImpl<$Res> implements $RequestStateCopyWith<$Res> {
+class _$RequestStateCopyWithImpl<$Res, $Val extends RequestState>
+    implements $RequestStateCopyWith<$Res> {
   _$RequestStateCopyWithImpl(this._value, this._then);
 
-  final RequestState _value;
   // ignore: unused_field
-  final $Res Function(RequestState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $UninitializedRequestStateCopyWith<$Res> {
-  factory $UninitializedRequestStateCopyWith(UninitializedRequestState value,
-          $Res Function(UninitializedRequestState) then) =
-      _$UninitializedRequestStateCopyWithImpl<$Res>;
+abstract class _$$UninitializedRequestStateCopyWith<$Res> {
+  factory _$$UninitializedRequestStateCopyWith(
+          _$UninitializedRequestState value,
+          $Res Function(_$UninitializedRequestState) then) =
+      __$$UninitializedRequestStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UninitializedRequestStateCopyWithImpl<$Res>
-    extends _$RequestStateCopyWithImpl<$Res>
-    implements $UninitializedRequestStateCopyWith<$Res> {
-  _$UninitializedRequestStateCopyWithImpl(UninitializedRequestState _value,
-      $Res Function(UninitializedRequestState) _then)
-      : super(_value, (v) => _then(v as UninitializedRequestState));
-
-  @override
-  UninitializedRequestState get _value =>
-      super._value as UninitializedRequestState;
+class __$$UninitializedRequestStateCopyWithImpl<$Res>
+    extends _$RequestStateCopyWithImpl<$Res, _$UninitializedRequestState>
+    implements _$$UninitializedRequestStateCopyWith<$Res> {
+  __$$UninitializedRequestStateCopyWithImpl(_$UninitializedRequestState _value,
+      $Res Function(_$UninitializedRequestState) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -155,7 +121,7 @@ class _$UninitializedRequestState implements UninitializedRequestState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UninitializedRequestState);
+            other is _$UninitializedRequestState);
   }
 
   @override
@@ -177,10 +143,10 @@ class _$UninitializedRequestState implements UninitializedRequestState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(dynamic data, String lastRequest, String timestamp)?
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(dynamic data, String lastRequest, String timestamp)?
         loaded,
   }) {
     return uninitialized?.call();
@@ -216,10 +182,10 @@ class _$UninitializedRequestState implements UninitializedRequestState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRequestState value)? uninitialized,
-    TResult Function(ErrorRequestState value)? error,
-    TResult Function(LoadingRequestState value)? loading,
-    TResult Function(LoadedRequestState value)? loaded,
+    TResult? Function(UninitializedRequestState value)? uninitialized,
+    TResult? Function(ErrorRequestState value)? error,
+    TResult? Function(LoadingRequestState value)? loading,
+    TResult? Function(LoadedRequestState value)? loaded,
   }) {
     return uninitialized?.call(this);
   }
@@ -245,30 +211,29 @@ abstract class UninitializedRequestState implements RequestState {
 }
 
 /// @nodoc
-abstract class $ErrorRequestStateCopyWith<$Res> {
-  factory $ErrorRequestStateCopyWith(
-          ErrorRequestState value, $Res Function(ErrorRequestState) then) =
-      _$ErrorRequestStateCopyWithImpl<$Res>;
+abstract class _$$ErrorRequestStateCopyWith<$Res> {
+  factory _$$ErrorRequestStateCopyWith(
+          _$ErrorRequestState value, $Res Function(_$ErrorRequestState) then) =
+      __$$ErrorRequestStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$ErrorRequestStateCopyWithImpl<$Res>
-    extends _$RequestStateCopyWithImpl<$Res>
-    implements $ErrorRequestStateCopyWith<$Res> {
-  _$ErrorRequestStateCopyWithImpl(
-      ErrorRequestState _value, $Res Function(ErrorRequestState) _then)
-      : super(_value, (v) => _then(v as ErrorRequestState));
+class __$$ErrorRequestStateCopyWithImpl<$Res>
+    extends _$RequestStateCopyWithImpl<$Res, _$ErrorRequestState>
+    implements _$$ErrorRequestStateCopyWith<$Res> {
+  __$$ErrorRequestStateCopyWithImpl(
+      _$ErrorRequestState _value, $Res Function(_$ErrorRequestState) _then)
+      : super(_value, _then);
 
-  @override
-  ErrorRequestState get _value => super._value as ErrorRequestState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(ErrorRequestState(
-      message: message == freezed
+    return _then(_$ErrorRequestState(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -293,18 +258,18 @@ class _$ErrorRequestState implements ErrorRequestState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ErrorRequestState &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$ErrorRequestState &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith =>
-      _$ErrorRequestStateCopyWithImpl<ErrorRequestState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ErrorRequestStateCopyWith<_$ErrorRequestState> get copyWith =>
+      __$$ErrorRequestStateCopyWithImpl<_$ErrorRequestState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -322,10 +287,10 @@ class _$ErrorRequestState implements ErrorRequestState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(dynamic data, String lastRequest, String timestamp)?
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(dynamic data, String lastRequest, String timestamp)?
         loaded,
   }) {
     return error?.call(message);
@@ -361,10 +326,10 @@ class _$ErrorRequestState implements ErrorRequestState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRequestState value)? uninitialized,
-    TResult Function(ErrorRequestState value)? error,
-    TResult Function(LoadingRequestState value)? loading,
-    TResult Function(LoadedRequestState value)? loaded,
+    TResult? Function(UninitializedRequestState value)? uninitialized,
+    TResult? Function(ErrorRequestState value)? error,
+    TResult? Function(LoadingRequestState value)? loading,
+    TResult? Function(LoadedRequestState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -386,31 +351,29 @@ class _$ErrorRequestState implements ErrorRequestState {
 }
 
 abstract class ErrorRequestState implements RequestState {
-  factory ErrorRequestState({required String message}) = _$ErrorRequestState;
+  factory ErrorRequestState({required final String message}) =
+      _$ErrorRequestState;
 
   String get message;
   @JsonKey(ignore: true)
-  $ErrorRequestStateCopyWith<ErrorRequestState> get copyWith =>
+  _$$ErrorRequestStateCopyWith<_$ErrorRequestState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingRequestStateCopyWith<$Res> {
-  factory $LoadingRequestStateCopyWith(
-          LoadingRequestState value, $Res Function(LoadingRequestState) then) =
-      _$LoadingRequestStateCopyWithImpl<$Res>;
+abstract class _$$LoadingRequestStateCopyWith<$Res> {
+  factory _$$LoadingRequestStateCopyWith(_$LoadingRequestState value,
+          $Res Function(_$LoadingRequestState) then) =
+      __$$LoadingRequestStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingRequestStateCopyWithImpl<$Res>
-    extends _$RequestStateCopyWithImpl<$Res>
-    implements $LoadingRequestStateCopyWith<$Res> {
-  _$LoadingRequestStateCopyWithImpl(
-      LoadingRequestState _value, $Res Function(LoadingRequestState) _then)
-      : super(_value, (v) => _then(v as LoadingRequestState));
-
-  @override
-  LoadingRequestState get _value => super._value as LoadingRequestState;
+class __$$LoadingRequestStateCopyWithImpl<$Res>
+    extends _$RequestStateCopyWithImpl<$Res, _$LoadingRequestState>
+    implements _$$LoadingRequestStateCopyWith<$Res> {
+  __$$LoadingRequestStateCopyWithImpl(
+      _$LoadingRequestState _value, $Res Function(_$LoadingRequestState) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -426,7 +389,7 @@ class _$LoadingRequestState implements LoadingRequestState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingRequestState);
+        (other.runtimeType == runtimeType && other is _$LoadingRequestState);
   }
 
   @override
@@ -448,10 +411,10 @@ class _$LoadingRequestState implements LoadingRequestState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(dynamic data, String lastRequest, String timestamp)?
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(dynamic data, String lastRequest, String timestamp)?
         loaded,
   }) {
     return loading?.call();
@@ -487,10 +450,10 @@ class _$LoadingRequestState implements LoadingRequestState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRequestState value)? uninitialized,
-    TResult Function(ErrorRequestState value)? error,
-    TResult Function(LoadingRequestState value)? loading,
-    TResult Function(LoadedRequestState value)? loaded,
+    TResult? Function(UninitializedRequestState value)? uninitialized,
+    TResult? Function(ErrorRequestState value)? error,
+    TResult? Function(LoadingRequestState value)? loading,
+    TResult? Function(LoadedRequestState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -516,40 +479,39 @@ abstract class LoadingRequestState implements RequestState {
 }
 
 /// @nodoc
-abstract class $LoadedRequestStateCopyWith<$Res> {
-  factory $LoadedRequestStateCopyWith(
-          LoadedRequestState value, $Res Function(LoadedRequestState) then) =
-      _$LoadedRequestStateCopyWithImpl<$Res>;
+abstract class _$$LoadedRequestStateCopyWith<$Res> {
+  factory _$$LoadedRequestStateCopyWith(_$LoadedRequestState value,
+          $Res Function(_$LoadedRequestState) then) =
+      __$$LoadedRequestStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic data, String lastRequest, String timestamp});
 }
 
 /// @nodoc
-class _$LoadedRequestStateCopyWithImpl<$Res>
-    extends _$RequestStateCopyWithImpl<$Res>
-    implements $LoadedRequestStateCopyWith<$Res> {
-  _$LoadedRequestStateCopyWithImpl(
-      LoadedRequestState _value, $Res Function(LoadedRequestState) _then)
-      : super(_value, (v) => _then(v as LoadedRequestState));
+class __$$LoadedRequestStateCopyWithImpl<$Res>
+    extends _$RequestStateCopyWithImpl<$Res, _$LoadedRequestState>
+    implements _$$LoadedRequestStateCopyWith<$Res> {
+  __$$LoadedRequestStateCopyWithImpl(
+      _$LoadedRequestState _value, $Res Function(_$LoadedRequestState) _then)
+      : super(_value, _then);
 
-  @override
-  LoadedRequestState get _value => super._value as LoadedRequestState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
-    Object? lastRequest = freezed,
-    Object? timestamp = freezed,
+    Object? lastRequest = null,
+    Object? timestamp = null,
   }) {
-    return _then(LoadedRequestState(
-      data: data == freezed
+    return _then(_$LoadedRequestState(
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      lastRequest: lastRequest == freezed
+      lastRequest: null == lastRequest
           ? _value.lastRequest
           : lastRequest // ignore: cast_nullable_to_non_nullable
               as String,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
@@ -579,24 +541,24 @@ class _$LoadedRequestState implements LoadedRequestState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoadedRequestState &&
+            other is _$LoadedRequestState &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality()
-                .equals(other.lastRequest, lastRequest) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp));
+            (identical(other.lastRequest, lastRequest) ||
+                other.lastRequest == lastRequest) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(lastRequest),
-      const DeepCollectionEquality().hash(timestamp));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(data), lastRequest, timestamp);
 
   @JsonKey(ignore: true)
   @override
-  $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith =>
-      _$LoadedRequestStateCopyWithImpl<LoadedRequestState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LoadedRequestStateCopyWith<_$LoadedRequestState> get copyWith =>
+      __$$LoadedRequestStateCopyWithImpl<_$LoadedRequestState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -614,10 +576,10 @@ class _$LoadedRequestState implements LoadedRequestState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function(String message)? error,
-    TResult Function()? loading,
-    TResult Function(dynamic data, String lastRequest, String timestamp)?
+    TResult? Function()? uninitialized,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+    TResult? Function(dynamic data, String lastRequest, String timestamp)?
         loaded,
   }) {
     return loaded?.call(data, lastRequest, timestamp);
@@ -653,10 +615,10 @@ class _$LoadedRequestState implements LoadedRequestState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UninitializedRequestState value)? uninitialized,
-    TResult Function(ErrorRequestState value)? error,
-    TResult Function(LoadingRequestState value)? loading,
-    TResult Function(LoadedRequestState value)? loaded,
+    TResult? Function(UninitializedRequestState value)? uninitialized,
+    TResult? Function(ErrorRequestState value)? error,
+    TResult? Function(LoadingRequestState value)? loading,
+    TResult? Function(LoadedRequestState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -679,14 +641,14 @@ class _$LoadedRequestState implements LoadedRequestState {
 
 abstract class LoadedRequestState implements RequestState {
   factory LoadedRequestState(
-      {required dynamic data,
-      required String lastRequest,
-      required String timestamp}) = _$LoadedRequestState;
+      {required final dynamic data,
+      required final String lastRequest,
+      required final String timestamp}) = _$LoadedRequestState;
 
   dynamic get data;
   String get lastRequest;
   String get timestamp;
   @JsonKey(ignore: true)
-  $LoadedRequestStateCopyWith<LoadedRequestState> get copyWith =>
+  _$$LoadedRequestStateCopyWith<_$LoadedRequestState> get copyWith =>
       throw _privateConstructorUsedError;
 }
