@@ -202,11 +202,11 @@ class RestCubit extends Cubit<RestState> {
   ///You can specify the [headers] for request.
   Future<void> formData(
     String path, {
+    required FormData body,
     Map<String, String>? headers,
     String? contentType,
     bool withLoading = true,
     dynamic Function(Map<String, dynamic>)? fromJson,
-    required FormData body,
     void Function(int, int)? onProgressChanged,
   }) async {
     if (withLoading) emit(RestState.loading());

@@ -55,8 +55,8 @@ class RestEvent with _$RestEvent {
   ///Perform an GET request
   factory RestEvent.formData(
     String path, {
-    @Default(true) bool withLoading,
     required FormData body,
+    @Default(true) bool withLoading,
     dynamic Function(Map<String, dynamic>)? fromJson,
     void Function(int, int)? onProgressChanged,
     Map<String, String>? headers,

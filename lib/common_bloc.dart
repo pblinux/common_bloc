@@ -1,3 +1,4 @@
+///A collection of common blocs and cubits that maybe will be used very often.
 library common_bloc;
 
 export 'package:common_bloc/src/bloc/request/request_bloc.dart';
