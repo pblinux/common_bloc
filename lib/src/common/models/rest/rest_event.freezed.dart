@@ -56,8 +56,8 @@ mixin _$RestEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -104,8 +104,8 @@ mixin _$RestEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -152,8 +152,8 @@ mixin _$RestEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -407,8 +407,8 @@ class _$GetEvent implements GetEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -458,8 +458,8 @@ class _$GetEvent implements GetEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -509,8 +509,8 @@ class _$GetEvent implements GetEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -773,8 +773,8 @@ class _$PostEvent implements PostEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -824,8 +824,8 @@ class _$PostEvent implements PostEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -875,8 +875,8 @@ class _$PostEvent implements PostEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1140,8 +1140,8 @@ class _$PutEvent implements PutEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1191,8 +1191,8 @@ class _$PutEvent implements PutEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1242,8 +1242,8 @@ class _$PutEvent implements PutEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1508,8 +1508,8 @@ class _$PatchEvent implements PatchEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1559,8 +1559,8 @@ class _$PatchEvent implements PatchEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1610,8 +1610,8 @@ class _$PatchEvent implements PatchEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1825,8 +1825,8 @@ class _$DeleteEvent implements DeleteEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1876,8 +1876,8 @@ class _$DeleteEvent implements DeleteEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -1927,8 +1927,8 @@ class _$DeleteEvent implements DeleteEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2016,8 +2016,8 @@ abstract class _$$FromDataEventCopyWith<$Res>
   @useResult
   $Res call(
       {String path,
-      bool withLoading,
       FormData body,
+      bool withLoading,
       dynamic Function(Map<String, dynamic>)? fromJson,
       void Function(int, int)? onProgressChanged,
       Map<String, String>? headers,
@@ -2036,8 +2036,8 @@ class __$$FromDataEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? path = null,
-    Object? withLoading = null,
     Object? body = null,
+    Object? withLoading = null,
     Object? fromJson = freezed,
     Object? onProgressChanged = freezed,
     Object? headers = freezed,
@@ -2048,14 +2048,14 @@ class __$$FromDataEventCopyWithImpl<$Res>
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      withLoading: null == withLoading
-          ? _value.withLoading
-          : withLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as FormData,
+      withLoading: null == withLoading
+          ? _value.withLoading
+          : withLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       fromJson: freezed == fromJson
           ? _value.fromJson
           : fromJson // ignore: cast_nullable_to_non_nullable
@@ -2080,8 +2080,8 @@ class __$$FromDataEventCopyWithImpl<$Res>
 
 class _$FromDataEvent implements FromDataEvent {
   _$FromDataEvent(this.path,
-      {this.withLoading = true,
-      required this.body,
+      {required this.body,
+      this.withLoading = true,
       this.fromJson,
       this.onProgressChanged,
       final Map<String, String>? headers,
@@ -2091,10 +2091,10 @@ class _$FromDataEvent implements FromDataEvent {
   @override
   final String path;
   @override
+  final FormData body;
+  @override
   @JsonKey()
   final bool withLoading;
-  @override
-  final FormData body;
   @override
   final dynamic Function(Map<String, dynamic>)? fromJson;
   @override
@@ -2114,7 +2114,7 @@ class _$FromDataEvent implements FromDataEvent {
 
   @override
   String toString() {
-    return 'RestEvent.formData(path: $path, withLoading: $withLoading, body: $body, fromJson: $fromJson, onProgressChanged: $onProgressChanged, headers: $headers, contentType: $contentType)';
+    return 'RestEvent.formData(path: $path, body: $body, withLoading: $withLoading, fromJson: $fromJson, onProgressChanged: $onProgressChanged, headers: $headers, contentType: $contentType)';
   }
 
   @override
@@ -2123,9 +2123,9 @@ class _$FromDataEvent implements FromDataEvent {
         (other.runtimeType == runtimeType &&
             other is _$FromDataEvent &&
             (identical(other.path, path) || other.path == path) &&
+            (identical(other.body, body) || other.body == body) &&
             (identical(other.withLoading, withLoading) ||
                 other.withLoading == withLoading) &&
-            (identical(other.body, body) || other.body == body) &&
             (identical(other.fromJson, fromJson) ||
                 other.fromJson == fromJson) &&
             (identical(other.onProgressChanged, onProgressChanged) ||
@@ -2139,8 +2139,8 @@ class _$FromDataEvent implements FromDataEvent {
   int get hashCode => Object.hash(
       runtimeType,
       path,
-      withLoading,
       body,
+      withLoading,
       fromJson,
       onProgressChanged,
       const DeepCollectionEquality().hash(_headers),
@@ -2191,8 +2191,8 @@ class _$FromDataEvent implements FromDataEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2200,7 +2200,7 @@ class _$FromDataEvent implements FromDataEvent {
         formData,
     required TResult Function(String path, bool withLoading) clear,
   }) {
-    return formData(path, withLoading, body, fromJson, onProgressChanged,
+    return formData(path, body, withLoading, fromJson, onProgressChanged,
         headers, contentType);
   }
 
@@ -2243,8 +2243,8 @@ class _$FromDataEvent implements FromDataEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2252,7 +2252,7 @@ class _$FromDataEvent implements FromDataEvent {
         formData,
     TResult? Function(String path, bool withLoading)? clear,
   }) {
-    return formData?.call(path, withLoading, body, fromJson, onProgressChanged,
+    return formData?.call(path, body, withLoading, fromJson, onProgressChanged,
         headers, contentType);
   }
 
@@ -2295,8 +2295,8 @@ class _$FromDataEvent implements FromDataEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2306,7 +2306,7 @@ class _$FromDataEvent implements FromDataEvent {
     required TResult orElse(),
   }) {
     if (formData != null) {
-      return formData(path, withLoading, body, fromJson, onProgressChanged,
+      return formData(path, body, withLoading, fromJson, onProgressChanged,
           headers, contentType);
     }
     return orElse();
@@ -2361,8 +2361,8 @@ class _$FromDataEvent implements FromDataEvent {
 
 abstract class FromDataEvent implements RestEvent {
   factory FromDataEvent(final String path,
-      {final bool withLoading,
-      required final FormData body,
+      {required final FormData body,
+      final bool withLoading,
       final dynamic Function(Map<String, dynamic>)? fromJson,
       final void Function(int, int)? onProgressChanged,
       final Map<String, String>? headers,
@@ -2370,9 +2370,9 @@ abstract class FromDataEvent implements RestEvent {
 
   @override
   String get path;
+  FormData get body;
   @override
   bool get withLoading;
-  FormData get body;
   dynamic Function(Map<String, dynamic>)? get fromJson;
   void Function(int, int)? get onProgressChanged;
   Map<String, String>? get headers;
@@ -2494,8 +2494,8 @@ class _$ClearEvent implements ClearEvent {
         delete,
     required TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2545,8 +2545,8 @@ class _$ClearEvent implements ClearEvent {
         delete,
     TResult? Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,
@@ -2596,8 +2596,8 @@ class _$ClearEvent implements ClearEvent {
         delete,
     TResult Function(
             String path,
-            bool withLoading,
             FormData body,
+            bool withLoading,
             dynamic Function(Map<String, dynamic>)? fromJson,
             void Function(int, int)? onProgressChanged,
             Map<String, String>? headers,

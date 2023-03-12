@@ -225,11 +225,11 @@ class RestBloc extends Bloc<RestEvent, RestState> {
   ///You can specify the [headers] for request.
   void formData(
     String path, {
+    required FormData body,
     Map<String, String>? headers,
     String? contentType,
     bool withLoading = true,
     dynamic Function(Map<String, dynamic>)? fromJson,
-    required FormData body,
     void Function(int, int)? onProgressChanged,
   }) =>
       add(
